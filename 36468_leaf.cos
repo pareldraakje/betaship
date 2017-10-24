@@ -1,0 +1,156 @@
+** Leaves
+** Big ocean 
+reps 8
+	new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
+	mesg wrt+ targ 1000 45262 27782 1
+	velo rand -100 100 0
+repe
+reps 8
+	new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
+	mesg wrt+ targ 1000 46832 26281 1
+	velo rand -100 100 0
+repe
+reps 8
+	new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
+	mesg wrt+ targ 1000 49832 26281 1
+	velo rand -100 100 0
+repe
+reps 8
+	new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
+	mesg wrt+ targ 1000 51268 27798 1
+	velo rand -100 100 0
+repe
+
+
+* main controller
+new: simp 2 5 36468 "blnk" 1 0 1
+tick 70
+
+** Creation script
+scrp 2 6 36468 1000
+* Attr: mouseable 2 + collide 64 + physics 128 = 194
+	attr 194
+* Bhvr: eat 16 + pick up 32 = 48
+	bhvr 56
+* Set physics attributes
+	accg 0
+	aero 3
+* Set collision attributes
+	perm 5
+	fric 70
+	elas 0
+* Move to the spot if possible
+	doif tmvt _p1_ _p2_ ne 0
+		mvto _p1_ _p2_
+	else
+		kill targ
+	endi
+	tick 1
+endm
+
+** Main controller timer
+scrp 2 5 36468 9
+	doif sean eq 2
+		doif rand 1 4 eq 4
+			new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
+			mesg wrt+ targ 1000 rand 46946 48095 rand 26852 27000 1
+		endi
+		doif rand 1 4 eq 4
+			new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
+			mesg wrt+ targ 1000 rand 48809 49576 rand 26804 27000 1
+		endi
+		doif rand 1 8 eq 8
+			new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
+			mesg wrt+ targ 1000 rand 47597 47982 rand 27370 27390 1
+		endi
+	endi
+endm
+
+** Leaf timer
+scrp 2 6 36468 9
+	addv ov50 1
+	doif carr eq null
+		setv va00 rand -9 9
+		doif va00 lt 0
+			setv va00 rand -2 -1
+			setv va01 rand -2 2
+		elif va00 gt 0
+			setv va00 rand 1 2
+			setv va01 rand -2 2
+		endi
+		reps rand 4 12
+			setv va02 rtyp grap posx posy
+			doif va02 eq 8 or va02 eq 9
+				aero 3
+				velo va00 va01
+			else
+				aero 0
+				divv va00 3.0
+				velo va00 1
+			endi
+			wait 15
+		repe
+		doif rand 0 5 eq 0
+
+			setv va02 rtyp grap posx posy
+			doif va02 eq 8 or va02 eq 9
+			else
+				doif ov50 gt 30
+					kill ownr
+					stop
+				endi
+			endi
+
+			rnge 700
+			setv va00 rand 0 3
+			esee 2 6 36468
+				addv va00 1
+			next
+* Create new leaf
+			doif va02 eq 8 or va02 eq 9
+
+				doif va00 lt 4
+					setv va01 posx
+					setv va02 post
+					subv va02 5
+					reps 2
+						new: simp 2 6 36468 "betaship_tools" 1 1 rand 1200 4000
+						mesg wrt+ targ 1000 va01 va02 0
+					repe
+				elif va00 gt 8
+					kill ownr
+					stop
+				endi
+			endi
+		endi
+	endi
+	targ ownr
+	tick rand 50 85
+endm
+
+
+
+
+* eat
+scrp 2 6 36468 12
+	stim writ from 77 rand 1 2
+	kill ownr
+endm
+* collide
+scrp 2 6 36468 6
+	setv va00 grap posx posy
+	doif rtyp va00 eq 8 or rtyp va00 eq 9
+	else
+		kill ownr
+		stop
+	endi
+endm
+
+rscr
+
+enum 2 6 36468
+	kill targ
+next
+enum 2 5 36468
+	kill targ
+next

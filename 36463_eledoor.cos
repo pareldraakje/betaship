@@ -1,0 +1,172 @@
+* door create script
+scrp 2 2 36463 1000
+	inst
+	attr 4
+	bhvr 1
+	mvto _p1_ _p2_
+endm
+* lift create script
+scrp 3 1 36463 1000
+	inst
+	bhvr 3
+	mvto _p1_ _p2_
+endm
+
+* teleport create script
+scrp 3 2 36463 1000
+	inst
+	bhvr 1
+	attr 4
+	mvto _p1_ _p2_
+endm
+
+
+* teleport push script
+scrp 3 2 36463 1
+	rtar 3 2 36463
+	setv va00 posx
+	setv va01 posy
+	setv va02 posb
+	doif from eq pntr
+		cmrp va00 va01 1
+		etch 4 0 0
+			gsub teleport
+		next
+	else
+		targ from
+		gsub teleport
+	endi
+	subr teleport
+* wait
+		stim writ targ 75 1
+* go in
+		stim writ targ 49 1
+* move
+		inst
+		setv va10 movs
+		doif va10 eq 0
+			mvsf va00 va02
+		else
+			mesg writ targ 5
+			wait 2
+			mvsf va00 va02
+		endi
+		slow
+* travel internal door
+		stim writ targ 96 1
+* travel meta door
+		stim writ targ 95 1
+* go out
+		stim writ targ 50 1
+
+	retn
+
+endm
+
+
+* door push script
+scrp 2 2 36463 1
+	targ ov00
+	setv va00 posx
+	setv va01 posy
+	setv va02 posb
+	doif from eq pntr
+		cmrp va00 va01 1
+
+		etch 4 0 0
+			gsub teleport
+		next
+	else
+		targ from
+		gsub teleport
+	endi
+
+	subr teleport
+* wait
+		stim writ targ 75 1
+* go in
+		stim writ targ 49 1
+* move
+		inst
+		setv va10 movs
+		doif va10 eq 0
+			mvsf va00 va02
+		else
+			mesg writ targ 5
+			wait 2
+			mvsf va00 va02
+		endi
+		slow
+* travel internal door
+		stim writ targ 96 1
+* travel meta door
+		stim writ targ 95 1
+* go out
+		stim writ targ 50 1
+	retn
+endm
+
+* lift push script (go up)
+scrp 3 1 36463 1
+	doif from ne pntr
+		doif ov00 ne ownr
+			targ ov00
+			setv va00 posx
+			setv va02 posy
+
+			targ from
+* wait
+			stim writ from 75 1
+* go uptt
+			stim writ from 51 -1
+* move
+			inst
+			setv va10 movs
+			doif va10 eq 0
+				mvsf va00 va02
+			else
+				mesg writ targ 5
+				wait 2
+				mvsf va00 va02
+			endi
+			slow
+* travel lift
+			stim writ from 94 1
+		else
+* disappoint
+			stim writ from 0 1
+		endi
+	endi
+endm
+
+* lift pull script (go down)
+scrp 3 1 36463 2
+	doif from ne pntr
+		doif ov01 ne ownr
+			targ ov01
+			setv va00 posx
+			setv va02 posb
+			targ from
+* wait
+			stim writ from 75 1
+* go down
+			stim writ from 52 -1
+* move
+			inst
+			setv va10 movs
+			doif va10 eq 0
+				mvsf va00 va02
+			else
+				mesg writ targ 5
+				wait 2
+				mvsf va00 va02
+			endi
+			slow
+* travel lift
+			stim writ from 94 1
+		else
+* disappoint
+			stim writ from 0 1
+		endi
+	endi
+endm

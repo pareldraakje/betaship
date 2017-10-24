@@ -1,0 +1,107 @@
+** Gadgets
+* main
+new: simp 3 8 36468 "betaship_tools" 1 2 3800
+mesg wrt+ targ 1000 49375 27184 1
+* Arctic
+new: simp 3 8 36468 "betaship_tools" 1 2 3800
+mesg wrt+ targ 1000 45598 28535 1
+* Desert
+new: simp 3 8 36468 "betaship_tools" 1 2 3800
+mesg wrt+ targ 1000 50977 28559 1
+
+** Vocab
+* main
+new: simp 3 3 36468 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 49575 27537 1
+* arctic
+new: simp 3 3 36468 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 45369 28983 1
+* desert
+new: simp 3 3 36468 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 49615 28577 1
+* aqua
+new: simp 3 3 36468 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 48397 28657 1
+* engine
+new: simp 3 3 36468 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 48179 28973 1
+* ocean
+new: simp 3 3 36468 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 46150 27600 1
+new: simp 3 3 36468 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 50271 27600 1
+
+
+** Creation script
+** Gadget
+scrp 3 8 36468 1000
+* Attr: mouseable 2 + activateable 4 + collide 64 + physics 128 = 198
+	attr 198
+* Bhvr: act1 1 + hit 8 + pick up 32 = 41
+	bhvr 41
+* Set physics attributes
+	accg 2
+	aero 3
+* Set collision attributes
+	perm 60
+	fric 60
+	elas 60
+* emit gadget smell
+	emit 18 0.5
+* Move to the spot if possible
+	doif tmvt _p1_ _p2_ ne 0
+		mvto _p1_ _p2_
+	else
+		kill targ
+	endi
+endm
+** vocb
+scrp 3 3 36468 1000
+* Attr: mouseable 2 + collide 64 + physics 128 = 194
+	attr 194
+* Bhvr: act1 1
+	bhvr 1
+* Set physics attributes
+	accg 2
+	aero 3
+* Set collision attributes
+	perm 60
+	fric 60
+	elas 60
+* emit machinery smell
+
+	emit 10 0.5
+* Move to the spot if possible
+	doif tmvt _p1_ _p2_ ne 0
+		mvto _p1_ _p2_
+	else
+		kill targ
+	endi
+endm
+
+
+** Gadget Push
+scrp 3 8 36468 1
+	stim writ from 90 2
+	velo rand -3 3 -3
+endm
+** Gadget Hit
+scrp 3 8 36468 3
+	stim writ from 92 2
+	velo rand -3 3 rand -6 -3
+endm
+** Vocb Push
+scrp 3 3 36468 1
+	stim writ from 90 2
+	targ from
+	vocb
+endm
+
+rscr
+
+enum 3 8 36468
+	kill targ
+next
+enum 3 3 36468
+	kill targ
+next

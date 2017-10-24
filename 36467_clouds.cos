@@ -1,0 +1,205 @@
+* Rain clouds
+reps 22
+	new: simp 1 1 36467 "betaship_cloud" 1 0 3000
+* ov00: rain (0) or snow (1) cloud
+	setv ov00 0
+	mesg wrt+ targ 1000 rand 47072 49407 rand 26760 26790 1
+repe
+
+* Snow clouds
+reps 10
+	new: simp 1 1 36467 "betaship_cloud" 1 0 3000
+* ov00: rain (0) or snow (1) cloud
+	setv ov00 1
+	mesg wrt+ targ 1000 rand 45650 46814 rand 28180 28205 1
+repe
+reps 6
+	new: simp 1 1 36467 "betaship_cloud" 1 0 3000
+* ov00: rain (0) or snow (1) cloud
+	setv ov00 1
+	mesg wrt+ targ 1000 rand 46623 46859 rand 28511 28550 1
+repe
+
+
+scrp 1 1 36467 1000
+* attr: invisible 16 + collide 64 + physics 128 = 208
+	attr 208
+	perm 10
+	elas 0
+	fric 100
+	accg 0
+	aero 0
+
+* set category to weather
+	cato 19
+* initial velocity
+	setv va00 rand -20 20
+	divv va00 20.0
+	velo va00 0
+	tick rand 200 300
+	mvto _p1_ _p2_
+	alph rand 50 100 1
+endm
+
+scrp 1 1 36467 9
+
+	tick rand 200 300
+	setv va00 sean
+	doif rand 0 5 eq 5
+		setv va99 rand -20 20
+		divv va99 20.0
+		velo va99 0
+	endi
+* Rain
+	doif ov00 eq 0
+		doif va00 ne 1
+			show 1
+			doif rand 0 9 eq 9
+				doif va00 ne 3
+					reps rand 30 50
+						targ ownr
+						setv va01 posx
+						setv va02 posy
+						new: simp 2 19 36467 "betaship_cloud" 1 1 3000
+						mesg wrt+ targ 1000 va01 va02 1
+						wait 50
+					repe
+				else
+					reps rand 8 20
+						targ ownr
+						doif obst left lt 100
+							setv va99 rand 0 20
+							divv va99 20.0
+							velo va99 0
+						endi
+						doif obst rght lt 100
+							setv va99 rand -20 0
+							divv va99 20.0
+							velo va99 0
+						endi
+						setv va01 posx
+						setv va02 posy
+						new: simp 2 20 36467 "betaship_cloud" 1 2 3000
+						mesg wrt+ targ 1000 va01 va02 1
+						wait rand 150 300
+					repe
+				endi
+			endi
+		else
+			show 0
+		endi
+
+
+* snow
+
+	elif ov00 eq 1
+		doif va00 ne 1
+			show 1
+			doif rand 0 5 eq 5
+				reps rand 15 30
+					targ ownr
+					doif obst left lt 100
+						setv va99 rand 0 20
+						divv va99 20.0
+						velo va99 0
+					endi
+					doif obst rght lt 100
+						setv va99 rand -20 0
+						divv va99 20.0
+						velo va99 0
+					endi
+					setv va01 posx
+					setv va02 posy
+					new: simp 2 20 36467 "betaship_cloud" 1 2 3000
+					mesg wrt+ targ 1000 va01 va02 1
+					wait rand 200 400
+				repe
+
+			endi
+		else
+			show 0
+		endi
+	endi
+
+	targ ownr
+	doif obst left lt 100
+		setv va99 rand 0 20
+		divv va99 20.0
+		velo va99 0
+	endi
+	doif obst rght lt 100
+		setv va99 rand -20 0
+		divv va99 20.0
+		velo va99 0
+	endi
+endm
+
+* rain
+scrp 2 19 36467 1000
+*attr: collide 64 + physics 128 = 192
+	attr 192
+
+	perm 60
+	fric 100
+	elas 0
+	accg 2
+	aero 5
+	doif rand 0 3 eq 0
+		emit 4 1
+	else
+		emit 3 1
+	endi
+
+	tick 80
+
+	mvto _p1_ _p2_
+endm
+
+* snow
+scrp 2 20 36467 1000
+	cato 19
+*attr: collide 64 + physics 128 = 192
+	attr 192
+
+	perm 60
+	fric 100
+	elas 0
+	accg 0.2
+	aero 10
+	emit 3 0.3
+	tick 300
+	setv ov00 0
+	mvto _p1_ _p2_
+endm
+
+scrp 2 19 36467 9
+	kill ownr
+endm
+
+scrp 2 19 36467 6
+	kill ownr
+endm
+
+scrp 2 20 36467 9
+	altr -1 2 -0.4
+	addv ov00 1
+	doif ov00 gt 7
+		kill ownr
+	endi
+endm
+
+scrp 2 20 36467 6
+	kill ownr
+endm
+
+
+rscr
+enum 2 19 36467
+	kill targ
+next
+enum 2 20 36467
+	kill targ
+next
+enum 1 1 36467
+	kill targ
+next

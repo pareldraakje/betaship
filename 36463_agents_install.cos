@@ -1,0 +1,556 @@
+* plant arctic
+reps 3
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 46626 27800 0
+	velo rand -25 25 0
+repe
+reps 5
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 46146 28341 0
+	velo rand -45 45 0
+repe
+reps 8
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 45962 28666 0
+	velo rand -85 85 0
+repe
+* flower arctic
+reps 3
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 46626 27800 0
+	velo rand -25 25 0
+repe
+reps 5
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 46146 28341 0
+	velo rand -45 45 0
+repe
+reps 8
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 45962 28666 0
+	velo rand -85 85 0
+repe
+* critter arctic
+new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+mesg wrt+ targ 1000 45515 28894 0
+* bug arctic
+new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
+mesg wrt+ targ 1000 46000 28894 0
+* toy arctic floor
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 46086 28908 0
+* toy arctic top
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 46782 27981 0
+
+* plant desert
+reps 2
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 49879 27859 0
+	velo rand -25 25 0
+repe
+reps 4
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 50441 28366 0
+	velo rand -45 45 0
+repe
+reps 8
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 50519 28682 0
+	velo rand -85 85 0
+repe
+* flower desert
+reps 2
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 49879 27859 0
+	velo rand -15 15 0
+repe
+reps 4
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 50441 28366 0
+	velo rand -30 30 0
+repe
+reps 8
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 50519 28682 0
+	velo rand -100 100 0
+repe
+* critter desert
+new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+mesg wrt+ targ 1000 50615 28894 0
+* bug desert
+new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
+mesg wrt+ targ 1000 50800 28894 0
+* toy desert floor
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 50920 29037 0
+* toy desert top
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 50092 28446 0
+
+* plant main
+reps 8
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 48388 26922 0
+	velo rand -85 85 0
+repe
+reps 9
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 48388 27361 0
+	velo rand -85 85 0
+repe
+* flower main
+reps 8
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 48388 26922 0
+	velo rand -85 85 0
+repe
+reps 9
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 48388 27361 0
+	velo rand -85 85 0
+repe
+
+* critter main
+new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+mesg wrt+ targ 1000 47137 27594 0
+* bug main
+new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
+mesg wrt+ targ 1000 49500 27400 0
+* toy main right
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 49541 27564 0
+* toy main left
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 47708 27703 0
+* toy main top
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 48568 27253 0
+
+* plant aqua
+reps 7
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 48354 28218 0
+	velo rand -70 70 0
+repe
+* flower aqua
+reps 7
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 48354 28218 0
+	velo rand -70 70 0
+repe
+* critter aqua
+new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+mesg wrt+ targ 1000 49161 28535 0
+* bug aqua
+new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
+mesg wrt+ targ 1000 48841 28654 0
+* toy aqua
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 47962 28617 0
+
+
+**
+** plant ocean
+** 
+reps 4
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 45064 28200 0
+	velo rand -25 25 0
+repe
+reps 2
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 45261 26560 0
+	velo rand -20 20 0
+repe
+reps 2
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 46378 27543 0
+	velo rand -15 15 0
+repe
+reps 4
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 48209 26471 0
+	velo rand -40 40 0
+repe
+reps 2
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 51566 27089 0
+	velo rand -25 25 0
+repe
+reps 2
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 50052 27529 0
+	velo rand -20 20 0
+repe
+reps 3
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 51488 28168 0
+	velo rand -25 25 0
+repe
+reps 2
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 51793 28849 0
+	velo rand -25 25 0
+repe
+**
+** flower ocean
+** 
+reps 4
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 45064 28200 0
+	velo rand -25 25 0
+repe
+reps 2
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 45261 26560 0
+	velo rand -20 20 0
+repe
+reps 2
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 46378 27543 0
+	velo rand -15 15 0
+repe
+reps 4
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 48209 26471 0
+	velo rand -40 40 0
+repe
+reps 2
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 51566 27089 0
+	velo rand -25 25 0
+repe
+reps 2
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 50052 27529 0
+	velo rand -20 20 0
+repe
+reps 3
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 51488 28168 0
+	velo rand -25 25 0
+repe
+reps 2
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 51793 28849 0
+	velo rand -25 25 0
+repe
+**
+** bug ocean
+** 
+reps 2
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 400
+	mesg wrt+ targ 1000 45064 28200 0
+	velo rand -25 25 0
+repe
+reps 2
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 400
+	mesg wrt+ targ 1000 45261 26560 0
+	velo rand -20 20 0
+repe
+reps 2
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 400
+	mesg wrt+ targ 1000 46378 27543 0
+	velo rand -15 15 0
+repe
+reps 2
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 400
+	mesg wrt+ targ 1000 48209 26471 0
+	velo rand -20 20 0
+repe
+reps 2
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 400
+	mesg wrt+ targ 1000 51566 27089 0
+	velo rand -25 25 0
+repe
+reps 2
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 400
+	mesg wrt+ targ 1000 50052 27529 0
+	velo rand -20 20 0
+repe
+reps 2
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 400
+	mesg wrt+ targ 1000 51488 28168 0
+	velo rand -25 25 0
+repe
+reps 2
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 400
+	mesg wrt+ targ 1000 51793 28849 0
+	velo rand -25 25 0
+repe
+**
+** toy ocean
+**
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 45004 28262 0
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 45396 26739 0
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 47818 26593 0
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 51557 27096 0
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 51513 28240 0
+
+
+**
+** Edible patch plants
+**
+* fruit aqua bot
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "spring" 1
+setv name "summer" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 48857 28510
+* seed aqua bot
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "spring" 1
+setv name "summer" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 48355 28270
+* food aqua bot
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "summer" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 47398 28454
+
+* fruit main top left
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "summer" 1
+setv name "fall" 1
+tick 1
+mvto 47094 27001
+* seed main top left
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "winter" 1
+tick 1
+mvto 47094 27001
+* food main top left
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "fall" 1
+tick 1
+mvto 47546 27104
+* seed main top center
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "winter" 1
+setv name "spring" 1
+tick 1
+mvto 48155 27964
+* fruit main top right
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "fall" 1
+setv name "summer" 1
+tick 1
+mvto 49022 26936
+* seed main top right
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "winter" 1
+tick 1
+mvto 49022 26936
+* food main top right
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "summer" 1
+setv name "winter" 1
+tick 1
+mvto 49205 27205
+* fruit main bot right
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "fall" 1
+setv name "summer" 1
+setv name "spring" 1
+tick 1
+mvto 47793 27378
+* seed main bot right
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "winter" 1
+tick 1
+mvto 47793 27378
+* seed main top
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "summer" 1
+tick 1
+mvto 47496 26933
+* food main bot right
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "fall" 1
+tick 1
+mvto 49278 27432
+* food main bot left
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "summer" 1
+setv name "winter" 1
+tick 1
+mvto 47300 27738
+
+* fruit arctic top
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "summer" 1
+tick 1
+mvto 46159 28303
+* seed arctic top
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "summer" 1
+tick 1
+mvto 46313 27887
+* fruit arctic mid
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "fall" 1
+tick 1
+mvto 46086 28362
+* seed arctic mid
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "fall" 1
+tick 1
+mvto 46086 28362
+* food arctic mid
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "summer" 1
+setv name "fall" 1
+tick 1
+mvto 46239 28281
+* fruit arctic low
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "summer" 1
+setv name "spring" 1
+tick 1
+mvto 46793 28518
+* seed arctic low
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "summer" 1
+setv name "fall" 1
+tick 1
+mvto 46300 28620
+* food arctic low
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "summer" 1
+setv name "fall" 1
+tick 1
+mvto 46518 28867
+
+* food desert high
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 49855 27932
+* fruit desert mid
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "winter" 1
+setv name "fall" 1
+tick 1
+mvto 50013 28313
+* seed desert mid
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "spring" 1
+tick 1
+mvto 50013 28313
+* food desert mid
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 50823 28558
+* fruit desert low mid
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "winter" 1
+tick 1
+mvto 50538 28707
+* seed desert low mid
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "spring" 1
+setv name "fall" 1
+tick 1
+mvto 50538 28707
+* fruit desert low right
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "winter" 1
+tick 1
+mvto 51102 28751
+* seed desert low right
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "spring" 1
+tick 1
+mvto 51102 28751
+* food desert low right
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 50312 28965
+
+
+rscr
+enum 2 13 36463
+	kill targ
+next
+enum 2 15 36463
+	kill targ
+next
+enum 2 21 36463
+	kill targ
+next
+enum 1 1 36463
+	kill targ
+next
+enum 2 3 36463
+	kill targ
+next
+enum 2 4 36463
+	kill targ
+next
+enum 2 7 36463
+	kill targ
+next
+enum 2 8 36463
+	kill targ
+next
+enum 2 11 36463
+	kill targ
+next

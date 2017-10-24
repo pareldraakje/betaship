@@ -1,0 +1,146 @@
+doif game "betaship" ne 1
+**
+** Signpost install script
+**
+	new: simp 1 3 36465 "betaship_fav" 1 0 1
+	attr 272
+	mvto 47441 27555
+	tick 10
+
+**
+** Controller/overlay install script
+**
+	new: simp 1 1 36465 "betaship_fav" 21 1 10000
+* attribute: activateable 4 + floatable 32 = 36
+	attr 36
+* ov00: the favplace variable
+* ov01: the metaroom id
+* ov02: the time of day
+* ov03: the season
+* ov04: the favplace fltx
+* ov05: the favplace flty
+* ov06: current pose
+	frel null
+	seta ov00 targ
+	setv ov01 gmap 47441 27555
+	setv ov02 99
+	setv ov03 99
+	setv ov04 0
+	setv ov05 0
+	setv ov06 0
+* initial tick
+	tick 10
+
+
+**
+** Move camera to signpost!
+**
+	cmrp 47441 27555 0
+
+** Set betaship game variable
+	setv game "betaship" 1
+endi
+
+**
+** controller push script
+**
+scrp 1 1 36465 1
+* if signpost is on screen
+	doif ov00 ne ownr
+* send push message to signpost
+		mesg writ ov00 0
+	endi
+endm
+
+
+**
+** controller timer script
+**
+scrp 1 1 36465 9
+* If the signpost variable isn't set yet
+	doif ov00 eq ownr
+		show 0
+* Check for signpost
+		rtar 1 4 36465
+* If there is a signpost
+		doif targ ne ownr and targ ne null
+* Set the signpost variable
+			seta va00 targ
+			flto 10 10
+			show 0
+			targ ownr
+			seta ov00 va00
+		endi
+* if the signpost variable is set
+	else
+		tick 150
+		show 1
+* retarget ownr
+		targ ownr
+		inst
+* recalculate posx posy
+		setv va00 ov02
+		setv va01 ov03
+		setv va99 0
+		targ ov00
+		doif va00 ne fltx
+			setv va00 fltx
+			setv va99 1
+		endi
+		doif va00 ne flty
+			setv va01 flty
+			setv va99 1
+		endi
+		doif va99 eq 1
+			targ ownr
+			flto va00 va01
+		endi
+		slow
+* if the time pose isn't correct
+		doif ov02 ne time
+* set the timevar
+			setv ov02 time
+* if the season pose isn't correct
+			doif ov03 ne sean
+* set the seasonvar
+				setv ov03 sean
+			endi
+* calculate the pose from the season vars
+			setv va00 ov02
+			setv va01 ov03
+
+			setv va10 va01
+			mulv va10 5
+			addv va10 va00
+			addv va10 1
+* change the pose variable
+			setv ov06 va10
+		endi
+		doif meta eq ov01
+			pose ov06
+		else
+			pose 0
+		endi
+	endi
+endm
+
+* metaroom change event
+scrp 1 1 36465 900
+	doif meta eq ov01
+		pose ov06
+	else
+		pose 0
+	endi
+endm
+
+
+rscr
+enum 1 3 36465
+	kill targ
+next
+enum 1 4 36465
+	kill targ
+next
+enum 1 1 36465
+	kill targ
+next
