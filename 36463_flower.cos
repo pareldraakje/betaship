@@ -53,7 +53,7 @@ scrp 2 7 36463 9
 	setv va00 grap posx posy
 	setv va01 prop va00 2
 * get the heat CA and check if the conditions are OK
-	doif va01 gt 0.45 and va01 lt 0.60
+	doif va01 gt 0.45 and va01 lt 0.61
 		alph 0 0
 		doif rand 0 3 eq 3
 			setv va02 posl

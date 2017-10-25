@@ -1,0 +1,519 @@
+** correct the water CA diffusion rate
+rate 8 2 1.000000 0.010000 1.000000
+rate 9 2 1.000000 0.010000 1.000000
+
+doif game "betaship" ne 1
+**
+** Light emitters
+**
+**
+**
+* Main top
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 54107 26930
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 54519 26930
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 55081 26930
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 55560 26930
+	tick 1
+* Main bot
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 54034 27281
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 54586 27281
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 55179 27281
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 55720 27281
+	tick 1
+
+* Arctic top
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 53803 27477
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 53215 27477
+	tick 1
+* Arctic mid
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 53818 27755
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 53277 27755
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 52818 27755
+	tick 1
+* Arctic bot
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 53849 27966
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 53282 27966
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 52705 27966
+	tick 1
+* Desert top
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 55787 27466
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 56142 27466
+	tick 1
+* Desert mid
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 56137 27729
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 56560 27729
+	tick 1
+* Desert bot
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 55978 28018
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 56380 28018
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 56771 28018
+	tick 1
+
+* Aqua top
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 55070 27642
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 54565 27642
+	tick 1
+* Aqua bot 
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.85
+	mvto 54132 28105
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.85
+	mvto 54658 28105
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.85
+	mvto 55107 28105
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.85
+	mvto 55529 28105
+	tick 1
+
+** Engine
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 54524 26549
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 55055 26549
+	tick 1
+
+* Scary outside world
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 52802 26703
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 53529 26703
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 54008 26549
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 54080 26250
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 54771 26229
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 55559 26229
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 56293 26430
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 57056 26425
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 55731 26605
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 56282 26853
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 1
+	setv ov01 0.95
+	mvto 56916 27054
+	tick 1
+
+
+**
+**
+**
+**
+** HEAT EMITTERS
+**
+**
+**
+**
+
+**
+** Heat emitters
+**
+**
+**
+* Main top
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.85
+	mvto 54107 26930
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.85
+	mvto 54519 26930
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.85
+	mvto 55081 26930
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.85
+	mvto 55560 26930
+	tick 1
+* Main bot
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.85
+	mvto 54034 27281
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.85
+	mvto 54586 27281
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.85
+	mvto 55179 27281
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.85
+	mvto 55720 27281
+	tick 1
+
+** ARCTIC
+* Arctic top
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.60
+	mvto 53803 27477
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.60
+	mvto 53215 27477
+	tick 1
+* Arctic mid
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.60
+	mvto 53818 27755
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.60
+	mvto 53277 27755
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.60
+	mvto 52818 27755
+	tick 1
+* Arctic bot
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.60
+	mvto 53849 27966
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.60
+	mvto 53282 27966
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.60
+	mvto 52705 27966
+	tick 1
+
+** DESERT
+* Desert top
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 1.1
+	mvto 55787 27466
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 1.1
+	mvto 56142 27466
+	tick 1
+* Desert mid
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 1.1
+	mvto 56137 27729
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 1.1
+	mvto 56560 27729
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.8
+	mvto 56137 27729
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.8
+	mvto 56560 27729
+	tick 1
+* Desert bot
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 1.1
+	mvto 55978 28018
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 1.1
+	mvto 56380 28018
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 1.1
+	mvto 56771 28018
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.8
+	mvto 55978 28018
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.8
+	mvto 56380 28018
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.8
+	mvto 56771 28018
+	tick 1
+
+* Aqua top
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.8
+	mvto 55070 27642
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.8
+	mvto 54565 27642
+	tick 1
+* Aqua bot 
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 54132 28105
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 54658 28105
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 55107 28105
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 55529 28105
+	tick 1
+
+** Engine
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.8
+	mvto 54524 26549
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.8
+	mvto 55055 26549
+	tick 1
+
+* Scary outside world
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 52802 26703
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 53529 26703
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 54008 26549
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 54080 26250
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 54771 26229
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 55559 26229
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 56293 26430
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 57056 26425
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 55731 26605
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 56282 26853
+	tick 1
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 2
+	setv ov01 0.75
+	mvto 56916 27054
+	tick 1
+
+endi
+
+
+**
+** Removal script
+**
+
+rscr
+enum 1 1 36464
+	kill targ
+next

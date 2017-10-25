@@ -1,0 +1,60 @@
+**
+** Gadget script
+**
+
+**
+** Creation script
+**
+
+** Gadget creation
+scrp 3 8 36463 1000
+* Attr: mouseable 2 + activateable 4 + collide 64 + physics 128 = 198
+	attr 198
+* Bhvr: act1 1 + hit 8 + pick up 32 = 41
+	bhvr 41
+* Set physics attributes
+	accg 2
+	aero 3
+* Set collision attributes
+	perm 60
+	fric 60
+	elas 60
+* emit gadget smell
+	emit 18 0.5
+* Move to the spot if possible
+	doif tmvt _p1_ _p2_ ne 0
+		mvto _p1_ _p2_
+	else
+		kill targ
+	endi
+endm
+
+**
+** Push script
+**
+
+** Gadget Push
+scrp 3 8 36463 1
+	stim writ from 90 2
+	velo rand -3 3 -3
+endm
+
+**
+** Hit script
+**
+
+** Gadget Hit
+scrp 3 8 36463 3
+	stim writ from 92 2
+	velo rand -3 3 rand -6 -3
+endm
+
+**
+** Removal script
+**
+
+rscr
+
+enum 3 8 36463
+	kill targ
+next

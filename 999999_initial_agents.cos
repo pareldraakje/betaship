@@ -1,0 +1,397 @@
+**
+** Installer script
+**
+** This script installs initial critters/bugs/toys/plants
+**
+
+**
+** Engine room
+**
+
+** Vocab
+* vocab engine
+new: simp 3 3 36463 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 54528 26632 1
+
+**
+** Arctic biome
+**
+** Plants
+* plant arctic
+reps 3
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 53604 27504 0
+	velo rand -20 20 0
+repe
+reps 5
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 53341 27726 0
+	velo rand -35 35 0
+repe
+reps 8
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 53223 27947 0
+	velo rand -85 85 0
+repe
+** Flowers
+* flower arctic
+reps 3
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 53604 27504 0
+	velo rand -20 20 0
+repe
+reps 5
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 53341 27726 0
+	velo rand -35 35 0
+repe
+reps 8
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 53223 27947 0
+	velo rand -85 85 0
+repe
+** Critters
+* critter arctic
+new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+mesg wrt+ targ 1000 53223 27947 0
+** Bugs
+* bug arctic
+new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
+mesg wrt+ targ 1000 53223 27947 0
+** Toys
+* toy arctic top
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 53609 27546 0
+* toy arctic floor
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 53074 28158 0
+** Fly
+* Arctic fly spawn
+reps 8
+	new: simp 2 13 36464 "betaship_fly" 2 0 rand 1500 4000
+	mesg wrt+ targ 1000 52996 27664 1
+	velo rand -100 100 0
+repe
+** Gadgets
+* Arctic gadget
+new: simp 3 8 36463 "betaship_tools" 1 2 3800
+mesg wrt+ targ 1000 53151 27813 1
+** Vocab
+* vocab arctic
+new: simp 3 3 36463 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 53732 28050 1
+
+
+**
+** Desert biome
+**
+
+** Plants
+* plant desert
+reps 2
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 55919 27520 0
+	velo rand -25 25 0
+repe
+reps 4
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 56367 27721 0
+	velo rand -45 45 0
+repe
+reps 8
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 56362 27947 0
+	velo rand -85 85 0
+repe
+** Flower
+* flower desert
+reps 2
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 55919 27520 0
+	velo rand -15 15 0
+repe
+reps 4
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 56367 27721 0
+	velo rand -30 30 0
+repe
+reps 8
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 56362 27947 0
+	velo rand -100 100 0
+repe
+** Critters
+* critter desert
+new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+mesg wrt+ targ 1000 56362 27947 0
+** Bugs
+* bug desert
+new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
+mesg wrt+ targ 1000 56362 27947 0
+** Toys
+* toy desert top
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 56125 27530 0
+* toy desert floor
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 56907 28086 0
+** Fly
+* Desert fly spawn
+reps 8
+	new: simp 2 13 36464 "betaship_fly" 2 0 rand 1500 4000
+	mesg wrt+ targ 1000 56475 27602 1
+	velo rand -100 100 0
+repe
+** Gadgets
+* Desert gadget mid
+new: simp 3 8 36463 "betaship_tools" 1 2 3800
+mesg wrt+ targ 1000 56120 27793 1
+* Desert gadget bot
+new: simp 3 8 36463 "betaship_tools" 1 2 3800
+mesg wrt+ targ 1000 56248 28173 1
+** Vocab
+* vocab desert
+new: simp 3 3 36463 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 56542 27787 1
+
+
+
+**
+** Main biome
+**
+** Plants
+* plant main
+reps 8
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 54885 26959 0
+	velo rand -85 85 0
+repe
+reps 9
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 54869 27196 0
+	velo rand -85 85 0
+repe
+** Flowers
+* flower main
+reps 8
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 54885 26959 0
+	velo rand -85 85 0
+repe
+reps 9
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 54869 27196 0
+	velo rand -85 85 0
+repe
+** Critters
+* critter main
+new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+mesg wrt+ targ 1000 54869 27196 0
+** Bugs
+* bug main
+new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
+mesg wrt+ targ 1000 54869 27196 0
+** Toys
+* toy main left
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 54293 27404 0
+* toy main right
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 55590 27324 0
+* toy main top
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 54674 27031 0
+** Fly
+* Main fly spawn
+reps 12
+	new: simp 2 13 36464 "betaship_fly" 2 0 rand 1500 4000
+	mesg wrt+ targ 1000 54694 26944 1
+	velo rand -100 100 0
+repe
+** Gadgets
+* Main gadget
+new: simp 3 8 36463 "betaship_tools" 1 2 3800
+mesg wrt+ targ 1000 54597 27422 1
+** Vocab
+* vocab main
+new: simp 3 3 36463 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 54242 27062 1
+
+
+**
+** Aquatic biome
+**
+
+** Plants
+* plant aqua
+reps 7
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 54869 27865 0
+	velo rand -70 70 0
+repe
+** Flowers
+* flower aqua
+reps 7
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 54869 27865 0
+	velo rand -70 70 0
+repe
+** Critters
+* critter aqua
+new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+mesg wrt+ targ 1000 54869 27865 0
+** Bugs
+* bug aqua
+new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
+mesg wrt+ targ 1000 54869 27865 0
+** Toys
+* toy aqua
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 54869 27865 0
+** Fish
+* Aqua biome fish spawn
+reps 8
+	new: simp 2 15 36464 "betaship_fish" 2 0 rand 1500 4000
+	mesg wrt+ targ 1000 54869 27865 1
+	velo rand -100 100 0
+repe
+** Fly
+* Aqua biome fly spawn
+reps 6
+	new: simp 2 13 36464 "betaship_fly" 2 0 rand 1500 4000
+	mesg wrt+ targ 1000 54864 27638 1
+	velo rand -100 100 0
+repe
+* vocab aqua
+new: simp 3 3 36463 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 55219 28204 1
+
+**
+** Scary outside world. (The ocean)
+**
+** Plants
+* plant ocean 
+reps 8
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 52968 26910 0
+	velo rand -50 50 0
+repe
+reps 8
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 54777 26121 0
+	velo rand -50 50 0
+repe
+reps 8
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 56617 26987 0
+	velo rand -50 50 0
+repe
+reps 4
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 57024 26440 0
+	velo rand -30 30 0
+repe
+reps 3
+	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
+	mesg wrt+ targ 1000 57329 27868 0
+	velo rand -25 25 0
+repe
+** Flowers
+* flower ocean
+reps 8
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 52968 26910 0
+	velo rand -50 50 0
+repe
+reps 8
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 54777 26121 0
+	velo rand -50 50 0
+repe
+reps 8
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 56617 26987 0
+	velo rand -15 15 0
+repe
+reps 4
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 57024 26440 0
+	velo rand -40 40 0
+repe
+reps 3
+	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
+	mesg wrt+ targ 1000 57329 27868 0
+	velo rand -25 25 0
+repe
+** Bugs
+* bug ocean
+reps 25
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 400
+	mesg wrt+ targ 1000 54849 26100 0
+	velo rand -200 200 0
+repe
+reps 3
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 400
+	mesg wrt+ targ 1000 57307 26559 0
+repe
+
+** Toys
+* toy ocean
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 52772 27410 0
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 54875 26270 0
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 55983 27203 0
+new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
+mesg wrt+ targ 1000 56689 26574 0
+** Fish
+** Big ocean fish spawns
+reps 8
+	new: simp 2 15 36464 "betaship_fish" 2 0 rand 1500 4000
+	mesg wrt+ targ 1000 54844 26229 1
+	velo rand -300 300 0
+repe
+** Vocab
+* vocab ocean
+new: simp 3 3 36463 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 54199 26348 1
+new: simp 3 3 36463 "betaship_tools" 1 3 3800
+mesg wrt+ targ 1000 57251 26554 1
+
+
+**
+** Removal script
+** 
+
+rscr
+
+** This script removes all plants/flowers/bugs/critters/toys/fish
+
+enum 2 4 36463
+	kill targ
+next
+enum 2 7 36463
+	kill targ
+next
+enum 2 13 36463
+	kill targ
+next
+enum 2 15 36463
+	kill targ
+next
+enum 2 21 36463
+	kill targ
+next
+enum 2 13 36464
+	kill targ
+next
+enum 2 15 36464
+	kill targ
+next
+enum 3 3 36463
+	kill targ
+next
+enum 3 8 36463
+	kill targ
+next

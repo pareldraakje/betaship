@@ -1,0 +1,58 @@
+**
+** Vocab tool script
+**
+
+
+**
+** Vocab script
+**
+
+**
+** Creation script
+**
+
+** vocab tool creation
+scrp 3 3 36463 1000
+* Attr: mouseable 2 + collide 64 + physics 128 = 194
+	attr 194
+* Bhvr: act1 1
+	bhvr 1
+* Set physics attributes
+	accg 2
+	aero 3
+* Set collision attributes
+	perm 60
+	fric 60
+	elas 60
+* emit machinery smell
+
+	emit 10 0.5
+* Move to the spot if possible
+	doif tmvt _p1_ _p2_ ne 0
+		mvto _p1_ _p2_
+	else
+		kill targ
+	endi
+endm
+
+**
+** Activate 1 (push) script
+**
+
+** Vocab Push
+scrp 3 3 36463 1
+	stim writ from 90 2
+	targ from
+	vocb
+endm
+
+**
+** Removal script
+**
+
+rscr
+
+
+enum 3 3 36463
+	kill targ
+next

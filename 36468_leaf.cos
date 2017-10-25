@@ -1,30 +1,26 @@
+**
+** Leaf script
+**
+
+**
+** Install script
+**
+
 ** Leaves
 ** Big ocean 
 reps 8
 	new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
-	mesg wrt+ targ 1000 45262 27782 1
-	velo rand -100 100 0
+	mesg wrt+ targ 1000 54919 26115 1
+	velo rand -200 200 0
 repe
-reps 8
-	new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
-	mesg wrt+ targ 1000 46832 26281 1
-	velo rand -100 100 0
-repe
-reps 8
-	new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
-	mesg wrt+ targ 1000 49832 26281 1
-	velo rand -100 100 0
-repe
-reps 8
-	new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
-	mesg wrt+ targ 1000 51268 27798 1
-	velo rand -100 100 0
-repe
-
 
 * main controller
 new: simp 2 5 36468 "blnk" 1 0 1
 tick 70
+
+**
+** Event scripts
+**
 
 ** Creation script
 scrp 2 6 36468 1000

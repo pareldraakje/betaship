@@ -4,7 +4,7 @@ doif game "betaship" ne 1
 **
 	new: simp 1 3 36465 "betaship_fav" 1 0 1
 	attr 272
-	mvto 47441 27555
+	mvto 54223 27172
 	tick 10
 
 **
@@ -22,7 +22,7 @@ doif game "betaship" ne 1
 * ov06: current pose
 	frel null
 	seta ov00 targ
-	setv ov01 gmap 47441 27555
+	setv ov01 gmap 54223 27172
 	setv ov02 99
 	setv ov03 99
 	setv ov04 0
@@ -35,7 +35,7 @@ doif game "betaship" ne 1
 **
 ** Move camera to signpost!
 **
-	cmrp 47441 27555 0
+	cmrp 54223 27172 0
 
 ** Set betaship game variable
 	setv game "betaship" 1
