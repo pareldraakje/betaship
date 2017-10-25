@@ -3,17 +3,19 @@
 
 group DSAG "Betaship"
 
-"Dependency 1" "betaship.blk"
-"Dependency 2" "betaship_agents.c16"
-"Dependency 3" "betaship_cloud.c16"
-"Dependency 4" "betaship_eledoor.c16"
-"Dependency 5" "betaship_fav.c16"
-"Dependency 6" "betaship_fish.c16"
-"Dependency 7" "betaship_fly.c16"
-"Dependency 8" "betaship_tools.c16"
-"Dependency 9" "betaship_vendor.c16"
-"Dependency 10" "betaship.catalogue"
-"Dependency 11" "blnk.c16"
+"Dependency 1" "betaship_d.blk"
+"Dependency 2" "betaship_m.blk"
+"Dependency 3" "betaship_n.blk"
+"Dependency 4" "betaship_agents.c16"
+"Dependency 5" "betaship_cloud.c16"
+"Dependency 6" "betaship_eledoor.c16"
+"Dependency 7" "betaship_fav.c16"
+"Dependency 8" "betaship_fish.c16"
+"Dependency 9" "betaship_fly.c16"
+"Dependency 10" "betaship_tools.c16"
+"Dependency 11" "betaship_vendor.c16"
+"Dependency 12" "betaship.catalogue"
+"Dependency 13" "blnk.c16"
 "Agent Animation Gallery" "betaship_fav"
 "Agent Description" "This is the Betaship metaroom. It has proper CAs, flowers, plants, food and animals. Depending on the season, there'll be different resources available."
 "Agent Animation File" "betaship_fav.c16"
@@ -22,7 +24,7 @@ group DSAG "Betaship"
 "Web Label" "Pilla from Creatures Caves"
 "Remove script" "enum 2 13 36463\n	kill targ\nnext\nenum 2 15 36463\n	kill targ\nnext\nenum 2 21 36463\n	kill targ\nnext\nenum 1 1 36463\n	kill targ\nnext\nenum 2 3 36463\n	kill targ\nnext\nenum 2 4 36463\n	kill targ\nnext\nenum 2 7 36463\n	kill targ\nnext\nenum 2 8 36463\n	kill targ\nnext\nenum 2 11 36463\n	kill targ\nnext\nenum 2 15 36464\n	kill targ\nnext\nenum 2 13 36464\n	kill targ\nnext\nenum 2 6 36468\n	kill targ\nnext\nenum 2 5 36468\n	kill targ\nnext\nenum 1 1 36468\n	kill targ\nnext\nenum 3 8 36463\n	kill targ\nnext\nenum 3 3 36463\n	kill targ\nnext\nenum 2 19 36467\n	kill targ\nnext\nenum 2 20 36467\n	kill targ\nnext\nenum 1 1 36467\n	kill targ\nnext\nenum 2 23 36463\n	kill targ\nnext\nenum 2 23 36465\n	kill targ\nnext"
 
-"Script Count" 26
+"Script Count" 27
 "Script 1" @ "00000_installer.cos"
 "Script 2" @ "36463_bug.cos"
 "Script 3" @ "36463_critter.cos"
@@ -41,40 +43,45 @@ group DSAG "Betaship"
 "Script 16" @ "36464_fish.cos"
 "Script 17" @ "36464_fly.cos"
 "Script 18" @ "36465_vendor_food.cos"
-"Script 19" @ "36467_clouds.cos"
-"Script 20" @ "36468_homeemitters.cos"
-"Script 21" @ "36468_leaf.cos"
-"Script 22" @ "999999_eledoor_install.cos"
-"Script 23" @ "999999_initial_agents.cos"
-"Script 24" @ "999999_initial_caemitters.cos"
-"Script 25" @ "999999_initial_patchplants.cos"
-"Script 26" @ "36465_signpost.cos"
+"Script 19" @ "36466_background.cos"
+"Script 20" @ "36467_clouds.cos"
+"Script 21" @ "36468_homeemitters.cos"
+"Script 22" @ "36468_leaf.cos"
+"Script 23" @ "999999_eledoor_install.cos"
+"Script 24" @ "999999_initial_agents.cos"
+"Script 25" @ "999999_initial_caemitters.cos"
+"Script 26" @ "999999_initial_patchplants.cos"
+"Script 27" @ "36465_signpost.cos"
 
 "Agent Type" 0
-"Dependency Count" 11
+"Dependency Count" 13
 "Dependency Category 1" 6
-"Dependency Category 2" 2
-"Dependency Category 3" 2
+"Dependency Category 2" 6
+"Dependency Category 3" 6
 "Dependency Category 4" 2
 "Dependency Category 5" 2
 "Dependency Category 6" 2
 "Dependency Category 7" 2
 "Dependency Category 8" 2
 "Dependency Category 9" 2
-"Dependency Category 10" 7
+"Dependency Category 10" 2
 "Dependency Category 11" 2
+"Dependency Category 12" 7
+"Dependency Category 13" 2
 "Agent Sprite First Image" 1
 
 
 
-inline FILE "betaship.blk" "betaship.blk"
 inline FILE "betaship.catalogue" "betaship.catalogue"
 inline FILE "betaship_agents.c16" "betaship_agents.c16"
 inline FILE "betaship_cloud.c16" "betaship_cloud.c16"
+inline FILE "betaship_d.blk" "betaship_d.blk"
 inline FILE "betaship_eledoor.c16" "betaship_eledoor.c16"
 inline FILE "betaship_fav.c16" "betaship_fav.c16"
 inline FILE "betaship_fish.c16" "betaship_fish.c16"
 inline FILE "betaship_fly.c16" "betaship_fly.c16"
+inline FILE "betaship_m.blk" "betaship_m.blk"
+inline FILE "betaship_n.blk" "betaship_n.blk"
 inline FILE "betaship_tools.c16" "betaship_tools.c16"
 inline FILE "betaship_vendor.c16" "betaship_vendor.c16"
 
