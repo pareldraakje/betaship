@@ -50,7 +50,7 @@ scrp 2 15 36464 9
 			doif va02 eq 8 or va02 eq 9
 				velo va00 va01
 			else
-				velo 0 10
+				velo rand -2 2 10
 			endi
 			wait 15
 		repe

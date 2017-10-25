@@ -9,17 +9,17 @@
 ** arctic norn home
 new: simp 1 1 36468 "betaship_tools" 1 0 800
 setv ov00 0
-mesg wrt+ targ 1000 45813 28500 1
+mesg wrt+ targ 1000 53272 27815 1
 
 ** main norn home
 new: simp 1 1 36468 "betaship_tools" 1 0 800
 setv ov00 1
-mesg wrt+ targ 1000 48884 27135 1
+mesg wrt+ targ 1000 54320 27039 1
 
 ** desert norn home
 new: simp 1 1 36468 "betaship_tools" 1 0 800
 setv ov00 2
-mesg wrt+ targ 1000 50747 28531 1
+mesg wrt+ targ 1000 56383 27746 1
 
 **
 ** Grendel home smell
@@ -28,7 +28,8 @@ mesg wrt+ targ 1000 50747 28531 1
 ** arctic grendel home
 new: simp 1 1 36468 "blnk" 1 0 800
 emit 16 0.6
-mesg wrt+ targ 1000 46278 28049 1
+setv ov00 3
+mesg wrt+ targ 1000 53102 28120 1
 
 **
 ** Ettin home smell
@@ -37,7 +38,8 @@ mesg wrt+ targ 1000 46278 28049 1
 ** desert ettin home
 new: simp 1 1 36468 "blnk" 1 0 800
 emit 17 0.6
-mesg wrt+ targ 1000 50189 27992 1
+setv ov00 3
+mesg wrt+ targ 1000 56758 28076 1
 
 
 ** Creation script

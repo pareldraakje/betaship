@@ -49,8 +49,14 @@ scrp 2 13 36464 9
 			setv va02 rtyp grap posx posy
 			doif va02 ne 8 and va02 ne 9
 				velo va00 va01
+				setv ov70 0
 			else
-				velo 0 -10
+				velo rand -2 2 -10
+				addv ov70 1
+				doif ov70 gt 20
+					kill ownr
+					stop
+				endi
 			endi
 			wait 15
 		repe
