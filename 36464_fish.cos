@@ -1,34 +1,13 @@
-** Aqua biome fish spawn
-reps 8
-	new: simp 2 15 36465 "betaship_fish" 2 0 rand 1500 4000
-	mesg wrt+ targ 1000 47680 28434 1
-	velo rand -100 100 0
-repe
+**
+** Fish script
+**
 
-** Big ocean fish spawns
-reps 8
-	new: simp 2 15 36465 "betaship_fish" 2 0 rand 1500 4000
-	mesg wrt+ targ 1000 45262 27782 1
-	velo rand -100 100 0
-repe
-reps 8
-	new: simp 2 15 36465 "betaship_fish" 2 0 rand 1500 4000
-	mesg wrt+ targ 1000 46832 26281 1
-	velo rand -100 100 0
-repe
-reps 8
-	new: simp 2 15 36465 "betaship_fish" 2 0 rand 1500 4000
-	mesg wrt+ targ 1000 49832 26281 1
-	velo rand -100 100 0
-repe
-reps 8
-	new: simp 2 15 36465 "betaship_fish" 2 0 rand 1500 4000
-	mesg wrt+ targ 1000 51268 27798 1
-	velo rand -100 100 0
-repe
+**
+** Creation script
+**
 
 ** Fish creation
-scrp 2 15 36465 1000
+scrp 2 15 36464 1000
 * Attr: mouseable 2 + collide 64 + physics 128 = 194
 	attr 194
 * Bhvr: act1 1 + hit 8 + eat 16 + pick up 32 = 57
@@ -49,8 +28,12 @@ scrp 2 15 36465 1000
 	tick 1
 endm
 
+**
+** Timer script
+**
+
 ** Fish timer
-scrp 2 15 36465 9
+scrp 2 15 36464 9
 	doif carr eq null
 		setv va00 rand -9 9
 		doif va00 lt 0
@@ -76,12 +59,12 @@ scrp 2 15 36465 9
 			setv va02 rtyp grap posx posy
 			doif va02 eq 8 or va02 eq 9
 			else
-			kill ownr
+				kill ownr
 			endi
 
 			rnge 700
 			setv va00 rand 0 3
-			esee 2 15 36465
+			esee 2 15 36464
 				addv va00 1
 			next
 			doif va00 lt 4
@@ -90,7 +73,7 @@ scrp 2 15 36465 9
 				setv va02 post
 				subv va02 5
 				reps 2
-					new: simp 2 15 36465 "betaship_fish" 2 0 rand 1200 4000
+					new: simp 2 15 36464 "betaship_fish" 2 0 rand 1200 4000
 					mesg wrt+ targ 1000 va01 va02 0
 				repe
 			elif va00 gt 8
@@ -101,26 +84,45 @@ scrp 2 15 36465 9
 	tick rand 50 85
 endm
 
+**
+** Activate 1 (push) script
+**
 
-* Fish play
-scrp 2 15 36465 1
+** Fish play
+scrp 2 15 36464 1
 	stim writ from 86 1
 	setv va00 velx
 	mulv va00 3
 	velo va00 -3
 endm
-* Fish hit
-scrp 2 15 36465 3
+
+**
+** Hit script
+**
+
+** Fish hit
+scrp 2 15 36464 3
 	stim writ from 87 1
 	velo rand -3 3 rand -6 -3
 endm
-* Fish eat
-scrp 2 15 36465 12
+
+**
+** Eat script
+**
+
+** Fish eat
+scrp 2 15 36464 12
 	stim writ from 80 2
 	kill ownr
 endm
 
+**
+** Removal script
+**
+
 rscr
-enum 2 15 36465
+
+** Remove all fishies
+enum 2 15 36464
 	kill targ
 next

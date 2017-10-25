@@ -1,31 +1,13 @@
-** Aqua biome fly spawn
-reps 6
-	new: simp 2 15 36466 "betaship_fly" 2 0 rand 1500 4000
-	mesg wrt+ targ 1000 48381 28011 1
-	velo rand -100 100 0
-repe
-** Arctic fly spawn
-reps 8
-	new: simp 2 15 36466 "betaship_fly" 2 0 rand 1500 4000
-	mesg wrt+ targ 1000 45816 28074 1
-	velo rand -100 100 0
-repe
-** Desert fly spawn
-reps 8
-	new: simp 2 15 36466 "betaship_fly" 2 0 rand 1500 4000
-	mesg wrt+ targ 1000 50639 28074 1
-	velo rand -100 100 0
-repe
-** Main fly spawn
-reps 12
-	new: simp 2 15 36466 "betaship_fly" 2 0 rand 1500 4000
-	mesg wrt+ targ 1000 48466 26925 1
-	velo rand -100 100 0
-repe
+**
+** Fly script
+**
 
+**
+** Creation script
+**
 
-** Fish creation
-scrp 2 15 36466 1000
+** Fly creation
+scrp 2 13 36464 1000
 * Attr: mouseable 2 + collide 64 + physics 128 = 194
 	attr 194
 * Bhvr: act1 1 + hit 8 + eat 16 + pick up 32 = 57
@@ -46,8 +28,12 @@ scrp 2 15 36466 1000
 	tick 1
 endm
 
-** Fish timer
-scrp 2 15 36466 9
+**
+** Timer script
+**
+
+** Fly timer
+scrp 2 13 36464 9
 	doif carr eq null
 		setv va00 rand -9 9
 		doif va00 lt 0
@@ -71,16 +57,16 @@ scrp 2 15 36466 9
 		doif rand 0 5 eq 0
 			rnge 700
 			setv va00 rand 0 3
-			esee 2 15 36466
+			esee 2 13 36464
 				addv va00 1
 			next
 			doif va00 lt 4
-* Create new fish
+* Create new fly
 				setv va01 posx
 				setv va02 post
 				subv va02 5
 				reps 2
-					new: simp 2 15 36466 "betaship_fly" 2 0 rand 1200 4000
+					new: simp 2 13 36464 "betaship_fly" 2 0 rand 1200 4000
 					mesg wrt+ targ 1000 va01 va02 0
 				repe
 			elif va00 gt 8
@@ -91,26 +77,43 @@ scrp 2 15 36466 9
 	tick rand 50 85
 endm
 
+**
+** Activate 1 (push) script
+**
 
-* Fish play
-scrp 2 15 36466 1
+** Fly play
+scrp 2 13 36464 1
 	stim writ from 86 1
 	setv va00 velx
 	mulv va00 3
 	velo va00 -3
 endm
-* Fish hit
-scrp 2 15 36466 3
+
+**
+** Hit script
+**
+
+** Fly hit
+scrp 2 13 36464 3
 	stim writ from 87 1
 	velo rand -3 3 rand -6 -3
 endm
-* Fish eat
-scrp 2 15 36466 12
+
+**
+** Eat script
+**
+
+** Fly eat
+scrp 2 13 36464 12
 	stim writ from 80 2
 	kill ownr
 endm
 
+**
+** Removal script
+**
+
 rscr
-enum 2 15 36466
+enum 2 13 36464
 	kill targ
 next

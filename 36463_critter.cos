@@ -1,0 +1,134 @@
+**
+** Critter script
+**
+
+**
+** Creation script
+**
+
+** Critter creation
+scrp 2 15 36463 1000
+* Attr: mouseable 2 + collide 64 + physics 128 = 194
+	attr 194
+* Bhvr: act1 1 + hit 8 + eat 16 + pick up 32 = 57
+	bhvr 57
+* Set physics attributes
+	accg 2
+	aero 3
+* Set collision attributes
+	perm 60
+	fric 60
+	elas 30
+* Move to the spot if possible
+	doif tmvt _p1_ _p2_ ne 0
+		mvto _p1_ _p2_
+	else
+		kill targ
+	endi
+	tick 1
+endm
+
+**
+** Activate 1 (push) script
+**
+
+** Critter play
+scrp 2 15 36463 1
+* stim played with animal
+	stim writ from 86 1
+* move critter around a bit
+	setv va00 velx
+	mulv va00 3
+	velo va00 -3
+endm
+
+**
+** Hit script
+**
+
+** Critter hit
+scrp 2 15 36463 3
+* stim hit animal
+	stim writ from 87 1
+* move the critter around a bit
+	velo rand -3 3 rand -6 -3
+endm
+
+**
+** Eat script
+**
+
+** Critter eat
+scrp 2 15 36463 12
+* stim eaten animal
+	stim writ from 80 2
+	kill ownr
+endm
+
+**
+** Timer script
+**
+
+** Critter
+scrp 2 15 36463 9
+* if not being carried
+	doif carr eq null
+* set direction
+		setv va00 rand 1 8
+		doif va00 le 4
+			setv va00 rand -8 -5
+			pose 1
+		elif va00 gt 4
+			setv va00 rand 5 8
+			pose 0
+		endi
+* move the critter
+		reps rand 4 12
+* if not falling
+			doif fall ne 1
+				setv va20 grap posx posy
+* if critter in water, set accg
+				doif rtyp va20 eq 8 or rtyp va20 eq 9
+					accg 0.8
+* if critter in invalid spot, kill it
+				elif rtyp va20 eq -1
+					kill targ
+					stop
+* if critter on land, set accg
+				else
+					accg 2
+				endi
+* move!
+				velo va00 -8
+			endi
+			wait 15
+		repe
+* randomly make kids
+		doif rand 0 5 eq 0
+			rnge 1000
+* set random variable to get dynamic population
+			setv va00 rand 0 3
+			esee 2 15 36463
+				addv va00 1
+			next
+* if not many critters around
+			doif va00 lt 4
+* Create new critters
+				targ ownr
+				setv va01 posx
+				setv va02 post
+				subv va02 5
+				reps 2
+					new: simp 2 15 36463 "betaship_agents" 2 4 rand 1200 4000
+					mesg wrt+ targ 1000 va01 va02 0
+				repe
+* if too many critters around, kill this one
+			elif va00 gt 7
+				kill ownr
+				stop
+			endi
+		endi
+	endi
+* set tick
+	tick rand 50 85
+endm

@@ -1,0 +1,266 @@
+**
+** Patch plant script
+**
+
+**
+** Installer script
+**
+
+** This script installs the initial patch plants
+
+** Aquatic biome
+* fruit aqua bot
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "spring" 1
+setv name "summer" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 48857 28510
+* seed aqua bot
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "spring" 1
+setv name "summer" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 48355 28270
+* food aqua bot
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "summer" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 47398 28454
+
+** Main biome
+* fruit main top left
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "summer" 1
+setv name "fall" 1
+tick 1
+mvto 47094 27001
+* seed main top left
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "winter" 1
+tick 1
+mvto 47094 27001
+* food main top left
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "fall" 1
+tick 1
+mvto 47546 27104
+* seed main top center
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "winter" 1
+setv name "spring" 1
+tick 1
+mvto 48155 27964
+* fruit main top right
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "fall" 1
+setv name "summer" 1
+tick 1
+mvto 49022 26936
+* seed main top right
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "winter" 1
+tick 1
+mvto 49022 26936
+* food main top right
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "summer" 1
+setv name "winter" 1
+tick 1
+mvto 49205 27205
+* fruit main bot right
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "fall" 1
+setv name "summer" 1
+setv name "spring" 1
+tick 1
+mvto 47793 27378
+* seed main bot right
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "winter" 1
+tick 1
+mvto 47793 27378
+* seed main top
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "summer" 1
+tick 1
+mvto 47496 26933
+* food main bot right
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "fall" 1
+tick 1
+mvto 49278 27432
+* food main bot left
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "summer" 1
+setv name "winter" 1
+tick 1
+mvto 47300 27738
+
+** Arctic biome
+* fruit arctic top
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "summer" 1
+tick 1
+mvto 46159 28303
+* seed arctic top
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "summer" 1
+tick 1
+mvto 46313 27887
+* fruit arctic mid
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "fall" 1
+tick 1
+mvto 46086 28362
+* seed arctic mid
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "fall" 1
+tick 1
+mvto 46086 28362
+* food arctic mid
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "summer" 1
+setv name "fall" 1
+tick 1
+mvto 46239 28281
+* fruit arctic low
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "summer" 1
+setv name "spring" 1
+tick 1
+mvto 46793 28518
+* seed arctic low
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "summer" 1
+setv name "fall" 1
+tick 1
+mvto 46300 28620
+* food arctic low
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "summer" 1
+setv name "fall" 1
+tick 1
+mvto 46518 28867
+
+** Desert biome
+* food desert high
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 49855 27932
+* fruit desert mid
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "winter" 1
+setv name "fall" 1
+tick 1
+mvto 50013 28313
+* seed desert mid
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "spring" 1
+tick 1
+mvto 50013 28313
+* food desert mid
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 50823 28558
+* fruit desert low mid
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "winter" 1
+tick 1
+mvto 50538 28707
+* seed desert low mid
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "spring" 1
+setv name "fall" 1
+tick 1
+mvto 50538 28707
+* fruit desert low right
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "winter" 1
+tick 1
+mvto 51102 28751
+* seed desert low right
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "spring" 1
+tick 1
+mvto 51102 28751
+* food desert low right
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 50312 28965
+
+**
+** Removal script
+**
+
+** This script removes the patch plants and fruit/food/seed
+
+rscr
+
+* Remove the patches
+enum 1 1 36463
+	kill targ
+next
+* Remove seed
+enum 2 3 36463
+	kill targ
+next
+* Remove fruit
+enum 2 8 36463
+	kill targ
+next
+* Remove food
+enum 2 11 36463
+	kill targ
+next

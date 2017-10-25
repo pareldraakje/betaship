@@ -1,0 +1,66 @@
+**
+** Food script
+**
+
+**
+** Creation script
+**
+
+** Food creation
+scrp 2 11 36463 1000
+* Attr: mouseable 2 + collide 64 + physics 128 = 194
+	attr 194
+* Bhvr: eat 16 + pick up 32
+	bhvr 48
+* Set physics attributes
+	accg 2
+	aero 3
+* Set collision attributes
+	perm 60
+	fric 60
+	elas 30
+* Emit food smell
+	emit 8 0.3
+* Move to the spot if possible
+	doif tmvt _p1_ _p2_ ne 0
+		mvto _p1_ _p2_
+	else
+		kill targ
+	endi
+	tick 1
+endm
+
+**
+** Eat script
+**
+
+** Food eat
+scrp 2 11 36463 12
+	stim writ from 79 2
+	kill ownr
+endm
+
+**
+** Timer script
+**
+
+** Food
+scrp 2 11 36463 9
+* If more than 3 in the vicinity, kill this one
+	setv va00 0
+	rnge 400
+	esee 2 11 36463
+		addv va00 1
+	next
+	doif va00 gt 3
+		kill ownr
+		stop
+	endi
+* If around for long enough, kill it
+	tick rand 200 400
+	addv ov00 1
+	doif ov00 gt 10 and carr eq null
+		kill ownr
+		stop
+	endi
+endm
