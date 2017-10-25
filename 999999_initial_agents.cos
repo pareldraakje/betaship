@@ -26,12 +26,12 @@ repe
 reps 5
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 53341 27726 0
-	velo rand -35 35 0
+	velo rand -45 45 0
 repe
 reps 8
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 53223 27947 0
-	velo rand -85 85 0
+	velo rand -65 65 0
 repe
 ** Flowers
 * flower arctic
@@ -43,12 +43,12 @@ repe
 reps 5
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 53341 27726 0
-	velo rand -35 35 0
+	velo rand -25 25 0
 repe
 reps 8
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 53223 27947 0
-	velo rand -85 85 0
+	velo rand -35 35 0
 repe
 ** Critters
 * critter arctic
@@ -91,34 +91,34 @@ mesg wrt+ targ 1000 53732 28050 1
 reps 2
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 55919 27520 0
-	velo rand -25 25 0
+	velo rand -20 20 0
 repe
 reps 4
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 56367 27721 0
-	velo rand -45 45 0
+	velo rand -35 35 0
 repe
 reps 8
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 56362 27947 0
-	velo rand -85 85 0
+	velo rand -65 65 0
 repe
 ** Flower
 * flower desert
 reps 2
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 55919 27520 0
-	velo rand -15 15 0
+	velo rand -20 20 0
 repe
 reps 4
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 56367 27721 0
-	velo rand -30 30 0
+	velo rand -25 25 0
 repe
 reps 8
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 56362 27947 0
-	velo rand -100 100 0
+	velo rand -65 65 0
 repe
 ** Critters
 * critter desert
@@ -164,24 +164,24 @@ mesg wrt+ targ 1000 56542 27787 1
 reps 8
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 54885 26959 0
-	velo rand -85 85 0
+	velo rand -75 75 0
 repe
 reps 9
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 54869 27196 0
-	velo rand -85 85 0
+	velo rand -75 75 0
 repe
 ** Flowers
 * flower main
 reps 8
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 54885 26959 0
-	velo rand -85 85 0
+	velo rand -75 75 0
 repe
 reps 9
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 54869 27196 0
-	velo rand -85 85 0
+	velo rand -75 75 0
 repe
 ** Critters
 * critter main
@@ -289,7 +289,7 @@ repe
 reps 4
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 57024 26440 0
-	velo rand -30 30 0
+	velo rand -40 40 0
 repe
 reps 3
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
@@ -311,7 +311,7 @@ repe
 reps 8
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 56617 26987 0
-	velo rand -15 15 0
+	velo rand -50 50 0
 repe
 reps 4
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400

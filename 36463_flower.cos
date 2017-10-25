@@ -48,22 +48,26 @@ endm
 
 ** Flower
 scrp 2 7 36463 9
-	tick rand 500 900
+	tick rand 400 800
 * get the heat CA level of the room the flower is in
 	setv va00 grap posx posy
 	setv va01 prop va00 2
-* get the heat CA and check if the conditions are OK
-	doif va01 gt 0.45 and va01 lt 0.61
-		alph 0 0
-		doif rand 0 3 eq 3
-			setv va02 posl
-			setv va03 post
-			new: simp 2 3 36463 "betaship_agents" 1 0 rand 1200 4000
-			mesg wrt+ targ 1000 va02 va03 1
-			velo rand -5 5 -5
-		endi
-	else
-* if conditions not OK, make semi-transparant
+	doif time eq 4
 		alph 100 1
+	else
+* get the heat CA and check if the conditions are OK
+		doif va01 gt 0.45 and va01 lt 0.61
+			alph 0 0
+			doif rand 0 3 eq 3
+				setv va02 posl
+				setv va03 post
+				new: simp 2 3 36463 "betaship_agents" 1 0 rand 1200 4000
+				mesg wrt+ targ 1000 va02 va03 1
+				velo rand -5 5 -5
+			endi
+		else
+* if conditions not OK, make semi-transparant
+			alph 100 1
+		endi
 	endi
 endm
