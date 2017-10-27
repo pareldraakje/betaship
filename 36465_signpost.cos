@@ -29,13 +29,7 @@ doif game "betaship" ne 1
 	setv ov05 0
 	setv ov06 0
 * initial tick
-	tick 10
-
-
-**
-** Move camera to signpost!
-**
-	cmrp 54223 27172 0
+	tick 100
 
 ** Set betaship game variable
 	setv game "betaship" 1
@@ -73,7 +67,7 @@ scrp 1 1 36465 9
 		endi
 * if the signpost variable is set
 	else
-		tick 150
+		tick 20
 		show 1
 * retarget ownr
 		targ ownr

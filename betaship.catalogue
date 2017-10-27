@@ -80,3 +80,5 @@ TAG "Agent Help 2 23 36463"
 TAG "Agent Help 2 23 36465"
 "Betaship animal vendor"
 "This vendor vends edible stuff and toys. The object being vended depends on the pushing creature's highest drive"
+TAG "txt_betaship"
+"You have now injected the Betaship. This is an underwater base filled with all kinds of circles. There is a seasonal and a day/night cycle in place.\nTo find out the current season, you can check out the favourite place icon when you are in the metaroom. There are two circles that reflect the season and time of day.\n\nThis metaroom, the graphics and the code are completely free to use.\nPlease enjoy!\n-- Pilla

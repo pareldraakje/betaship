@@ -12,6 +12,7 @@
 *# Web Label = "Pilla from Creatures Caves"
 
 *# depend blnk.c16
+*# depend useful_screen.c16
 
 *# attach betaship_d.blk
 *# attach betaship_m.blk
