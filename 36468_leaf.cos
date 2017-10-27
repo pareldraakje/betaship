@@ -92,6 +92,9 @@ scrp 2 6 36468 9
 			doif va02 eq 8 or va02 eq 9
 			else
 				doif ov50 gt 30
+		doif room ownr ne -1
+			altr room ownr 4 1
+		endi
 					kill ownr
 					stop
 				endi
@@ -114,6 +117,9 @@ scrp 2 6 36468 9
 						mesg wrt+ targ 1000 va01 va02 0
 					repe
 				elif va00 gt 8
+		doif room ownr ne -1
+			altr room ownr 4 1
+		endi
 					kill ownr
 					stop
 				endi
@@ -137,6 +143,9 @@ scrp 2 6 36468 6
 	setv va00 grap posx posy
 	doif rtyp va00 eq 8 or rtyp va00 eq 9
 	else
+		doif room ownr ne -1
+			altr room ownr 4 1
+		endi
 		kill ownr
 		stop
 	endi
