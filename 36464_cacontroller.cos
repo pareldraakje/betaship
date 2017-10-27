@@ -4,6 +4,16 @@
 **
 **
 
+**
+** Plant and flower connecting to CA 9
+**
+
+*Plants
+cacl 2 4 0 9
+*Flowers
+cacl 2 7 0 9
+
+
 ** Timer script
 
 scrp 1 1 36464 9
