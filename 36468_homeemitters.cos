@@ -56,19 +56,19 @@ scrp 1 1 36468 9
 		doif sean eq 1
 			emit 15 1
 		else
-			emit 15 0.2
+			emit 15 0
 		endi
 	elif ov01 eq 1
 		doif sean eq 0 or sean eq 2
-			emit 15 0.8
+			emit 15 1
 		else
-			emit 15 0.2
+			emit 15 0
 		endi
 	elif ov02 eq 2
 		doif sean eq 3
 			emit 15 1
 		else
-			emit 15 0.2
+			emit 15 0
 		endi
 	endi
 endm
