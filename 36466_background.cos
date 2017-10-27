@@ -4,7 +4,7 @@
 
 new: simp 1 1 36466 "blnk" 1 0 1000
 setv ov00 gmap 54668 26862
-tick 60
+tick 20
 
 
 **
