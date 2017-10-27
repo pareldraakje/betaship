@@ -53,6 +53,11 @@ scrp 2 11 36463 9
 		addv va00 1
 	next
 	doif va00 gt 3
+		inst
+		doif room ownr ne -1
+			altr room ownr 4 1
+		endi
+		slow
 		kill ownr
 		stop
 	endi
@@ -60,6 +65,9 @@ scrp 2 11 36463 9
 	tick rand 200 400
 	addv ov00 1
 	doif ov00 gt 10 and carr eq null
+		doif room ownr ne -1
+			altr room ownr 4 1
+		endi
 		kill ownr
 		stop
 	endi
