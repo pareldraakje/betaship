@@ -53,11 +53,7 @@ scrp 2 8 36463 9
 		addv va00 1
 	next
 	doif va00 gt 3
-		doif room ownr ne -1
-			altr room ownr 3 1
-			altr room ownr 4 1
-		endi
-		kill ownr
+		gsub manky
 		stop
 	endi
 * If around for long enough, kill it
@@ -66,10 +62,18 @@ scrp 2 8 36463 9
 	addv ov00 1
 	doif ov00 gt 10 and carr eq null
 		doif room ownr ne -1
-			altr room ownr 3 1
-			altr room ownr 4 1
+			gsub manky
 		endi
-		kill ownr
 		stop
 	endi
+	subr manky
+		targ ownr
+		setv va00 posl
+		setv va01 post
+		new: simp 2 9 36463 "betaship_dead" 1 0 rand 1000 3000
+		mvto va00 va01
+		tick 1
+		kill ownr
+		stop
+	retn
 endm

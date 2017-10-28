@@ -58,8 +58,10 @@ scrp 2 15 36464 9
 
 			setv va02 rtyp grap posx posy
 			doif va02 eq 8 or va02 eq 9
-			else
+			elif va02 eq -1
 				kill ownr
+			else
+				gsub detritus
 			endi
 
 			rnge 700
@@ -77,11 +79,21 @@ scrp 2 15 36464 9
 					mesg wrt+ targ 1000 va01 va02 0
 				repe
 			elif va00 gt 8
-				kill ownr
+				gsub detritus
 			endi
 		endi
 	endi
 	tick rand 50 85
+	subr detritus
+		targ ownr
+		setv va00 posl
+		setv va01 post
+		new: simp 2 10 36463 "betaship_dead" 1 1 rand 1000 3000
+		mvto va00 va01
+		tick 1
+		kill ownr
+		stop
+	retn
 endm
 
 **

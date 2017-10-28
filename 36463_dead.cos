@@ -1,0 +1,110 @@
+**
+** Dead things scripts
+**
+
+
+**
+** Manky
+**
+
+
+*
+** Eat script
+*
+
+scrp 2 9 36463 12
+	stim writ from 81 0.5
+	stim writ from 82 0.5
+	kill ownr
+endm
+
+*
+** Timer script
+*
+
+scrp 2 9 36463 9
+
+	doif attr eq 0
+		inst
+		tick rand 500 1200
+* Attr: mouseable 2 + collide 64 + physics 128 = 194
+		attr 194
+* Bhvr: eat 16 + pick up 32
+		bhvr 48
+* Set physics attributes
+		accg 2
+		aero 3
+* Set collision attributes
+		perm 60
+		fric 60
+		elas 30
+* Emit nutrient smell
+		emit 4 0.01
+	else
+
+		doif room targ ne -1 and carr eq null
+			altr room targ 4 0.02
+			altr room targ 3 0.02
+			kill ownr
+		elif room targ eq -1 and carr eq null
+			kill ownr
+		endi
+
+	endi
+endm
+
+
+**
+** Detritus
+**
+
+
+
+*
+** Eat script
+*
+
+scrp 2 10 36463 12
+	stim writ from 81 1
+	kill ownr
+endm
+
+*
+** Timer script
+*
+
+scrp 2 10 36463 9
+	doif attr eq 0
+		inst
+		tick rand 500 1200
+* Attr: mouseable 2 + collide 64 + physics 128 = 194
+		attr 194
+* Bhvr: eat 16 + pick up 32
+		bhvr 48
+* Set physics attributes
+		accg 2
+		aero 3
+* Set collision attributes
+		perm 60
+		fric 60
+		elas 30
+* Emit nutrient smell
+		emit 4 0.01
+	else
+		doif room targ ne -1 and carr eq null
+			altr room targ 4 0.02
+			kill ownr
+		elif room targ eq -1 and carr eq null
+			kill ownr
+		endi
+	endi
+endm
+
+
+rscr
+enum 2 9 36463
+	kill targ
+next
+enum 2 10 36463
+	kill targ
+next
