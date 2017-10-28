@@ -20,6 +20,7 @@
 
 *# attach betaship_agents.c16
 *# attach betaship_cloud.c16
+*# attach betaship_dead.c16
 *# attach betaship_eledoor.c16
 *# attach betaship_fav.c16
 *# attach betaship_fish.c16
@@ -28,7 +29,7 @@
 *# attach betaship_vendor.c16
 *# attach betaship.catalogue
 
-*# link 36463_bug.cos 36463_critter.cos 36463_eledoor.cos 36463_flower.cos 36463_food.cos 36463_fruit.cos
+*# link 36463_bug.cos 36463_critter.cos 36463_eledoor.cos 36463_flower.cos 36463_food.cos 36463_fruit.cos 36463_dead.cos
 *# link 36463_gadget.cos 36463_patchplants.cos 36463_plant.cos 36463_seed.cos 36463_toy.cos 36463_vendor_wildlife.cos
 *# link 36463_vocab.cos 36464_cacontroller.cos 36464_fish.cos 36464_fly.cos 36465_vendor_food.cos 
 *# link 36466_background.cos 36467_clouds.cos 36468_homeemitters.cos 36468_leaf.cos

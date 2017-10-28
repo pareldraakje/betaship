@@ -62,6 +62,8 @@ scrp 2 15 36464 9
 				kill ownr
 			else
 				gsub detritus
+				targ ownr
+				kill ownr
 			endi
 
 			rnge 700
@@ -80,19 +82,20 @@ scrp 2 15 36464 9
 				repe
 			elif va00 gt 8
 				gsub detritus
+				targ ownr
+				kill ownr
 			endi
 		endi
 	endi
 	tick rand 50 85
 	subr detritus
+		inst
 		targ ownr
 		setv va00 posl
 		setv va01 post
 		new: simp 2 10 36463 "betaship_dead" 1 1 rand 1000 3000
-		mvto va00 va01
-		tick 1
-		kill ownr
-		stop
+		mesg wrt+ targ 1000 va00 va01 0
+		slow
 	retn
 endm
 

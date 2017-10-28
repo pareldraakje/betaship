@@ -125,20 +125,21 @@ scrp 2 13 36463 9
 * if too many bugs around, die
 			elif va00 gt 7
 				gsub detritus
+				targ ownr
+				kill ownr
 			endi
 		endi
 	endi
 * set tick
 	tick rand 50 85
 	subr detritus
+		inst
 		targ ownr
 		setv va00 posl
 		setv va01 post
 		new: simp 2 10 36463 "betaship_dead" 1 1 rand 1000 3000
-		mvto va00 va01
-		tick 1
-		kill ownr
-		stop
+		mesg wrt+ targ 1000 va00 va01 0
+		slow
 	retn
 
 endm

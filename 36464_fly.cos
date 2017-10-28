@@ -55,6 +55,8 @@ scrp 2 13 36464 9
 				addv ov70 1
 				doif ov70 gt 20
 					gsub detritus
+					targ ownr
+					kill ownr
 				endi
 			endi
 			wait 15
@@ -76,19 +78,21 @@ scrp 2 13 36464 9
 				repe
 			elif va00 gt 8
 				gsub detritus
+				targ ownr
+				kill ownr
 			endi
 		endi
 	endi
 	tick rand 50 85
 	subr detritus
+		inst
 		targ ownr
 		setv va00 posl
 		setv va01 post
 		new: simp 2 10 36463 "betaship_dead" 1 1 rand 1000 3000
 		mvto va00 va01
 		tick 1
-		kill ownr
-		stop
+		slow
 	retn
 endm
 
