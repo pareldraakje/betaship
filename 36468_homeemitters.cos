@@ -1,0 +1,81 @@
+**
+** Home smell emitters
+**
+
+**
+** Norn home smell
+**
+
+** arctic norn home
+new: simp 1 1 36468 "betaship_tools" 1 0 800
+setv ov00 0
+mesg wrt+ targ 1000 53272 27815 1
+
+** main norn home
+new: simp 1 1 36468 "betaship_tools" 1 0 800
+setv ov00 1
+mesg wrt+ targ 1000 54320 27039 1
+
+** desert norn home
+new: simp 1 1 36468 "betaship_tools" 1 0 800
+setv ov00 2
+mesg wrt+ targ 1000 56383 27746 1
+
+**
+** Grendel home smell
+**
+
+** arctic grendel home
+new: simp 1 1 36468 "blnk" 1 0 800
+emit 16 0.6
+setv ov00 3
+mesg wrt+ targ 1000 53102 28120 1
+
+**
+** Ettin home smell
+**
+
+** desert ettin home
+new: simp 1 1 36468 "blnk" 1 0 800
+emit 17 0.6
+setv ov00 3
+mesg wrt+ targ 1000 56758 28076 1
+
+
+** Creation script
+
+scrp 1 1 36468 1000
+	tick 1
+	mvto _p1_ _p2_
+endm
+
+** Timer script, for seasonal differences
+scrp 1 1 36468 9
+	tick 500
+	doif ov00 eq 0
+		doif sean eq 1
+			emit 15 1
+		else
+			emit 15 0
+		endi
+	elif ov01 eq 1
+		doif sean eq 0 or sean eq 2
+			emit 15 1
+		else
+			emit 15 0
+		endi
+	elif ov02 eq 2
+		doif sean eq 3
+			emit 15 1
+		else
+			emit 15 0
+		endi
+	endi
+endm
+
+
+rscr
+
+enum 1 1 36468
+	kill targ
+next

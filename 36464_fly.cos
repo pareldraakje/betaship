@@ -1,0 +1,138 @@
+**
+** Fly script
+**
+
+**
+** Creation script
+**
+
+** Fly creation
+scrp 2 13 36464 1000
+* Attr: mouseable 2 + collide 64 + physics 128 = 194
+	attr 194
+* Bhvr: act1 1 + hit 8 + eat 16 + pick up 32 = 57
+	bhvr 57
+* Set physics attributes
+	accg 0
+	aero 3
+* Set collision attributes
+	perm 5
+	fric 60
+	elas 30
+* Move to the spot if possible
+	doif tmvt _p1_ _p2_ ne 0
+		mvto _p1_ _p2_
+	else
+		kill targ
+	endi
+	tick 1
+endm
+
+**
+** Timer script
+**
+
+** Fly timer
+scrp 2 13 36464 9
+	doif carr eq null
+		setv va00 rand -9 9
+		doif va00 lt 0
+			setv va00 rand -3 -2
+			setv va01 rand -1 1
+			pose 1
+		elif va00 gt 0
+			setv va00 rand 2 3
+			setv va01 rand -1 1
+			pose 0
+		endi
+		reps rand 4 12
+			setv va02 rtyp grap posx posy
+			doif va02 ne 8 and va02 ne 9
+				velo va00 va01
+				setv ov70 0
+			else
+				velo rand -2 2 -10
+				addv ov70 1
+				doif ov70 gt 20
+					gsub detritus
+					targ ownr
+					kill ownr
+				endi
+			endi
+			wait 15
+		repe
+		doif rand 0 5 eq 0
+			rnge 700
+			setv va00 rand 0 3
+			esee 2 13 36464
+				addv va00 1
+			next
+			doif va00 lt 4
+* Create new fly
+				setv va01 posx
+				setv va02 post
+				subv va02 5
+				reps 2
+					new: simp 2 13 36464 "betaship_fly" 2 0 rand 1200 4000
+					mesg wrt+ targ 1000 va01 va02 0
+				repe
+			elif va00 gt 8
+				gsub detritus
+				targ ownr
+				kill ownr
+			endi
+		endi
+	endi
+	tick rand 50 85
+	subr detritus
+		inst
+		targ ownr
+		setv va00 posl
+		setv va01 post
+		new: simp 2 10 36463 "betaship_dead" 1 1 rand 1000 3000
+		mvto va00 va01
+		tick 1
+		slow
+	retn
+endm
+
+**
+** Activate 1 (push) script
+**
+
+** Fly play
+scrp 2 13 36464 1
+	stim writ from 86 1
+	setv va00 velx
+	mulv va00 3
+	velo va00 -3
+endm
+
+**
+** Hit script
+**
+
+** Fly hit
+scrp 2 13 36464 3
+	stim writ from 87 1
+	velo rand -3 3 rand -6 -3
+endm
+
+**
+** Eat script
+**
+
+** Fly eat
+scrp 2 13 36464 12
+	stim writ from 80 2
+	kill ownr
+endm
+
+**
+** Removal script
+**
+
+rscr
+enum 2 13 36464
+	kill targ
+next

@@ -1,0 +1,38 @@
+**Copied from DS agent help
+new: comp 1 2 36463 "useful_screen" 1 0 9040
+attr 304
+pat: fixd 1 "useful_screen" 1 25 59 1 "WhiteOnTransparentChars"
+part 1
+frmt 8 8 8 18 3 0 0
+pat: butt 2 "useful_screen" 13 2 122 290 0 [0 1 255] 1000 0
+pat: fixd 6 "useful_screen" 15 119 306 1 "WhiteOnTransparentChars"
+part 6
+frmt 0 0 0 0 3 0 2
+pat: fixd 3 "useful_screen" 12 22 22 1 "WhiteOnTransparentChars"
+part 3
+frmt 8 0 37 0 2 0 8
+setv va90 wndw
+divv va90 2
+setv va91 wndh
+divv va91 2
+setv va92 wdth
+divv va92 2
+setv va93 hght
+divv va93 2
+subv va90 va92
+subv va91 va93
+flto va90 va91
+**/
+part 3
+ptxt "Betaship - The underwater base"
+part 1
+ptxt read "txt_betaship" 0
+
+*kill dialog
+scrp 1 2 36463 1000
+**
+** Move camera to signpost!
+**
+	cmrp 54223 27172 0
+	kill ownr
+endm

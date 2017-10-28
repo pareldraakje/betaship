@@ -1,0 +1,28 @@
+**
+** Background controller script
+**
+
+new: simp 1 1 36466 "blnk" 1 0 1000
+setv ov00 gmap 54668 26862
+tick 20
+
+
+**
+** Timer script
+**
+
+scrp 1 1 36466 9
+	doif time eq 0 or time eq 1 or time eq 3
+		doif bkgd ov00 ne "betaship_m"
+			bkgd ov00 "betaship_m" 2
+		endi
+	elif time eq 2
+		doif bkgd ov00 ne "betaship_d"
+			bkgd ov00 "betaship_d" 2
+		endi
+	else
+		doif bkgd ov00 ne "betaship_n"
+			bkgd ov00 "betaship_n" 2
+		endi
+	endi
+endm

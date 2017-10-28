@@ -1,0 +1,62 @@
+**
+** Patch plant controller script
+**
+
+**
+** Controller timer script for the patch plants
+**
+
+scrp 1 1 36463 9
+	tick rand 500 2000
+	doif sean eq 0
+		doif name "spring" eq 1
+			gsub spawn
+		else
+			gsub hide
+		endi
+	elif sean eq 1
+		doif name "summer" eq 1
+			gsub spawn
+		else
+			gsub hide
+		endi
+	elif sean eq 2
+		doif name "fall" eq 1
+			gsub spawn
+		else
+			gsub hide
+		endi
+	else
+		doif name "winter" eq 1
+			gsub spawn
+		else
+			gsub hide
+		endi
+	endi
+
+	subr spawn
+		alph 100 1
+		show 1
+
+		setv va00 ov00
+		doif va00 eq 3
+			setv va01 0
+		elif va00 eq 8
+			setv va01 1
+		elif va00 eq 11
+			setv va01 2
+		endi
+
+		setv va02 posl
+		setv va03 post
+
+		new: simp 2 va00 36463 "betaship_agents" 1 va01 rand 1500 4000
+		mesg wrt+ targ 1000 va02 va03 1
+		velo rand -15 15 -1
+	retn
+
+	subr hide
+		alph 100 0
+		show 0
+	retn
+endm

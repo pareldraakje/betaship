@@ -12,11 +12,15 @@
 *# Web Label = "Pilla from Creatures Caves"
 
 *# depend blnk.c16
+*# depend useful_screen.c16
 
-*# attach betaship.blk
+*# attach betaship_d.blk
+*# attach betaship_m.blk
+*# attach betaship_n.blk
 
 *# attach betaship_agents.c16
 *# attach betaship_cloud.c16
+*# attach betaship_dead.c16
 *# attach betaship_eledoor.c16
 *# attach betaship_fav.c16
 *# attach betaship_fish.c16
@@ -25,8 +29,12 @@
 *# attach betaship_vendor.c16
 *# attach betaship.catalogue
 
-*# link 36463_agents.cos 36463_eledoor.cos 36464_caemit.cos 36463_agents_install.cos 36463_eledoor_install.cos 36465_fish.cos 36466_fly.cos 36463_livevendor.cos 36465_foodvendor.cos 36467_clouds.cos 36468_gadgetvoc.cos 36468_leaf.cos 36468_nestca.cos  36465_signpost.cos 
-
+*# link 36463_bug.cos 36463_critter.cos 36463_eledoor.cos 36463_flower.cos 36463_food.cos 36463_fruit.cos 36463_dead.cos
+*# link 36463_gadget.cos 36463_patchplants.cos 36463_plant.cos 36463_seed.cos 36463_toy.cos 36463_vendor_wildlife.cos
+*# link 36463_vocab.cos 36464_cacontroller.cos 36464_fish.cos 36464_fly.cos 36465_vendor_food.cos 
+*# link 36466_background.cos 36467_clouds.cos 36468_homeemitters.cos 36468_leaf.cos
+*# link 999999_eledoor_install.cos 999999_initial_agents.cos 999999_initial_caemitters.cos 999999_initial_patchplants.cos
+*# link 36463_dialog.cos 36465_signpost.cos
 
 **
 
@@ -43,2493 +51,1204 @@ doif game "betaship" ne 1
 
 
 **
+** <-- Add the backgrounds -->
+**
+
+
+
+
+	setv game "mapeditortmp" addm 52159 26051 5456 2328 "betaship_m"
+	addb game "mapeditortmp" "betaship_d"
+	addb game "mapeditortmp" "betaship_n"
+
+
+
+
+**
 ** <-- start metaroom coordinates -->
 **
 
 
-setv game "betashipmap" addm 44623 26052 7532 3188 "betaship"
-mmsc 48389 27646 ""
-  setv va00 addr game "betashipmap" 48114 48240 27307 27315 27755 27724
-    rtyp va00 5
-    rmsc 48177 27515 ""
-    setv game "betashipmap_600" va00
-  setv va00 addr game "betashipmap" 48010 48114 27284 27307 27801 27755
-    rtyp va00 5
-    rmsc 48062 27519 ""
-    setv game "betashipmap_601" va00
-  setv va00 addr game "betashipmap" 47875 48010 27281 27284 27776 27801
-    rtyp va00 5
-    rmsc 47942 27541 ""
-    setv game "betashipmap_602" va00
-  setv va00 addr game "betashipmap" 47739 47875 27287 27281 27747 27776
-    rtyp va00 5
-    rmsc 47807 27531 ""
-    setv game "betashipmap_603" va00
-  setv va00 addr game "betashipmap" 47567 47739 27347 27287 27756 27747
-    rtyp va00 5
-    rmsc 47653 27547 ""
-    setv game "betashipmap_604" va00
-  setv va00 addr game "betashipmap" 47423 47567 27370 27347 27813 27756
-    rtyp va00 5
-    rmsc 47495 27563 ""
-    setv game "betashipmap_605" va00
-  setv va00 addr game "betashipmap" 47319 47423 27344 27370 27816 27813
-    rtyp va00 5
-    rmsc 47371 27578 ""
-    setv game "betashipmap_606" va00
-  setv va00 addr game "betashipmap" 47216 47319 27330 27344 27770 27816
-    rtyp va00 5
-    rmsc 47267 27573 ""
-    setv game "betashipmap_607" va00
-  setv va00 addr game "betashipmap" 47129 47216 27321 27330 27759 27770
-    rtyp va00 5
-    rmsc 47172 27545 ""
-    setv game "betashipmap_608" va00
-  setv va00 addr game "betashipmap" 47054 47129 27298 27321 27744 27759
-    rtyp va00 5
-    rmsc 47091 27528 ""
-    setv game "betashipmap_609" va00
-  setv va00 addr game "betashipmap" 46945 47054 27284 27284 27687 27744
-    rtyp va00 5
-    rmsc 46999 27514 ""
-    setv game "betashipmap_610" va00
-  setv va00 addr game "betashipmap" 49389 49509 26631 26675 26958 26958
+
+
+mmsc 54887 27215 ""
+  setv va00 addr game "mapeditortmp" 56911 56953 27810 27852 27859 27859
     rtyp va00 0
-    rmsc 49449 26794 ""
-    setv game "betashipmap_611" va00
-  setv va00 addr game "betashipmap" 46862 46945 27284 27284 27655 27687
-    rtyp va00 5
-    rmsc 46903 27485 ""
-    setv game "betashipmap_612" va00
-  setv va00 addr game "betashipmap" 46772 46862 27284 27284 27655 27655
-    rtyp va00 5
-    rmsc 46817 27469 ""
-    setv game "betashipmap_613" va00
-  setv va00 addr game "betashipmap" 46709 46772 27284 27284 27592 27655
-    rtyp va00 5
-    rmsc 46740 27469 ""
-    setv game "betashipmap_614" va00
-  setv va00 addr game "betashipmap" 48240 48335 27315 27321 27724 27743
-    rtyp va00 5
-    rmsc 48287 27529 ""
-    setv game "betashipmap_615" va00
-  setv va00 addr game "betashipmap" 48335 48470 27321 27331 27743 27780
-    rtyp va00 5
-    rmsc 48402 27550 ""
-    setv game "betashipmap_616" va00
-  setv va00 addr game "betashipmap" 48470 48562 27331 27351 27780 27786
-    rtyp va00 5
-    rmsc 48516 27558 ""
-    setv game "betashipmap_617" va00
-  setv va00 addr game "betashipmap" 49131 49293 28749 28749 29125 29054
-    rtyp va00 9
-    rmsc 49212 28901 ""
-    setv game "betashipmap_618" va00
-  setv va00 addr game "betashipmap" 48562 48688 27351 27344 27786 27776
-    rtyp va00 5
-    rmsc 48625 27563 ""
-    setv game "betashipmap_619" va00
-  setv va00 addr game "betashipmap" 48688 48816 27344 27305 27776 27737
-    rtyp va00 5
-    rmsc 48752 27540 ""
-    setv game "betashipmap_620" va00
-  setv va00 addr game "betashipmap" 48816 48942 27305 27301 27737 27707
-    rtyp va00 5
-    rmsc 48879 27506 ""
-    setv game "betashipmap_621" va00
-  setv va00 addr game "betashipmap" 48942 49077 27301 27295 27707 27671
-    rtyp va00 5
-    rmsc 49009 27486 ""
-    setv game "betashipmap_622" va00
-  setv va00 addr game "betashipmap" 49077 49192 27295 27298 27671 27621
-    rtyp va00 5
-    rmsc 49134 27458 ""
-    setv game "betashipmap_623" va00
-  setv va00 addr game "betashipmap" 49192 49304 27298 27295 27621 27598
-    rtyp va00 5
-    rmsc 49248 27448 ""
-    setv game "betashipmap_624" va00
-  setv va00 addr game "betashipmap" 49304 49439 27295 27305 27598 27605
-    rtyp va00 5
-    rmsc 49371 27450 ""
-    setv game "betashipmap_625" va00
-  setv va00 addr game "betashipmap" 49509 49618 26675 26757 26958 26958
+    rmsc 56932 27834 ""
+    setv game "mapeditortmp_600" va00
+  setv va00 addr game "mapeditortmp" 52957 53155 27553 27423 27573 27573
     rtyp va00 0
-    rmsc 49563 26816 ""
-    setv game "betashipmap_626" va00
-  setv va00 addr game "betashipmap" 49439 49509 27305 27284 27605 27630
-    rtyp va00 5
-    rmsc 49474 27467 ""
-    setv game "betashipmap_627" va00
-  setv va00 addr game "betashipmap" 49509 49597 27262 27262 27630 27619
-    rtyp va00 5
-    rmsc 49553 27440 ""
-    setv game "betashipmap_628" va00
-  setv va00 addr game "betashipmap" 49597 49726 27262 27262 27619 27559
-    rtyp va00 5
-    rmsc 49661 27410 ""
-    setv game "betashipmap_629" va00
-  setv va00 addr game "betashipmap" 49726 49776 27262 27262 27559 27539
-    rtyp va00 5
-    rmsc 49751 27400 ""
-    setv game "betashipmap_630" va00
-  setv va00 addr game "betashipmap" 49618 49726 26757 26955 27262 27262
+    rmsc 53056 27563 ""
+    setv game "mapeditortmp_601" va00
+  setv va00 addr game "mapeditortmp" 56397 56645 27424 27588 27604 27604
     rtyp va00 0
-    rmsc 49672 27009 ""
-    setv game "betashipmap_631" va00
-  setv va00 addr game "betashipmap" 49726 49776 26955 27097 27262 27262
-    rtyp va00 0
-    rmsc 49751 27108 ""
-    setv game "betashipmap_632" va00
-  setv va00 addr game "betashipmap" 49509 49618 26958 26958 27262 27262
-    rtyp va00 0
-    rmsc 49563 27110 ""
-    setv game "betashipmap_633" va00
-  setv va00 addr game "betashipmap" 48769 48833 26732 26728 27246 27237
+    rmsc 56521 27514 ""
+    setv game "mapeditortmp_602" va00
+  setv va00 addr game "mapeditortmp" 53831 53968 27137 27137 27378 27412
     rtyp va00 5
-    rmsc 48801 26984 ""
-    setv game "betashipmap_634" va00
-  setv va00 addr game "betashipmap" 49255 49389 26609 26631 26958 26958
-    rtyp va00 0
-    rmsc 49322 26783 ""
-    setv game "betashipmap_635" va00
-  setv va00 addr game "betashipmap" 49113 49255 26598 26609 26958 26958
-    rtyp va00 0
-    rmsc 49184 26778 ""
-    setv game "betashipmap_636" va00
-  setv va00 addr game "betashipmap" 49017 49113 26603 26598 26959 26958
-    rtyp va00 0
-    rmsc 49065 26780 ""
-    setv game "betashipmap_637" va00
-  setv va00 addr game "betashipmap" 48925 49017 26628 26603 26959 26959
-    rtyp va00 0
-    rmsc 48971 26793 ""
-    setv game "betashipmap_638" va00
-  setv va00 addr game "betashipmap" 49457 49509 26958 26958 27250 27262
+    rmsc 53899 27274 ""
+    setv game "mapeditortmp_603" va00
+  setv va00 addr game "mapeditortmp" 53968 54100 27137 27138 27412 27438
     rtyp va00 5
-    rmsc 49483 27110 ""
-    setv game "betashipmap_639" va00
-  setv va00 addr game "betashipmap" 49373 49457 26958 26958 27260 27250
+    rmsc 54034 27287 ""
+    setv game "mapeditortmp_604" va00
+  setv va00 addr game "mapeditortmp" 54100 54228 27138 27157 27438 27456
     rtyp va00 5
-    rmsc 49415 27104 ""
-    setv game "betashipmap_640" va00
-  setv va00 addr game "betashipmap" 49288 49373 26958 26958 27266 27260
+    rmsc 54164 27297 ""
+    setv game "mapeditortmp_605" va00
+  setv va00 addr game "mapeditortmp" 54228 54363 27157 27155 27456 27458
     rtyp va00 5
-    rmsc 49330 27109 ""
-    setv game "betashipmap_641" va00
-  setv va00 addr game "betashipmap" 49208 49288 26958 26958 27270 27266
+    rmsc 54295 27307 ""
+    setv game "mapeditortmp_606" va00
+  setv va00 addr game "mapeditortmp" 54363 54508 27155 27111 27458 27469
     rtyp va00 5
-    rmsc 49248 27112 ""
-    setv game "betashipmap_642" va00
-  setv va00 addr game "betashipmap" 49120 49208 26958 26958 27261 27270
+    rmsc 54435 27312 ""
+    setv game "mapeditortmp_607" va00
+  setv va00 addr game "mapeditortmp" 54508 54659 27111 27119 27469 27481
     rtyp va00 5
-    rmsc 49164 27114 ""
-    setv game "betashipmap_643" va00
-  setv va00 addr game "betashipmap" 49039 49120 26959 26958 27250 27261
+    rmsc 54583 27296 ""
+    setv game "mapeditortmp_608" va00
+  setv va00 addr game "mapeditortmp" 54659 54823 27119 27133 27481 27478
     rtyp va00 5
-    rmsc 49079 27110 ""
-    setv game "betashipmap_644" va00
-  setv va00 addr game "betashipmap" 48925 49039 26959 26959 27235 27250
+    rmsc 54741 27298 ""
+    setv game "mapeditortmp_609" va00
+  setv va00 addr game "mapeditortmp" 54823 54995 27133 27150 27478 27473
     rtyp va00 5
-    rmsc 48982 27104 ""
-    setv game "betashipmap_645" va00
-  setv va00 addr game "betashipmap" 48833 48925 26677 26628 27237 27235
+    rmsc 54909 27303 ""
+    setv game "mapeditortmp_610" va00
+  setv va00 addr game "mapeditortmp" 54995 55113 27150 27142 27473 27460
     rtyp va00 5
-    rmsc 48879 26956 ""
-    setv game "betashipmap_646" va00
-  setv va00 addr game "betashipmap" 48680 48769 26727 26732 27275 27246
+    rmsc 55054 27305 ""
+    setv game "mapeditortmp_611" va00
+  setv va00 addr game "mapeditortmp" 55113 55253 27142 27121 27460 27422
     rtyp va00 5
-    rmsc 48724 26986 ""
-    setv game "betashipmap_647" va00
-  setv va00 addr game "betashipmap" 48567 48680 26725 26727 27308 27275
+    rmsc 55183 27282 ""
+    setv game "mapeditortmp_612" va00
+  setv va00 addr game "mapeditortmp" 55253 55398 27121 27122 27422 27389
     rtyp va00 5
-    rmsc 48623 27000 ""
-    setv game "betashipmap_648" va00
-  setv va00 addr game "betashipmap" 48470 48567 26724 26725 27316 27308
+    rmsc 55325 27255 ""
+    setv game "mapeditortmp_613" va00
+  setv va00 addr game "mapeditortmp" 55398 55547 27122 27126 27389 27377
     rtyp va00 5
-    rmsc 48518 27016 ""
-    setv game "betashipmap_649" va00
-  setv va00 addr game "betashipmap" 48335 48470 26719 26724 27288 27316
+    rmsc 55472 27249 ""
+    setv game "mapeditortmp_614" va00
+  setv va00 addr game "mapeditortmp" 55547 55675 27126 27117 27377 27360
     rtyp va00 5
-    rmsc 48402 27017 ""
-    setv game "betashipmap_650" va00
-  setv va00 addr game "betashipmap" 48232 48335 26719 26719 27255 27288
+    rmsc 55611 27243 ""
+    setv game "mapeditortmp_615" va00
+  setv va00 addr game "mapeditortmp" 55675 55798 27117 27109 27360 27309
     rtyp va00 5
-    rmsc 48283 27003 ""
-    setv game "betashipmap_651" va00
-  setv va00 addr game "betashipmap" 48144 48232 26715 26719 27230 27255
+    rmsc 55736 27213 ""
+    setv game "mapeditortmp_616" va00
+  setv va00 addr game "mapeditortmp" 54032 54164 26721 26701 27101 27119
     rtyp va00 5
-    rmsc 48188 26985 ""
-    setv game "betashipmap_652" va00
-  setv va00 addr game "betashipmap" 48047 48144 26717 26715 27230 27230
+    rmsc 54098 26920 ""
+    setv game "mapeditortmp_617" va00
+  setv va00 addr game "mapeditortmp" 54164 54273 26701 26701 27119 27131
     rtyp va00 5
-    rmsc 48095 26973 ""
-    setv game "betashipmap_653" va00
-  setv va00 addr game "betashipmap" 47935 48047 26724 26717 27248 27230
+    rmsc 54218 26916 ""
+    setv game "mapeditortmp_618" va00
+  setv va00 addr game "mapeditortmp" 54273 54377 26701 26725 27131 27116
     rtyp va00 5
-    rmsc 47991 26977 ""
-    setv game "betashipmap_654" va00
-  setv va00 addr game "betashipmap" 47834 47935 26715 26715 27238 27248
+    rmsc 54325 26908 ""
+    setv game "mapeditortmp_619" va00
+  setv va00 addr game "mapeditortmp" 54377 54434 26725 26772 27116 27083
     rtyp va00 5
-    rmsc 47884 26981 ""
-    setv game "betashipmap_655" va00
-  setv va00 addr game "betashipmap" 47742 47834 26712 26715 27242 27238
+    rmsc 54405 26904 ""
+    setv game "mapeditortmp_620" va00
+  setv va00 addr game "mapeditortmp" 54434 54598 26772 26777 27083 27088
     rtyp va00 5
-    rmsc 47788 26975 ""
-    setv game "betashipmap_656" va00
-  setv va00 addr game "betashipmap" 47674 47742 26712 26712 27248 27242
+    rmsc 54516 26930 ""
+    setv game "mapeditortmp_621" va00
+  setv va00 addr game "mapeditortmp" 54598 54745 26777 26780 27088 27086
     rtyp va00 5
-    rmsc 47708 26977 ""
-    setv game "betashipmap_657" va00
-  setv va00 addr game "betashipmap" 47610 47674 26925 26925 27278 27248
+    rmsc 54671 26931 ""
+    setv game "mapeditortmp_622" va00
+  setv va00 addr game "mapeditortmp" 54745 54880 26780 26778 27086 27128
     rtyp va00 5
-    rmsc 47642 27086 ""
-    setv game "betashipmap_658" va00
-  setv va00 addr game "betashipmap" 47610 47674 26646 26712 26925 26925
+    rmsc 54812 26954 ""
+    setv game "mapeditortmp_623" va00
+  setv va00 addr game "mapeditortmp" 52889 52946 27612 27573 27851 27855
+    rtyp va00 6
+    rmsc 52917 27733 ""
+    setv game "mapeditortmp_624" va00
+  setv va00 addr game "mapeditortmp" 54880 54997 26778 26778 27128 27131
+    rtyp va00 5
+    rmsc 54938 26954 ""
+    setv game "mapeditortmp_625" va00
+  setv va00 addr game "mapeditortmp" 54997 55157 26778 26778 27131 27085
+    rtyp va00 5
+    rmsc 55077 26931 ""
+    setv game "mapeditortmp_626" va00
+  setv va00 addr game "mapeditortmp" 55157 55226 26778 26717 27085 27076
+    rtyp va00 5
+    rmsc 55191 26927 ""
+    setv game "mapeditortmp_627" va00
+  setv va00 addr game "mapeditortmp" 55226 55372 26717 26703 27076 27095
+    rtyp va00 5
+    rmsc 55299 26906 ""
+    setv game "mapeditortmp_628" va00
+  setv va00 addr game "mapeditortmp" 55372 55519 26703 26712 27095 27095
+    rtyp va00 5
+    rmsc 55445 26899 ""
+    setv game "mapeditortmp_629" va00
+  setv va00 addr game "mapeditortmp" 55519 55610 26712 26743 27095 27091
+    rtyp va00 5
+    rmsc 55564 26901 ""
+    setv game "mapeditortmp_630" va00
+  setv va00 addr game "mapeditortmp" 55610 55747 26743 26889 27091 27081
     rtyp va00 0
-    rmsc 47642 26785 ""
-    setv game "betashipmap_659" va00
-  setv va00 addr game "betashipmap" 47534 47610 26618 26646 26925 26925
+    rmsc 55678 26912 ""
+    setv game "mapeditortmp_631" va00
+  setv va00 addr game "mapeditortmp" 55747 55782 26895 27031 27081 27078
     rtyp va00 0
-    rmsc 47572 26771 ""
-    setv game "betashipmap_660" va00
-  setv va00 addr game "betashipmap" 47450 47534 26605 26618 26925 26925
+    rmsc 55764 26986 ""
+    setv game "mapeditortmp_632" va00
+  setv va00 addr game "mapeditortmp" 55610 55675 27091 27086 27122 27117
     rtyp va00 0
-    rmsc 47492 26765 ""
-    setv game "betashipmap_661" va00
-  setv va00 addr game "betashipmap" 47349 47450 26607 26605 26925 26925
+    rmsc 55642 27104 ""
+    setv game "mapeditortmp_633" va00
+  setv va00 addr game "mapeditortmp" 55675 55791 27086 27077 27117 27109
     rtyp va00 0
-    rmsc 47399 26766 ""
-    setv game "betashipmap_662" va00
-  setv va00 addr game "betashipmap" 47268 47349 26605 26607 26925 26925
+    rmsc 55733 27097 ""
+    setv game "mapeditortmp_634" va00
+  setv va00 addr game "mapeditortmp" 53888 54032 26810 26721 27101 27101
     rtyp va00 0
-    rmsc 47308 26765 ""
-    setv game "betashipmap_663" va00
-  setv va00 addr game "betashipmap" 47166 47268 26613 26605 26925 26925
+    rmsc 53960 26955 ""
+    setv game "mapeditortmp_635" va00
+  setv va00 addr game "mapeditortmp" 53831 53888 26926 26810 27101 27101
     rtyp va00 0
-    rmsc 47217 26769 ""
-    setv game "betashipmap_664" va00
-  setv va00 addr game "betashipmap" 47080 47166 26631 26613 26925 26925
+    rmsc 53859 27013 ""
+    setv game "mapeditortmp_636" va00
+  setv va00 addr game "mapeditortmp" 53831 54023 27101 27101 27137 27137
     rtyp va00 0
-    rmsc 47123 26778 ""
-    setv game "betashipmap_665" va00
-  setv va00 addr game "betashipmap" 46988 47080 26669 26631 26925 26925
-    rtyp va00 0
-    rmsc 47034 26797 ""
-    setv game "betashipmap_666" va00
-  setv va00 addr game "betashipmap" 46936 46988 26701 26669 26925 26925
-    rtyp va00 0
-    rmsc 46962 26813 ""
-    setv game "betashipmap_667" va00
-  setv va00 addr game "betashipmap" 47554 47610 26925 26925 27298 27278
+    rmsc 53927 27119 ""
+    setv game "mapeditortmp_637" va00
+  setv va00 addr game "mapeditortmp" 53774 53830 27306 27400 27579 27581
     rtyp va00 5
-    rmsc 47582 27101 ""
-    setv game "betashipmap_668" va00
-  setv va00 addr game "betashipmap" 47495 47554 26925 26925 27308 27298
+    rmsc 53802 27443 ""
+    setv game "mapeditortmp_638" va00
+  setv va00 addr game "mapeditortmp" 53626 53774 27304 27306 27579 27579
     rtyp va00 5
-    rmsc 47524 27111 ""
-    setv game "betashipmap_669" va00
-  setv va00 addr game "betashipmap" 47427 47495 26925 26925 27306 27308
+    rmsc 53700 27441 ""
+    setv game "mapeditortmp_639" va00
+  setv va00 addr game "mapeditortmp" 53473 53626 27318 27304 27575 27579
     rtyp va00 5
-    rmsc 47461 27116 ""
-    setv game "betashipmap_670" va00
-  setv va00 addr game "betashipmap" 47360 47427 26925 26925 27304 27306
+    rmsc 53549 27448 ""
+    setv game "mapeditortmp_640" va00
+  setv va00 addr game "mapeditortmp" 53328 53473 27348 27318 27573 27575
     rtyp va00 5
-    rmsc 47393 27115 ""
-    setv game "betashipmap_671" va00
-  setv va00 addr game "betashipmap" 47285 47360 26925 26925 27289 27304
+    rmsc 53400 27461 ""
+    setv game "mapeditortmp_641" va00
+  setv va00 addr game "mapeditortmp" 53155 53328 27423 27348 27573 27573
+    rtyp va00 0
+    rmsc 53241 27498 ""
+    setv game "mapeditortmp_642" va00
+  setv va00 addr game "mapeditortmp" 53595 53708 27610 27625 27855 27847
+    rtyp va00 6
+    rmsc 53651 27728 ""
+    setv game "mapeditortmp_643" va00
+  setv va00 addr game "mapeditortmp" 52670 52889 27841 27612 27851 27851
+    rtyp va00 0
+    rmsc 52779 27846 ""
+    setv game "mapeditortmp_644" va00
+  setv va00 addr game "mapeditortmp" 53475 53595 27604 27610 27834 27855
+    rtyp va00 6
+    rmsc 53535 27729 ""
+    setv game "mapeditortmp_645" va00
+  setv va00 addr game "mapeditortmp" 53328 53475 27595 27604 27879 27834
+    rtyp va00 6
+    rmsc 53401 27714 ""
+    setv game "mapeditortmp_646" va00
+  setv va00 addr game "mapeditortmp" 55737 55827 27409 27302 27613 27589
     rtyp va00 5
-    rmsc 47322 27114 ""
-    setv game "betashipmap_672" va00
-  setv va00 addr game "betashipmap" 47208 47285 26925 26925 27278 27289
+    rmsc 55782 27499 ""
+    setv game "mapeditortmp_647" va00
+  setv va00 addr game "mapeditortmp" 53204 53328 27573 27573 27871 27879
+    rtyp va00 6
+    rmsc 53266 27726 ""
+    setv game "mapeditortmp_648" va00
+  setv va00 addr game "mapeditortmp" 53078 53204 27573 27573 27855 27871
+    rtyp va00 6
+    rmsc 53141 27722 ""
+    setv game "mapeditortmp_649" va00
+  setv va00 addr game "mapeditortmp" 52946 53078 27573 27573 27855 27855
+    rtyp va00 6
+    rmsc 53012 27714 ""
+    setv game "mapeditortmp_650" va00
+  setv va00 addr game "mapeditortmp" 53708 53920 27625 27640 27847 27847
+    rtyp va00 0
+    rmsc 53814 27736 ""
+    setv game "mapeditortmp_651" va00
+  setv va00 addr game "mapeditortmp" 53807 53920 27871 27871 28093 28060
+    rtyp va00 6
+    rmsc 53863 27965 ""
+    setv game "mapeditortmp_652" va00
+  setv va00 addr game "mapeditortmp" 53683 53807 27871 27871 28131 28093
+    rtyp va00 6
+    rmsc 53745 27982 ""
+    setv game "mapeditortmp_653" va00
+  setv va00 addr game "mapeditortmp" 53530 53683 27879 27871 28167 28131
+    rtyp va00 6
+    rmsc 53606 28005 ""
+    setv game "mapeditortmp_654" va00
+  setv va00 addr game "mapeditortmp" 53349 53530 27883 27879 28203 28167
+    rtyp va00 6
+    rmsc 53439 28025 ""
+    setv game "mapeditortmp_655" va00
+  setv va00 addr game "mapeditortmp" 53193 53349 27908 27883 28215 28203
+    rtyp va00 6
+    rmsc 53271 28055 ""
+    setv game "mapeditortmp_656" va00
+  setv va00 addr game "mapeditortmp" 52997 53193 27875 27908 28211 28215
+    rtyp va00 6
+    rmsc 53095 28045 ""
+    setv game "mapeditortmp_657" va00
+  setv va00 addr game "mapeditortmp" 52853 52997 27875 27875 28211 28211
+    rtyp va00 6
+    rmsc 52925 28043 ""
+    setv game "mapeditortmp_658" va00
+  setv va00 addr game "mapeditortmp" 52656 52889 27851 27851 27875 27875
+    rtyp va00 0
+    rmsc 52772 27863 ""
+    setv game "mapeditortmp_659" va00
+  setv va00 addr game "mapeditortmp" 53723 53920 27847 27847 27871 27871
+    rtyp va00 0
+    rmsc 53821 27859 ""
+    setv game "mapeditortmp_660" va00
+  setv va00 addr game "mapeditortmp" 53920 53968 27640 27650 27966 27771
+    rtyp va00 0
+    rmsc 53944 27705 ""
+    setv game "mapeditortmp_661" va00
+  setv va00 addr game "mapeditortmp" 52746 52853 27875 27875 28155 28211
+    rtyp va00 6
+    rmsc 52799 28043 ""
+    setv game "mapeditortmp_662" va00
+  setv va00 addr game "mapeditortmp" 52656 52746 27875 27875 28170 28155
+    rtyp va00 6
+    rmsc 52701 28015 ""
+    setv game "mapeditortmp_663" va00
+  setv va00 addr game "mapeditortmp" 52537 52656 28010 27875 28166 28170
+    rtyp va00 6
+    rmsc 52596 28090 ""
+    setv game "mapeditortmp_664" va00
+  setv va00 addr game "mapeditortmp" 54189 54324 27535 27518 27788 27788
     rtyp va00 5
-    rmsc 47246 27107 ""
-    setv game "betashipmap_673" va00
-  setv va00 addr game "betashipmap" 47132 47208 26925 26925 27276 27278
+    rmsc 54256 27661 ""
+    setv game "mapeditortmp_665" va00
+  setv va00 addr game "mapeditortmp" 54324 54468 27518 27514 27788 27793
     rtyp va00 5
-    rmsc 47170 27101 ""
-    setv game "betashipmap_674" va00
-  setv va00 addr game "betashipmap" 47080 47132 26925 26925 27275 27276
+    rmsc 54396 27655 ""
+    setv game "mapeditortmp_666" va00
+  setv va00 addr game "mapeditortmp" 54468 54610 27514 27513 27793 27793
+    rtyp va00 1
+    rmsc 54539 27653 ""
+    setv game "mapeditortmp_667" va00
+  setv va00 addr game "mapeditortmp" 54610 54738 27513 27511 27793 27794
     rtyp va00 5
-    rmsc 47106 27100 ""
-    setv game "betashipmap_675" va00
-  setv va00 addr game "betashipmap" 47054 47080 26925 26925 27284 27275
+    rmsc 54674 27653 ""
+    setv game "mapeditortmp_668" va00
+  setv va00 addr game "mapeditortmp" 54738 54870 27511 27509 27794 27798
     rtyp va00 5
-    rmsc 47067 27100 ""
-    setv game "betashipmap_676" va00
-  setv va00 addr game "betashipmap" 47002 47054 26925 26925 27284 27284
+    rmsc 54804 27654 ""
+    setv game "mapeditortmp_669" va00
+  setv va00 addr game "mapeditortmp" 54870 55006 27509 27515 27798 27797
+    rtyp va00 5
+    rmsc 54938 27653 ""
+    setv game "mapeditortmp_670" va00
+  setv va00 addr game "mapeditortmp" 55006 55132 27515 27515 27797 27793
+    rtyp va00 5
+    rmsc 55069 27654 ""
+    setv game "mapeditortmp_671" va00
+  setv va00 addr game "mapeditortmp" 55132 55261 27515 27519 27793 27795
+    rtyp va00 5
+    rmsc 55196 27655 ""
+    setv game "mapeditortmp_672" va00
+  setv va00 addr game "mapeditortmp" 54011 54189 27749 27535 27802 27802
     rtyp va00 0
-    rmsc 47028 27104 ""
-    setv game "betashipmap_677" va00
-  setv va00 addr game "betashipmap" 46936 47002 26925 26925 27284 27284
+    rmsc 54100 27775 ""
+    setv game "mapeditortmp_673" va00
+  setv va00 addr game "mapeditortmp" 55261 55422 27519 27549 27802 27802
     rtyp va00 0
-    rmsc 46969 27104 ""
-    setv game "betashipmap_678" va00
-  setv va00 addr game "betashipmap" 46822 46936 26816 26701 27284 27284
+    rmsc 55341 27660 ""
+    setv game "mapeditortmp_674" va00
+  setv va00 addr game "mapeditortmp" 55422 55555 27549 27779 27802 27802
     rtyp va00 0
-    rmsc 46879 27050 ""
-    setv game "betashipmap_679" va00
-  setv va00 addr game "betashipmap" 46732 46822 26994 26816 27284 27284
-    rtyp va00 0
-    rmsc 46777 27139 ""
-    setv game "betashipmap_680" va00
-  setv va00 addr game "betashipmap" 46709 46732 27140 27009 27284 27284
-    rtyp va00 0
-    rmsc 46720 27212 ""
-    setv game "betashipmap_681" va00
-  setv va00 addr game "betashipmap" 49579 49631 27828 27790 27988 28020
-    rtyp va00 7
-    rmsc 49605 27924 ""
-    setv game "betashipmap_682" va00
-  setv va00 addr game "betashipmap" 49631 49766 27790 27732 28020 28024
-    rtyp va00 7
-    rmsc 49698 27907 ""
-    setv game "betashipmap_683" va00
-  setv va00 addr game "betashipmap" 49766 49894 27732 27708 28024 28022
-    rtyp va00 7
-    rmsc 49830 27877 ""
-    setv game "betashipmap_684" va00
-  setv va00 addr game "betashipmap" 49894 50010 27708 27698 28022 28036
-    rtyp va00 7
-    rmsc 49952 27872 ""
-    setv game "betashipmap_685" va00
-  setv va00 addr game "betashipmap" 50010 50136 27698 27710 28036 28060
-    rtyp va00 7
-    rmsc 50073 27879 ""
-    setv game "betashipmap_686" va00
-  setv va00 addr game "betashipmap" 50136 50244 27710 27734 28060 28072
-    rtyp va00 7
-    rmsc 50190 27891 ""
-    setv game "betashipmap_687" va00
-  setv va00 addr game "betashipmap" 50244 50356 27734 27766 28072 28076
-    rtyp va00 7
-    rmsc 50300 27905 ""
-    setv game "betashipmap_688" va00
-  setv va00 addr game "betashipmap" 50356 50453 27766 27803 28076 28090
-    rtyp va00 7
-    rmsc 50404 27928 ""
-    setv game "betashipmap_689" va00
-  setv va00 addr game "betashipmap" 50453 50647 27803 27899 28090 28090
-    rtyp va00 0
-    rmsc 50550 27946 ""
-    setv game "betashipmap_690" va00
-  setv va00 addr game "betashipmap" 50647 50871 27899 28084 28090 28090
-    rtyp va00 0
-    rmsc 50759 27994 ""
-    setv game "betashipmap_691" va00
-  setv va00 addr game "betashipmap" 50799 50879 28090 28090 28610 28615
-    rtyp va00 7
-    rmsc 50839 28352 ""
-    setv game "betashipmap_692" va00
-  setv va00 addr game "betashipmap" 50879 50999 28090 28212 28615 28637
-    rtyp va00 7
-    rmsc 50939 28363 ""
-    setv game "betashipmap_693" va00
-  setv va00 addr game "betashipmap" 50999 51087 28212 28308 28637 28636
-    rtyp va00 7
-    rmsc 51043 28424 ""
-    setv game "betashipmap_694" va00
-  setv va00 addr game "betashipmap" 50699 50799 28090 28090 28600 28610
-    rtyp va00 7
-    rmsc 50749 28350 ""
-    setv game "betashipmap_695" va00
-  setv va00 addr game "betashipmap" 50599 50699 28090 28090 28602 28600
-    rtyp va00 7
-    rmsc 50649 28345 ""
-    setv game "betashipmap_696" va00
-  setv va00 addr game "betashipmap" 50515 50599 28090 28090 28604 28602
-    rtyp va00 7
-    rmsc 50557 28346 ""
-    setv game "betashipmap_697" va00
-  setv va00 addr game "betashipmap" 50461 50515 28090 28090 28590 28604
-    rtyp va00 7
-    rmsc 50488 28347 ""
-    setv game "betashipmap_698" va00
-  setv va00 addr game "betashipmap" 50373 50461 28128 28124 28548 28590
-    rtyp va00 7
-    rmsc 50417 28359 ""
-    setv game "betashipmap_699" va00
-  setv va00 addr game "betashipmap" 50284 50373 28122 28128 28504 28548
-    rtyp va00 7
-    rmsc 50328 28335 ""
-    setv game "betashipmap_700" va00
-  setv va00 addr game "betashipmap" 50194 50284 28096 28122 28500 28504
-    rtyp va00 7
-    rmsc 50239 28300 ""
-    setv game "betashipmap_701" va00
-  setv va00 addr game "betashipmap" 50104 50194 28102 28096 28506 28500
-    rtyp va00 7
-    rmsc 50149 28301 ""
-    setv game "betashipmap_702" va00
-  setv va00 addr game "betashipmap" 50020 50104 28100 28102 28494 28506
-    rtyp va00 7
-    rmsc 50062 28303 ""
-    setv game "betashipmap_703" va00
-  setv va00 addr game "betashipmap" 49964 50020 28092 28100 28468 28494
-    rtyp va00 7
-    rmsc 49992 28293 ""
-    setv game "betashipmap_704" va00
-  setv va00 addr game "betashipmap" 49912 49964 28092 28092 28476 28468
-    rtyp va00 7
-    rmsc 49938 28280 ""
-    setv game "betashipmap_705" va00
-  setv va00 addr game "betashipmap" 49832 49912 28086 28092 28476 28476
-    rtyp va00 0
-    rmsc 49872 28281 ""
-    setv game "betashipmap_706" va00
-  setv va00 addr game "betashipmap" 51087 51324 28308 28614 28636 28634
-    rtyp va00 0
-    rmsc 51205 28471 ""
-    setv game "betashipmap_707" va00
-  setv va00 addr game "betashipmap" 49474 49548 28478 28478 28634 28638
-    rtyp va00 7
-    rmsc 49511 28558 ""
-    setv game "betashipmap_708" va00
-  setv va00 addr game "betashipmap" 49548 49632 28478 28477 28638 28660
-    rtyp va00 7
-    rmsc 49590 28569 ""
-    setv game "betashipmap_709" va00
-  setv va00 addr game "betashipmap" 49632 49722 28477 28477 28660 28694
-    rtyp va00 7
-    rmsc 49677 28585 ""
-    setv game "betashipmap_710" va00
-  setv va00 addr game "betashipmap" 49722 49804 28477 28476 28694 28732
-    rtyp va00 7
-    rmsc 49763 28604 ""
-    setv game "betashipmap_711" va00
-  setv va00 addr game "betashipmap" 49804 49912 28476 28476 28732 28800
-    rtyp va00 7
-    rmsc 49858 28638 ""
-    setv game "betashipmap_712" va00
-  setv va00 addr game "betashipmap" 49912 50008 28492 28508 28800 28868
-    rtyp va00 7
-    rmsc 49960 28680 ""
-    setv game "betashipmap_713" va00
-  setv va00 addr game "betashipmap" 50008 50088 28508 28536 28868 28920
-    rtyp va00 7
-    rmsc 50048 28714 ""
-    setv game "betashipmap_714" va00
-  setv va00 addr game "betashipmap" 50088 50176 28536 28538 28920 28974
-    rtyp va00 7
-    rmsc 50132 28755 ""
-    setv game "betashipmap_715" va00
-  setv va00 addr game "betashipmap" 50176 50272 28538 28566 28974 29020
-    rtyp va00 7
-    rmsc 50224 28779 ""
-    setv game "betashipmap_716" va00
-  setv va00 addr game "betashipmap" 50272 50393 28566 28572 29020 29046
-    rtyp va00 7
-    rmsc 50332 28806 ""
-    setv game "betashipmap_717" va00
-  setv va00 addr game "betashipmap" 50393 50497 28572 28628 29046 29060
-    rtyp va00 7
-    rmsc 50445 28816 ""
-    setv game "betashipmap_718" va00
-  setv va00 addr game "betashipmap" 50497 50617 28628 28664 29060 29068
-    rtyp va00 7
-    rmsc 50557 28848 ""
-    setv game "betashipmap_719" va00
-  setv va00 addr game "betashipmap" 50617 50745 28664 28666 29068 29056
-    rtyp va00 7
-    rmsc 50681 28860 ""
-    setv game "betashipmap_720" va00
-  setv va00 addr game "betashipmap" 50745 50845 28666 28650 29056 29092
-    rtyp va00 7
-    rmsc 50795 28879 ""
-    setv game "betashipmap_721" va00
-  setv va00 addr game "betashipmap" 50845 50965 28650 28658 29092 29094
-    rtyp va00 7
-    rmsc 50905 28872 ""
-    setv game "betashipmap_722" va00
-  setv va00 addr game "betashipmap" 50965 51099 28658 28656 29094 29066
-    rtyp va00 7
-    rmsc 51032 28862 ""
-    setv game "betashipmap_723" va00
-  setv va00 addr game "betashipmap" 51099 51169 28636 28635 29066 29040
-    rtyp va00 7
-    rmsc 51134 28838 ""
-    setv game "betashipmap_724" va00
-  setv va00 addr game "betashipmap" 51169 51243 28635 28635 29040 29058
-    rtyp va00 7
-    rmsc 51206 28846 ""
-    setv game "betashipmap_725" va00
-  setv va00 addr game "betashipmap" 51243 51340 28635 28634 29058 29076
-    rtyp va00 7
-    rmsc 51291 28855 ""
-    setv game "betashipmap_726" va00
-  setv va00 addr game "betashipmap" 51340 51440 28634 28797 29076 29082
-    rtyp va00 7
-    rmsc 51390 28858 ""
-    setv game "betashipmap_727" va00
-  setv va00 addr game "betashipmap" 51440 51492 28797 28902 29082 29078
-    rtyp va00 7
-    rmsc 51466 28937 ""
-    setv game "betashipmap_728" va00
-  setv va00 addr game "betashipmap" 49704 49832 28073 28086 28477 28476
-    rtyp va00 0
-    rmsc 49768 28274 ""
-    setv game "betashipmap_729" va00
-  setv va00 addr game "betashipmap" 49568 49704 28077 28073 28478 28477
-    rtyp va00 0
-    rmsc 49636 28277 ""
-    setv game "betashipmap_730" va00
-  setv va00 addr game "betashipmap" 49474 49568 28075 28077 28478 28478
-    rtyp va00 0
-    rmsc 49521 28276 ""
-    setv game "betashipmap_731" va00
-  setv va00 addr game "betashipmap" 47214 48121 27867 27846 28124 28124
-    rtyp va00 0
-    rmsc 47667 27995 ""
-    setv game "betashipmap_732" va00
-  setv va00 addr game "betashipmap" 47035 47214 28094 27867 28121 28124
-    rtyp va00 0
-    rmsc 47124 28109 ""
-    setv game "betashipmap_733" va00
-  setv va00 addr game "betashipmap" 48677 49226 27859 27872 28118 28118
-    rtyp va00 0
-    rmsc 48951 27988 ""
-    setv game "betashipmap_734" va00
-  setv va00 addr game "betashipmap" 49226 49391 27872 28097 28118 28118
-    rtyp va00 0
-    rmsc 49308 27995 ""
-    setv game "betashipmap_735" va00
-  setv va00 addr game "betashipmap" 47035 47097 28121 28122 28680 28728
+    rmsc 55488 27675 ""
+    setv game "mapeditortmp_675" va00
+  setv va00 addr game "mapeditortmp" 54723 54812 27829 27830 28052 28036
     rtyp va00 8
-    rmsc 47066 28424 ""
-    setv game "betashipmap_736" va00
-  setv va00 addr game "betashipmap" 47097 47138 28122 28123 28728 28731
+    rmsc 54767 27932 ""
+    setv game "mapeditortmp_676" va00
+  setv va00 addr game "mapeditortmp" 54812 54916 27830 27827 28036 28038
     rtyp va00 8
-    rmsc 47117 28426 ""
-    setv game "betashipmap_737" va00
-  setv va00 addr game "betashipmap" 47138 47180 28123 28123 28731 28745
+    rmsc 54864 27934 ""
+    setv game "mapeditortmp_677" va00
+  setv va00 addr game "mapeditortmp" 54916 55012 27827 27826 28038 28029
     rtyp va00 8
-    rmsc 47159 28434 ""
-    setv game "betashipmap_738" va00
-  setv va00 addr game "betashipmap" 47180 47235 28123 28124 28745 28744
-    rtyp va00 8
-    rmsc 47207 28433 ""
-    setv game "betashipmap_739" va00
-  setv va00 addr game "betashipmap" 47235 47326 28124 28124 28744 28771
-    rtyp va00 8
-    rmsc 47280 28447 ""
-    setv game "betashipmap_740" va00
-  setv va00 addr game "betashipmap" 47326 47409 28124 28124 28771 28770
-    rtyp va00 8
-    rmsc 47367 28447 ""
-    setv game "betashipmap_741" va00
-  setv va00 addr game "betashipmap" 47409 47516 28124 28124 28770 28727
-    rtyp va00 8
-    rmsc 47462 28425 ""
-    setv game "betashipmap_742" va00
-  setv va00 addr game "betashipmap" 47516 47641 28124 28124 28727 28726
-    rtyp va00 8
-    rmsc 47578 28425 ""
-    setv game "betashipmap_743" va00
-  setv va00 addr game "betashipmap" 47641 47772 28124 28124 28726 28707
-    rtyp va00 8
-    rmsc 47706 28415 ""
-    setv game "betashipmap_744" va00
-  setv va00 addr game "betashipmap" 47772 47948 28124 28124 28707 28688
-    rtyp va00 8
-    rmsc 47860 28406 ""
-    setv game "betashipmap_745" va00
-  setv va00 addr game "betashipmap" 47948 48050 28124 28124 28688 28664
-    rtyp va00 8
-    rmsc 47999 28394 ""
-    setv game "betashipmap_746" va00
-  setv va00 addr game "betashipmap" 48050 48133 28156 28156 28664 28656
-    rtyp va00 8
-    rmsc 48091 28406 ""
-    setv game "betashipmap_747" va00
-  setv va00 addr game "betashipmap" 48133 48242 28413 28418 28656 28667
-    rtyp va00 8
-    rmsc 48187 28540 ""
-    setv game "betashipmap_748" va00
-  setv va00 addr game "betashipmap" 48242 48373 28418 28413 28667 28707
-    rtyp va00 8
-    rmsc 48307 28562 ""
-    setv game "betashipmap_749" va00
-  setv va00 addr game "betashipmap" 48373 48437 28413 28386 28707 28718
-    rtyp va00 8
-    rmsc 48405 28565 ""
-    setv game "betashipmap_750" va00
-  setv va00 addr game "betashipmap" 48437 48493 28386 28469 28718 28720
-    rtyp va00 8
-    rmsc 48465 28553 ""
-    setv game "betashipmap_751" va00
-  setv va00 addr game "betashipmap" 48493 48553 28469 28477 28720 28720
-    rtyp va00 8
-    rmsc 48523 28594 ""
-    setv game "betashipmap_752" va00
-  setv va00 addr game "betashipmap" 48553 48587 28477 28397 28720 28720
-    rtyp va00 8
-    rmsc 48570 28598 ""
-    setv game "betashipmap_753" va00
-  setv va00 addr game "betashipmap" 48547 48587 28162 28154 28365 28397
-    rtyp va00 8
-    rmsc 48567 28279 ""
-    setv game "betashipmap_754" va00
-  setv va00 addr game "betashipmap" 48587 48646 28154 28143 28720 28724
-    rtyp va00 8
-    rmsc 48616 28439 ""
-    setv game "betashipmap_755" va00
-  setv va00 addr game "betashipmap" 48133 48232 28156 28159 28395 28370
-    rtyp va00 8
-    rmsc 48182 28263 ""
-    setv game "betashipmap_756" va00
-  setv va00 addr game "betashipmap" 48232 48335 28159 28155 28370 28374
-    rtyp va00 8
-    rmsc 48283 28266 ""
-    setv game "betashipmap_757" va00
-  setv va00 addr game "betashipmap" 48335 48386 28155 28151 28374 28372
-    rtyp va00 8
-    rmsc 48360 28263 ""
-    setv game "betashipmap_758" va00
-  setv va00 addr game "betashipmap" 48386 48444 28151 28162 28372 28360
-    rtyp va00 8
-    rmsc 48415 28255 ""
-    setv game "betashipmap_759" va00
-  setv va00 addr game "betashipmap" 48444 48487 28162 28169 28360 28370
-    rtyp va00 8
-    rmsc 48465 28266 ""
-    setv game "betashipmap_760" va00
-  setv va00 addr game "betashipmap" 48487 48547 28169 28162 28370 28365
-    rtyp va00 8
-    rmsc 48517 28267 ""
-    setv game "betashipmap_761" va00
-  setv va00 addr game "betashipmap" 48646 48690 28143 28134 28724 28726
-    rtyp va00 8
-    rmsc 48668 28434 ""
-    setv game "betashipmap_762" va00
-  setv va00 addr game "betashipmap" 48690 48780 28118 28118 28726 28732
-    rtyp va00 8
-    rmsc 48735 28425 ""
-    setv game "betashipmap_763" va00
-  setv va00 addr game "betashipmap" 48780 48852 28118 28118 28732 28722
-    rtyp va00 8
-    rmsc 48816 28420 ""
-    setv game "betashipmap_764" va00
-  setv va00 addr game "betashipmap" 48852 48916 28118 28118 28722 28696
-    rtyp va00 8
-    rmsc 48884 28407 ""
-    setv game "betashipmap_765" va00
-  setv va00 addr game "betashipmap" 48916 49001 28118 28118 28696 28700
-    rtyp va00 8
-    rmsc 48958 28409 ""
-    setv game "betashipmap_766" va00
-  setv va00 addr game "betashipmap" 49001 49105 28118 28118 28700 28684
-    rtyp va00 8
-    rmsc 49053 28401 ""
-    setv game "betashipmap_767" va00
-  setv va00 addr game "betashipmap" 49105 49201 28118 28118 28684 28668
-    rtyp va00 8
-    rmsc 49153 28393 ""
-    setv game "betashipmap_768" va00
-  setv va00 addr game "betashipmap" 49201 49289 28118 28118 28668 28672
-    rtyp va00 8
-    rmsc 49245 28395 ""
-    setv game "betashipmap_769" va00
-  setv va00 addr game "betashipmap" 49289 49359 28118 28118 28672 28644
-    rtyp va00 8
-    rmsc 49324 28381 ""
-    setv game "betashipmap_770" va00
-  setv va00 addr game "betashipmap" 49359 49391 28118 28118 28644 28630
-    rtyp va00 8
-    rmsc 49375 28374 ""
-    setv game "betashipmap_771" va00
-  setv va00 addr game "betashipmap" 49391 49433 28110 28242 28630 28628
-    rtyp va00 8
-    rmsc 49412 28369 ""
-    setv game "betashipmap_772" va00
-  setv va00 addr game "betashipmap" 48050 48095 28124 28124 28156 28156
-    rtyp va00 8
-    rmsc 48072 28140 ""
-    setv game "betashipmap_773" va00
-  setv va00 addr game "betashipmap" 48095 48121 28124 28124 28144 28132
-    rtyp va00 8
-    rmsc 48108 28128 ""
-    setv game "betashipmap_774" va00
-  setv va00 addr game "betashipmap" 48121 48188 27846 27843 28132 28110
+    rmsc 54964 27928 ""
+    setv game "mapeditortmp_678" va00
+  setv va00 addr game "mapeditortmp" 55261 55573 27802 27802 27822 27822
     rtyp va00 0
-    rmsc 48154 27978 ""
-    setv game "betashipmap_775" va00
-  setv va00 addr game "betashipmap" 48188 48290 27843 27841 28110 28118
+    rmsc 55417 27812 ""
+    setv game "mapeditortmp_679" va00
+  setv va00 addr game "mapeditortmp" 54455 54593 27815 27815 28298 28292
+    rtyp va00 8
+    rmsc 54524 28053 ""
+    setv game "mapeditortmp_680" va00
+  setv va00 addr game "mapeditortmp" 55472 55583 27822 27822 28237 28205
+    rtyp va00 8
+    rmsc 55527 28013 ""
+    setv game "mapeditortmp_681" va00
+  setv va00 addr game "mapeditortmp" 55309 55472 27822 27822 28278 28237
+    rtyp va00 8
+    rmsc 55390 28029 ""
+    setv game "mapeditortmp_682" va00
+  setv va00 addr game "mapeditortmp" 55155 55309 27822 27822 28294 28278
+    rtyp va00 8
+    rmsc 55232 28050 ""
+    setv game "mapeditortmp_683" va00
+  setv va00 addr game "mapeditortmp" 55012 55155 27826 27822 28306 28294
+    rtyp va00 8
+    rmsc 55083 28060 ""
+    setv game "mapeditortmp_684" va00
+  setv va00 addr game "mapeditortmp" 54857 55012 28071 28064 28296 28306
+    rtyp va00 8
+    rmsc 54934 28188 ""
+    setv game "mapeditortmp_685" va00
+  setv va00 addr game "mapeditortmp" 54332 54455 27859 27815 28292 28298
+    rtyp va00 8
+    rmsc 54393 28078 ""
+    setv game "mapeditortmp_686" va00
+  setv va00 addr game "mapeditortmp" 54723 54857 28066 28071 28283 28296
+    rtyp va00 8
+    rmsc 54790 28181 ""
+    setv game "mapeditortmp_687" va00
+  setv va00 addr game "mapeditortmp" 54593 54723 27815 27829 28292 28283
+    rtyp va00 8
+    rmsc 54658 28049 ""
+    setv game "mapeditortmp_688" va00
+  setv va00 addr game "mapeditortmp" 54192 54332 27818 27859 28304 28292
+    rtyp va00 8
+    rmsc 54262 28055 ""
+    setv game "mapeditortmp_689" va00
+  setv va00 addr game "mapeditortmp" 54478 54593 27793 27793 27815 27815
     rtyp va00 0
-    rmsc 48239 27980 ""
-    setv game "betashipmap_776" va00
-  setv va00 addr game "betashipmap" 48290 48372 27841 27844 28118 28126
+    rmsc 54535 27804 ""
+    setv game "mapeditortmp_690" va00
+  setv va00 addr game "mapeditortmp" 54066 54192 27818 27818 28303 28304
+    rtyp va00 8
+    rmsc 54129 28061 ""
+    setv game "mapeditortmp_691" va00
+  setv va00 addr game "mapeditortmp" 54011 54066 27818 27818 28295 28303
+    rtyp va00 8
+    rmsc 54038 28060 ""
+    setv game "mapeditortmp_692" va00
+  setv va00 addr game "mapeditortmp" 54011 54179 27802 27802 27818 27818
     rtyp va00 0
-    rmsc 48331 27983 ""
-    setv game "betashipmap_777" va00
-  setv va00 addr game "betashipmap" 48372 48415 27844 27843 28126 28121
+    rmsc 54095 27810 ""
+    setv game "mapeditortmp_693" va00
+  setv va00 addr game "mapeditortmp" 55827 55966 27302 27297 27589 27585
+    rtyp va00 5
+    rmsc 55896 27443 ""
+    setv game "mapeditortmp_694" va00
+  setv va00 addr game "mapeditortmp" 55966 56088 27297 27311 27585 27583
+    rtyp va00 5
+    rmsc 56027 27440 ""
+    setv game "mapeditortmp_695" va00
+  setv va00 addr game "mapeditortmp" 56088 56253 27311 27361 27583 27567
+    rtyp va00 5
+    rmsc 56170 27439 ""
+    setv game "mapeditortmp_696" va00
+  setv va00 addr game "mapeditortmp" 56253 56397 27361 27424 27604 27604
     rtyp va00 0
-    rmsc 48393 27982 ""
-    setv game "betashipmap_778" va00
-  setv va00 addr game "betashipmap" 48415 48494 27843 27844 28121 28137
+    rmsc 56325 27482 ""
+    setv game "mapeditortmp_697" va00
+  setv va00 addr game "mapeditortmp" 56672 56765 27604 27672 27832 27824
+    rtyp va00 7
+    rmsc 56718 27714 ""
+    setv game "mapeditortmp_698" va00
+  setv va00 addr game "mapeditortmp" 56513 56672 27604 27604 27844 27832
+    rtyp va00 7
+    rmsc 56592 27718 ""
+    setv game "mapeditortmp_699" va00
+  setv va00 addr game "mapeditortmp" 56346 56513 27604 27604 27868 27844
+    rtyp va00 7
+    rmsc 56429 27724 ""
+    setv game "mapeditortmp_700" va00
+  setv va00 addr game "mapeditortmp" 56200 56346 27604 27604 27831 27868
+    rtyp va00 7
+    rmsc 56273 27736 ""
+    setv game "mapeditortmp_701" va00
+  setv va00 addr game "mapeditortmp" 56069 56200 27605 27604 27850 27831
+    rtyp va00 7
+    rmsc 56134 27718 ""
+    setv game "mapeditortmp_702" va00
+  setv va00 addr game "mapeditortmp" 55953 56069 27625 27605 27851 27850
+    rtyp va00 7
+    rmsc 56011 27737 ""
+    setv game "mapeditortmp_703" va00
+  setv va00 addr game "mapeditortmp" 55634 55953 27667 27625 27851 27851
     rtyp va00 0
-    rmsc 48454 27990 ""
-    setv game "betashipmap_779" va00
-  setv va00 addr game "betashipmap" 48494 48559 27844 27846 28137 28136
+    rmsc 55793 27759 ""
+    setv game "mapeditortmp_704" va00
+  setv va00 addr game "mapeditortmp" 55634 55762 27871 27871 28061 28090
+    rtyp va00 7
+    rmsc 55698 27980 ""
+    setv game "mapeditortmp_705" va00
+  setv va00 addr game "mapeditortmp" 55762 55892 27871 27871 28090 28127
+    rtyp va00 7
+    rmsc 55827 27999 ""
+    setv game "mapeditortmp_706" va00
+  setv va00 addr game "mapeditortmp" 55892 56033 27871 27871 28127 28171
+    rtyp va00 7
+    rmsc 55962 28021 ""
+    setv game "mapeditortmp_707" va00
+  setv va00 addr game "mapeditortmp" 55634 55953 27851 27851 27871 27871
     rtyp va00 0
-    rmsc 48526 27990 ""
-    setv game "betashipmap_780" va00
-  setv va00 addr game "betashipmap" 48559 48626 27846 27849 28136 28116
+    rmsc 55793 27861 ""
+    setv game "mapeditortmp_708" va00
+  setv va00 addr game "mapeditortmp" 56033 56176 27871 27865 28171 28208
+    rtyp va00 7
+    rmsc 56104 28039 ""
+    setv game "mapeditortmp_709" va00
+  setv va00 addr game "mapeditortmp" 56176 56311 27865 27872 28208 28228
+    rtyp va00 7
+    rmsc 56243 28046 ""
+    setv game "mapeditortmp_710" va00
+  setv va00 addr game "mapeditortmp" 56311 56443 27872 27901 28228 28211
+    rtyp va00 7
+    rmsc 56377 28041 ""
+    setv game "mapeditortmp_711" va00
+  setv va00 addr game "mapeditortmp" 56443 56561 27901 27869 28211 28196
+    rtyp va00 7
+    rmsc 56502 28048 ""
+    setv game "mapeditortmp_712" va00
+  setv va00 addr game "mapeditortmp" 56561 56705 27869 27859 28196 28187
+    rtyp va00 7
+    rmsc 56633 28028 ""
+    setv game "mapeditortmp_713" va00
+  setv va00 addr game "mapeditortmp" 56705 56829 27859 27859 28187 28131
+    rtyp va00 7
+    rmsc 56767 27995 ""
+    setv game "mapeditortmp_714" va00
+  setv va00 addr game "mapeditortmp" 56765 56911 27672 27810 27824 27824
     rtyp va00 0
-    rmsc 48592 27981 ""
-    setv game "betashipmap_781" va00
-  setv va00 addr game "betashipmap" 48626 48677 27849 27859 28116 28118
+    rmsc 56838 27748 ""
+    setv game "mapeditortmp_715" va00
+  setv va00 addr game "mapeditortmp" 56829 56953 27859 27859 28131 28131
+    rtyp va00 7
+    rmsc 56891 27995 ""
+    setv game "mapeditortmp_716" va00
+  setv va00 addr game "mapeditortmp" 56953 57047 27859 27983 28131 28115
+    rtyp va00 7
+    rmsc 57000 27987 ""
+    setv game "mapeditortmp_717" va00
+  setv va00 addr game "mapeditortmp" 56775 56911 27824 27824 27859 27859
     rtyp va00 0
-    rmsc 48651 27983 ""
-    setv game "betashipmap_782" va00
-  setv va00 addr game "betashipmap" 46842 46940 28455 28455 28736 28710
-    rtyp va00 6
-    rmsc 46891 28582 ""
-    setv game "betashipmap_783" va00
-  setv va00 addr game "betashipmap" 46757 46842 28455 28455 28772 28736
-    rtyp va00 6
-    rmsc 46799 28595 ""
-    setv game "betashipmap_784" va00
-  setv va00 addr game "betashipmap" 46693 46757 28455 28455 28808 28772
-    rtyp va00 6
-    rmsc 46725 28613 ""
-    setv game "betashipmap_785" va00
-  setv va00 addr game "betashipmap" 46626 46693 28473 28465 28853 28808
-    rtyp va00 6
-    rmsc 46659 28640 ""
-    setv game "betashipmap_786" va00
-  setv va00 addr game "betashipmap" 46555 46626 28495 28473 28908 28853
-    rtyp va00 6
-    rmsc 46590 28674 ""
-    setv game "betashipmap_787" va00
-  setv va00 addr game "betashipmap" 46491 46555 28509 28495 28954 28908
-    rtyp va00 6
-    rmsc 46523 28708 ""
-    setv game "betashipmap_788" va00
-  setv va00 addr game "betashipmap" 46440 46491 28515 28509 28975 28954
-    rtyp va00 6
-    rmsc 46465 28734 ""
-    setv game "betashipmap_789" va00
-  setv va00 addr game "betashipmap" 46396 46440 28517 28515 28984 28975
-    rtyp va00 6
-    rmsc 46418 28746 ""
-    setv game "betashipmap_790" va00
-  setv va00 addr game "betashipmap" 46330 46396 28530 28517 29003 28984
-    rtyp va00 6
-    rmsc 46363 28757 ""
-    setv game "betashipmap_791" va00
-  setv va00 addr game "betashipmap" 46264 46330 28536 28530 29024 29003
-    rtyp va00 6
-    rmsc 46297 28769 ""
-    setv game "betashipmap_792" va00
-  setv va00 addr game "betashipmap" 46200 46264 28556 28536 29034 29024
-    rtyp va00 6
-    rmsc 46232 28790 ""
-    setv game "betashipmap_793" va00
-  setv va00 addr game "betashipmap" 46131 46200 28588 28556 29046 29034
-    rtyp va00 6
-    rmsc 46165 28811 ""
-    setv game "betashipmap_794" va00
-  setv va00 addr game "betashipmap" 46102 46131 28613 28588 29054 29046
-    rtyp va00 6
-    rmsc 46116 28829 ""
-    setv game "betashipmap_795" va00
-  setv va00 addr game "betashipmap" 46047 46102 28624 28613 29064 29054
-    rtyp va00 6
-    rmsc 46074 28839 ""
-    setv game "betashipmap_796" va00
-  setv va00 addr game "betashipmap" 45975 46047 28630 28624 29067 29064
-    rtyp va00 6
-    rmsc 46011 28847 ""
-    setv game "betashipmap_797" va00
-  setv va00 addr game "betashipmap" 45915 45975 28632 28630 29066 29067
-    rtyp va00 6
-    rmsc 45945 28849 ""
-    setv game "betashipmap_798" va00
-  setv va00 addr game "betashipmap" 45858 45915 28625 28632 29076 29066
-    rtyp va00 6
-    rmsc 45886 28845 ""
-    setv game "betashipmap_799" va00
-  setv va00 addr game "betashipmap" 45799 45858 28623 28625 29093 29076
-    rtyp va00 6
-    rmsc 45828 28849 ""
-    setv game "betashipmap_800" va00
-  setv va00 addr game "betashipmap" 45731 45799 28623 28623 29103 29093
-    rtyp va00 6
-    rmsc 45765 28858 ""
-    setv game "betashipmap_801" va00
-  setv va00 addr game "betashipmap" 45655 45731 28633 28623 29115 29103
-    rtyp va00 6
-    rmsc 45693 28868 ""
-    setv game "betashipmap_802" va00
-  setv va00 addr game "betashipmap" 45572 45655 28642 28633 29126 29115
-    rtyp va00 6
-    rmsc 45613 28878 ""
-    setv game "betashipmap_803" va00
-  setv va00 addr game "betashipmap" 45535 45572 28643 28642 29122 29126
-    rtyp va00 6
-    rmsc 45553 28884 ""
-    setv game "betashipmap_804" va00
-  setv va00 addr game "betashipmap" 45520 45535 28632 28643 29115 29122
-    rtyp va00 6
-    rmsc 45527 28877 ""
-    setv game "betashipmap_805" va00
-  setv va00 addr game "betashipmap" 45453 45520 28612 28612 29092 29115
-    rtyp va00 6
-    rmsc 45486 28863 ""
-    setv game "betashipmap_806" va00
-  setv va00 addr game "betashipmap" 45387 45453 28612 28612 29072 29092
-    rtyp va00 6
-    rmsc 45420 28852 ""
-    setv game "betashipmap_807" va00
-  setv va00 addr game "betashipmap" 45306 45387 28612 28612 29086 29072
-    rtyp va00 6
-    rmsc 45346 28842 ""
-    setv game "betashipmap_808" va00
-  setv va00 addr game "betashipmap" 45242 45306 28612 28612 29107 29086
-    rtyp va00 6
-    rmsc 45274 28849 ""
-    setv game "betashipmap_809" va00
-  setv va00 addr game "betashipmap" 45150 45242 28749 28612 29117 29107
-    rtyp va00 6
-    rmsc 45196 28928 ""
-    setv game "betashipmap_810" va00
-  setv va00 addr game "betashipmap" 45065 45150 28911 28749 29117 29117
-    rtyp va00 6
-    rmsc 45107 29014 ""
-    setv game "betashipmap_811" va00
-  setv va00 addr game "betashipmap" 46842 46940 28108 28108 28455 28455
-    rtyp va00 0
-    rmsc 46891 28281 ""
-    setv game "betashipmap_812" va00
-  setv va00 addr game "betashipmap" 46757 46842 28118 28108 28455 28455
-    rtyp va00 0
-    rmsc 46799 28286 ""
-    setv game "betashipmap_813" va00
-  setv va00 addr game "betashipmap" 46693 46757 28130 28118 28455 28455
-    rtyp va00 0
-    rmsc 46725 28292 ""
-    setv game "betashipmap_814" va00
-  setv va00 addr game "betashipmap" 46657 46693 28130 28130 28432 28442
-    rtyp va00 6
-    rmsc 46675 28286 ""
-    setv game "betashipmap_815" va00
-  setv va00 addr game "betashipmap" 46615 46657 28132 28130 28457 28432
-    rtyp va00 6
-    rmsc 46636 28282 ""
-    setv game "betashipmap_816" va00
-  setv va00 addr game "betashipmap" 46542 46615 28128 28132 28473 28457
-    rtyp va00 6
-    rmsc 46578 28292 ""
-    setv game "betashipmap_817" va00
-  setv va00 addr game "betashipmap" 46449 46542 28134 28128 28469 28473
-    rtyp va00 6
-    rmsc 46495 28303 ""
-    setv game "betashipmap_818" va00
-  setv va00 addr game "betashipmap" 46362 46449 28132 28134 28469 28469
-    rtyp va00 6
-    rmsc 46405 28300 ""
-    setv game "betashipmap_819" va00
-  setv va00 addr game "betashipmap" 46309 46362 28140 28132 28483 28469
-    rtyp va00 6
-    rmsc 46335 28304 ""
-    setv game "betashipmap_820" va00
-  setv va00 addr game "betashipmap" 46228 46309 28155 28140 28526 28483
-    rtyp va00 6
-    rmsc 46268 28319 ""
-    setv game "betashipmap_821" va00
-  setv va00 addr game "betashipmap" 46145 46228 28157 28155 28564 28526
-    rtyp va00 6
-    rmsc 46186 28341 ""
-    setv game "betashipmap_822" va00
-  setv va00 addr game "betashipmap" 46080 46145 28153 28157 28574 28564
-    rtyp va00 6
-    rmsc 46112 28358 ""
-    setv game "betashipmap_823" va00
-  setv va00 addr game "betashipmap" 46003 46080 28140 28140 28574 28574
-    rtyp va00 6
-    rmsc 46041 28357 ""
-    setv game "betashipmap_824" va00
-  setv va00 addr game "betashipmap" 45800 46003 28015 27887 28139 28140
-    rtyp va00 0
-    rmsc 45901 28077 ""
-    setv game "betashipmap_825" va00
-  setv va00 addr game "betashipmap" 46003 46080 27887 27845 28140 28140
-    rtyp va00 0
-    rmsc 46041 28013 ""
-    setv game "betashipmap_826" va00
-  setv va00 addr game "betashipmap" 46080 46149 27845 27802 28140 28116
-    rtyp va00 6
-    rmsc 46114 27980 ""
-    setv game "betashipmap_827" va00
-  setv va00 addr game "betashipmap" 46149 46224 27802 27778 28116 28106
-    rtyp va00 6
-    rmsc 46186 27954 ""
-    setv game "betashipmap_828" va00
-  setv va00 addr game "betashipmap" 46224 46317 27778 27758 28106 28104
-    rtyp va00 6
-    rmsc 46270 27941 ""
-    setv game "betashipmap_829" va00
-  setv va00 addr game "betashipmap" 46317 46406 27758 27745 28104 28096
-    rtyp va00 6
-    rmsc 46361 27927 ""
-    setv game "betashipmap_830" va00
-  setv va00 addr game "betashipmap" 46406 46514 27745 27737 28096 28078
-    rtyp va00 6
-    rmsc 46460 27911 ""
-    setv game "betashipmap_831" va00
-  setv va00 addr game "betashipmap" 46514 46621 27737 27741 28078 28056
-    rtyp va00 6
-    rmsc 46567 27896 ""
-    setv game "betashipmap_832" va00
-  setv va00 addr game "betashipmap" 46621 46708 27741 27750 28056 28052
-    rtyp va00 6
-    rmsc 46664 27896 ""
-    setv game "betashipmap_833" va00
-  setv va00 addr game "betashipmap" 46708 46809 27750 27778 28052 28056
-    rtyp va00 6
-    rmsc 46758 27903 ""
-    setv game "betashipmap_834" va00
-  setv va00 addr game "betashipmap" 46809 46886 27778 27810 28056 28060
-    rtyp va00 6
-    rmsc 46847 27919 ""
-    setv game "betashipmap_835" va00
-  setv va00 addr game "betashipmap" 46886 46955 27810 27853 28060 28031
-    rtyp va00 6
-    rmsc 46920 27920 ""
-    setv game "betashipmap_836" va00
-  setv va00 addr game "betashipmap" 45942 46003 28140 28140 28572 28574
-    rtyp va00 6
-    rmsc 45972 28357 ""
-    setv game "betashipmap_837" va00
-  setv va00 addr game "betashipmap" 45855 45942 28140 28140 28580 28572
-    rtyp va00 6
-    rmsc 45898 28356 ""
-    setv game "betashipmap_838" va00
-  setv va00 addr game "betashipmap" 45780 45855 28139 28140 28583 28580
-    rtyp va00 6
-    rmsc 45817 28359 ""
-    setv game "betashipmap_839" va00
-  setv va00 addr game "betashipmap" 45699 45780 28139 28139 28589 28583
-    rtyp va00 6
-    rmsc 45739 28361 ""
-    setv game "betashipmap_840" va00
-  setv va00 addr game "betashipmap" 45649 45699 28139 28139 28603 28589
-    rtyp va00 6
-    rmsc 45674 28364 ""
-    setv game "betashipmap_841" va00
-  setv va00 addr game "betashipmap" 45563 45649 28227 28139 28605 28603
-    rtyp va00 6
-    rmsc 45606 28415 ""
-    setv game "betashipmap_842" va00
-  setv va00 addr game "betashipmap" 45520 45563 28269 28227 28612 28605
-    rtyp va00 6
-    rmsc 45541 28437 ""
-    setv game "betashipmap_843" va00
-  setv va00 addr game "betashipmap" 45370 45520 28440 28269 28612 28612
-    rtyp va00 0
-    rmsc 45445 28526 ""
-    setv game "betashipmap_844" va00
-  setv va00 addr game "betashipmap" 45242 45370 28604 28440 28612 28612
-    rtyp va00 0
-    rmsc 45306 28608 ""
-    setv game "betashipmap_845" va00
-  setv va00 addr game "betashipmap" 45661 45800 28132 28015 28139 28139
-    rtyp va00 0
-    rmsc 45730 28135 ""
-    setv game "betashipmap_846" va00
-  setv va00 addr game "betashipmap" 47419 47467 28805 28801 29004 29006
+    rmsc 56843 27841 ""
+    setv game "mapeditortmp_718" va00
+  setv va00 addr game "mapeditortmp" 54238 54353 26470 26407 26655 26701
     rtyp va00 3
-    rmsc 47443 28905 ""
-    setv game "betashipmap_847" va00
-  setv va00 addr game "betashipmap" 47467 47579 28801 28785 29006 29039
+    rmsc 54295 26585 ""
+    setv game "mapeditortmp_719" va00
+  setv va00 addr game "mapeditortmp" 54353 54464 26407 26399 26701 26747
     rtyp va00 3
-    rmsc 47523 28920 ""
-    setv game "betashipmap_848" va00
-  setv va00 addr game "betashipmap" 47579 47679 28785 28767 29039 29089
+    rmsc 54408 26577 ""
+    setv game "mapeditortmp_720" va00
+  setv va00 addr game "mapeditortmp" 54597 54724 26401 26409 26741 26709
     rtyp va00 3
-    rmsc 47629 28937 ""
-    setv game "betashipmap_849" va00
-  setv va00 addr game "betashipmap" 47679 47809 28767 28757 29089 29121
+    rmsc 54660 26555 ""
+    setv game "mapeditortmp_721" va00
+  setv va00 addr game "mapeditortmp" 54724 54853 26409 26405 26709 26723
     rtyp va00 3
-    rmsc 47744 28944 ""
-    setv game "betashipmap_850" va00
-  setv va00 addr game "betashipmap" 47809 47941 28757 28755 29121 29113
+    rmsc 54788 26566 ""
+    setv game "mapeditortmp_722" va00
+  setv va00 addr game "mapeditortmp" 54853 54990 26405 26401 26723 26741
     rtyp va00 3
-    rmsc 47875 28935 ""
-    setv game "betashipmap_851" va00
-  setv va00 addr game "betashipmap" 47941 48075 28755 28757 29113 29075
+    rmsc 54921 26573 ""
+    setv game "mapeditortmp_723" va00
+  setv va00 addr game "mapeditortmp" 54990 55139 26401 26399 26741 26725
     rtyp va00 3
-    rmsc 48008 28915 ""
-    setv game "betashipmap_852" va00
-  setv va00 addr game "betashipmap" 48075 48183 28757 28763 29075 29059
+    rmsc 55064 26563 ""
+    setv game "mapeditortmp_724" va00
+  setv va00 addr game "mapeditortmp" 55139 55248 26399 26415 26725 26687
     rtyp va00 3
-    rmsc 48129 28908 ""
-    setv game "betashipmap_853" va00
-  setv va00 addr game "betashipmap" 48183 48301 28763 28769 29059 29075
+    rmsc 55193 26543 ""
+    setv game "mapeditortmp_725" va00
+  setv va00 addr game "mapeditortmp" 55248 55332 26415 26496 26687 26679
     rtyp va00 3
-    rmsc 48242 28919 ""
-    setv game "betashipmap_854" va00
-  setv va00 addr game "betashipmap" 48301 48437 28769 28777 29075 29099
+    rmsc 55290 26547 ""
+    setv game "mapeditortmp_726" va00
+  setv va00 addr game "mapeditortmp" 54464 54597 26399 26401 26747 26741
     rtyp va00 3
-    rmsc 48369 28934 ""
-    setv game "betashipmap_855" va00
-  setv va00 addr game "betashipmap" 48437 48557 28777 28783 29099 29113
-    rtyp va00 3
-    rmsc 48497 28945 ""
-    setv game "betashipmap_856" va00
-  setv va00 addr game "betashipmap" 48557 48667 28783 28787 29113 29107
-    rtyp va00 3
-    rmsc 48612 28945 ""
-    setv game "betashipmap_857" va00
-  setv va00 addr game "betashipmap" 48667 48759 28787 28781 29107 29077
-    rtyp va00 3
-    rmsc 48713 28932 ""
-    setv game "betashipmap_858" va00
-  setv va00 addr game "betashipmap" 48759 48855 28781 28775 29077 29057
-    rtyp va00 3
-    rmsc 48807 28919 ""
-    setv game "betashipmap_859" va00
-  setv va00 addr game "betashipmap" 48855 48945 28775 28763 29057 29021
-    rtyp va00 3
-    rmsc 48900 28898 ""
-    setv game "betashipmap_860" va00
-  setv va00 addr game "betashipmap" 48945 49039 28763 28765 29021 29017
-    rtyp va00 3
-    rmsc 48992 28890 ""
-    setv game "betashipmap_861" va00
-  setv va00 addr game "betashipmap" 45708 45828 26939 26945 28073 27972
-    rtyp va00 9
-    rmsc 45768 27455 ""
-    setv game "betashipmap_862" va00
-  setv va00 addr game "betashipmap" 45578 45708 26959 26939 28192 28073
-    rtyp va00 9
-    rmsc 45643 27516 ""
-    setv game "betashipmap_863" va00
-  setv va00 addr game "betashipmap" 45458 45578 27005 26959 28319 28192
-    rtyp va00 9
-    rmsc 45518 27598 ""
-    setv game "betashipmap_864" va00
-  setv va00 addr game "betashipmap" 45352 45418 28354 28340 28445 28361
-    rtyp va00 9
-    rmsc 45385 28357 ""
-    setv game "betashipmap_865" va00
-  setv va00 addr game "betashipmap" 45266 45352 28371 28354 28559 28445
-    rtyp va00 9
-    rmsc 45309 28408 ""
-    setv game "betashipmap_866" va00
-  setv va00 addr game "betashipmap" 45188 45266 28381 28371 28677 28559
-    rtyp va00 9
-    rmsc 45227 28470 ""
-    setv game "betashipmap_867" va00
-  setv va00 addr game "betashipmap" 45116 45188 28384 28381 28797 28677
-    rtyp va00 9
-    rmsc 45152 28530 ""
-    setv game "betashipmap_868" va00
-  setv va00 addr game "betashipmap" 45052 45116 28387 28384 28923 28808
-    rtyp va00 9
-    rmsc 45084 28597 ""
-    setv game "betashipmap_869" va00
-  setv va00 addr game "betashipmap" 45014 45052 28387 28387 29009 28923
-    rtyp va00 9
-    rmsc 45033 28655 ""
-    setv game "betashipmap_870" va00
-  setv va00 addr game "betashipmap" 44919 45014 28373 28387 28989 29009
-    rtyp va00 9
-    rmsc 44966 28691 ""
-    setv game "betashipmap_871" va00
-  setv va00 addr game "betashipmap" 44821 44919 28345 28373 28973 28989
-    rtyp va00 9
-    rmsc 44870 28667 ""
-    setv game "betashipmap_872" va00
-  setv va00 addr game "betashipmap" 44767 44821 28311 28345 28675 28819
-    rtyp va00 9
-    rmsc 44794 28565 ""
-    setv game "betashipmap_873" va00
-  setv va00 addr game "betashipmap" 45418 45458 27021 27005 28340 28319
-    rtyp va00 9
-    rmsc 45438 27670 ""
-    setv game "betashipmap_874" va00
-  setv va00 addr game "betashipmap" 44783 44821 27571 27457 28321 28345
-    rtyp va00 9
-    rmsc 44802 27958 ""
-    setv game "betashipmap_875" va00
-  setv va00 addr game "betashipmap" 44719 44783 27727 27571 27845 28135
-    rtyp va00 9
-    rmsc 44751 27931 ""
-    setv game "betashipmap_876" va00
-  setv va00 addr game "betashipmap" 44821 44919 27381 27311 28345 28373
-    rtyp va00 9
-    rmsc 44870 27877 ""
-    setv game "betashipmap_877" va00
-  setv va00 addr game "betashipmap" 44919 45014 27311 27063 28373 28387
-    rtyp va00 9
-    rmsc 44966 27849 ""
-    setv game "betashipmap_878" va00
-  setv va00 addr game "betashipmap" 45014 45052 27063 27024 28387 28387
-    rtyp va00 9
-    rmsc 45033 27725 ""
-    setv game "betashipmap_879" va00
-  setv va00 addr game "betashipmap" 45052 45116 27024 26984 28387 28384
-    rtyp va00 9
-    rmsc 45084 27704 ""
-    setv game "betashipmap_880" va00
-  setv va00 addr game "betashipmap" 45116 45188 26984 26989 28384 28381
-    rtyp va00 9
-    rmsc 45152 27682 ""
-    setv game "betashipmap_881" va00
-  setv va00 addr game "betashipmap" 45188 45266 26989 27017 28381 28371
-    rtyp va00 9
-    rmsc 45227 27680 ""
-    setv game "betashipmap_882" va00
-  setv va00 addr game "betashipmap" 45266 45352 27017 27029 28371 28354
-    rtyp va00 9
-    rmsc 45309 27685 ""
-    setv game "betashipmap_883" va00
-  setv va00 addr game "betashipmap" 45352 45418 27029 27021 28354 28340
-    rtyp va00 9
-    rmsc 45385 27684 ""
-    setv game "betashipmap_884" va00
-  setv va00 addr game "betashipmap" 45828 45871 26945 26923 27972 27938
-    rtyp va00 9
-    rmsc 45849 27441 ""
-    setv game "betashipmap_885" va00
-  setv va00 addr game "betashipmap" 45026 45097 26489 26325 26745 26735
-    rtyp va00 9
-    rmsc 45061 26612 ""
-    setv game "betashipmap_886" va00
-  setv va00 addr game "betashipmap" 45170 45230 26293 26281 26735 26785
-    rtyp va00 9
-    rmsc 45200 26539 ""
-    setv game "betashipmap_887" va00
-  setv va00 addr game "betashipmap" 45230 45317 26281 26261 26785 26857
-    rtyp va00 9
-    rmsc 45273 26569 ""
-    setv game "betashipmap_888" va00
-  setv va00 addr game "betashipmap" 45317 45547 26261 26112 26857 26845
-    rtyp va00 9
-    rmsc 45432 26553 ""
-    setv game "betashipmap_889" va00
-  setv va00 addr game "betashipmap" 45547 45735 26112 26112 26845 26837
-    rtyp va00 9
-    rmsc 45641 26474 ""
-    setv game "betashipmap_890" va00
-  setv va00 addr game "betashipmap" 45735 45823 26112 26132 26837 26861
-    rtyp va00 9
-    rmsc 45779 26486 ""
-    setv game "betashipmap_891" va00
-  setv va00 addr game "betashipmap" 45871 45972 26169 26192 27938 27875
-    rtyp va00 9
-    rmsc 45921 27022 ""
-    setv game "betashipmap_892" va00
-  setv va00 addr game "betashipmap" 45823 45871 26132 26169 26861 26893
-    rtyp va00 9
-    rmsc 45847 26512 ""
-    setv game "betashipmap_893" va00
-  setv va00 addr game "betashipmap" 45097 45170 26325 26293 26735 26735
-    rtyp va00 9
-    rmsc 45133 26530 ""
-    setv game "betashipmap_894" va00
-  setv va00 addr game "betashipmap" 45972 46072 26192 26137 27875 27826
-    rtyp va00 9
-    rmsc 46022 27009 ""
-    setv game "betashipmap_895" va00
-  setv va00 addr game "betashipmap" 46140 46477 26071 26071 27676 27666
-    rtyp va00 9
-    rmsc 46308 26868 ""
-    setv game "betashipmap_896" va00
-  setv va00 addr game "betashipmap" 46072 46140 26137 26071 27676 27676
-    rtyp va00 9
-    rmsc 46106 26906 ""
-    setv game "betashipmap_897" va00
-  setv va00 addr game "betashipmap" 46477 46536 27337 27432 27666 27660
-    rtyp va00 9
-    rmsc 46506 27498 ""
-    setv game "betashipmap_898" va00
-  setv va00 addr game "betashipmap" 46477 46545 26071 26071 27252 27164
-    rtyp va00 9
-    rmsc 46511 26617 ""
-    setv game "betashipmap_899" va00
-  setv va00 addr game "betashipmap" 46545 46630 26071 26071 27164 27140
-    rtyp va00 9
-    rmsc 46587 26605 ""
-    setv game "betashipmap_900" va00
-  setv va00 addr game "betashipmap" 46630 46706 26071 26071 27095 26847
-    rtyp va00 9
-    rmsc 46668 26459 ""
-    setv game "betashipmap_901" va00
-  setv va00 addr game "betashipmap" 46706 46780 26071 26071 26847 26723
-    rtyp va00 9
-    rmsc 46743 26397 ""
-    setv game "betashipmap_902" va00
-  setv va00 addr game "betashipmap" 46780 46912 26071 26071 26723 26631
-    rtyp va00 9
-    rmsc 46846 26351 ""
-    setv game "betashipmap_903" va00
-  setv va00 addr game "betashipmap" 46912 47108 26071 26071 26631 26563
-    rtyp va00 9
-    rmsc 47010 26317 ""
-    setv game "betashipmap_904" va00
-  setv va00 addr game "betashipmap" 47108 47280 26071 26071 26563 26543
-    rtyp va00 9
-    rmsc 47194 26307 ""
-    setv game "betashipmap_905" va00
-  setv va00 addr game "betashipmap" 47280 47388 26071 26071 26543 26547
-    rtyp va00 9
-    rmsc 47334 26309 ""
-    setv game "betashipmap_906" va00
-  setv va00 addr game "betashipmap" 47388 47532 26071 26071 26547 26571
-    rtyp va00 9
-    rmsc 47460 26321 ""
-    setv game "betashipmap_907" va00
-  setv va00 addr game "betashipmap" 47532 47638 26071 26071 26571 26607
-    rtyp va00 9
-    rmsc 47585 26339 ""
-    setv game "betashipmap_908" va00
-  setv va00 addr game "betashipmap" 47638 47680 26071 26071 26607 26643
-    rtyp va00 9
-    rmsc 47659 26357 ""
-    setv game "betashipmap_909" va00
-  setv va00 addr game "betashipmap" 47680 47705 26071 26071 26643 26677
-    rtyp va00 9
-    rmsc 47692 26374 ""
-    setv game "betashipmap_910" va00
-  setv va00 addr game "betashipmap" 47705 47837 26071 26071 26677 26679
-    rtyp va00 9
-    rmsc 47771 26375 ""
-    setv game "betashipmap_911" va00
-  setv va00 addr game "betashipmap" 47837 48682 26071 26071 26679 26685
-    rtyp va00 9
-    rmsc 48259 26378 ""
-    setv game "betashipmap_912" va00
-  setv va00 addr game "betashipmap" 48682 48749 26071 26071 26685 26682
-    rtyp va00 9
-    rmsc 48715 26376 ""
-    setv game "betashipmap_913" va00
-  setv va00 addr game "betashipmap" 48749 48776 26071 26071 26682 26654
-    rtyp va00 9
-    rmsc 48762 26362 ""
-    setv game "betashipmap_914" va00
-  setv va00 addr game "betashipmap" 48776 48812 26071 26071 26654 26620
-    rtyp va00 9
-    rmsc 48794 26345 ""
-    setv game "betashipmap_915" va00
-  setv va00 addr game "betashipmap" 48812 48902 26071 26071 26620 26577
-    rtyp va00 9
-    rmsc 48857 26324 ""
-    setv game "betashipmap_916" va00
-  setv va00 addr game "betashipmap" 48902 49045 26071 26071 26577 26549
-    rtyp va00 9
-    rmsc 48973 26310 ""
-    setv game "betashipmap_917" va00
-  setv va00 addr game "betashipmap" 49045 49165 26071 26071 26549 26541
-    rtyp va00 9
-    rmsc 49105 26306 ""
-    setv game "betashipmap_918" va00
-  setv va00 addr game "betashipmap" 49165 49334 26071 26071 26541 26561
-    rtyp va00 9
-    rmsc 49249 26316 ""
-    setv game "betashipmap_919" va00
-  setv va00 addr game "betashipmap" 49334 49494 26071 26071 26561 26609
-    rtyp va00 9
-    rmsc 49414 26340 ""
-    setv game "betashipmap_920" va00
-  setv va00 addr game "betashipmap" 49494 49584 26071 26071 26609 26657
-    rtyp va00 9
-    rmsc 49539 26364 ""
-    setv game "betashipmap_921" va00
-  setv va00 addr game "betashipmap" 49654 49695 26071 26071 26708 26742
-    rtyp va00 9
-    rmsc 49674 26406 ""
-    setv game "betashipmap_922" va00
-  setv va00 addr game "betashipmap" 49584 49654 26071 26071 26657 26708
-    rtyp va00 9
-    rmsc 49619 26389 ""
-    setv game "betashipmap_923" va00
-  setv va00 addr game "betashipmap" 49695 49737 26071 26071 26742 26806
-    rtyp va00 9
-    rmsc 49716 26438 ""
-    setv game "betashipmap_924" va00
-  setv va00 addr game "betashipmap" 49737 49777 26071 26071 26806 26898
-    rtyp va00 9
-    rmsc 49757 26484 ""
-    setv game "betashipmap_925" va00
-  setv va00 addr game "betashipmap" 49777 49807 26071 26071 26898 27016
-    rtyp va00 9
-    rmsc 49792 26543 ""
-    setv game "betashipmap_926" va00
-  setv va00 addr game "betashipmap" 49807 49837 26071 26071 27016 27145
-    rtyp va00 9
-    rmsc 49822 26608 ""
-    setv game "betashipmap_927" va00
-  setv va00 addr game "betashipmap" 49837 49883 26071 26071 27145 27150
-    rtyp va00 9
-    rmsc 49860 26610 ""
-    setv game "betashipmap_928" va00
-  setv va00 addr game "betashipmap" 49883 49930 26071 26071 27150 27178
-    rtyp va00 9
-    rmsc 49906 26624 ""
-    setv game "betashipmap_929" va00
-  setv va00 addr game "betashipmap" 49930 49968 26071 26071 27178 27216
-    rtyp va00 9
-    rmsc 49949 26643 ""
-    setv game "betashipmap_930" va00
-  setv va00 addr game "betashipmap" 49968 49994 26071 26071 27216 27285
-    rtyp va00 9
-    rmsc 49981 26678 ""
-    setv game "betashipmap_931" va00
-  setv va00 addr game "betashipmap" 49994 50129 26071 26071 27663 27673
-    rtyp va00 9
-    rmsc 50061 26872 ""
-    setv game "betashipmap_932" va00
-  setv va00 addr game "betashipmap" 49964 49994 27398 27325 27664 27663
-    rtyp va00 9
-    rmsc 49979 27530 ""
-    setv game "betashipmap_933" va00
-  setv va00 addr game "betashipmap" 49904 49964 27444 27398 27663 27664
-    rtyp va00 9
-    rmsc 49934 27554 ""
-    setv game "betashipmap_934" va00
-  setv va00 addr game "betashipmap" 50129 50373 26071 26071 27673 27675
-    rtyp va00 9
-    rmsc 50251 26873 ""
-    setv game "betashipmap_935" va00
-  setv va00 addr game "betashipmap" 50373 50386 26071 26071 27675 27691
-    rtyp va00 9
-    rmsc 50379 26881 ""
-    setv game "betashipmap_936" va00
-  setv va00 addr game "betashipmap" 50386 50506 26071 26071 27762 27806
-    rtyp va00 9
-    rmsc 50446 26938 ""
-    setv game "betashipmap_937" va00
-  setv va00 addr game "betashipmap" 50506 50645 26071 26071 27806 27882
-    rtyp va00 9
-    rmsc 50575 26976 ""
-    setv game "betashipmap_938" va00
-  setv va00 addr game "betashipmap" 50645 50726 26071 26071 27882 27947
-    rtyp va00 9
-    rmsc 50685 27009 ""
-    setv game "betashipmap_939" va00
-  setv va00 addr game "betashipmap" 50726 50810 26071 26071 27947 28019
-    rtyp va00 9
-    rmsc 50768 27045 ""
-    setv game "betashipmap_940" va00
-  setv va00 addr game "betashipmap" 50810 50891 26071 26071 28019 28092
-    rtyp va00 9
-    rmsc 50850 27081 ""
-    setv game "betashipmap_941" va00
-  setv va00 addr game "betashipmap" 50891 50921 26071 26071 27198 27172
-    rtyp va00 9
-    rmsc 50906 26621 ""
-    setv game "betashipmap_942" va00
-  setv va00 addr game "betashipmap" 50921 51060 26071 26071 27172 27178
-    rtyp va00 9
-    rmsc 50990 26624 ""
-    setv game "betashipmap_943" va00
-  setv va00 addr game "betashipmap" 51060 51202 26071 26071 27178 27162
-    rtyp va00 9
-    rmsc 51131 26616 ""
-    setv game "betashipmap_944" va00
-  setv va00 addr game "betashipmap" 51202 51321 26071 26071 27162 27180
-    rtyp va00 9
-    rmsc 51261 26625 ""
-    setv game "betashipmap_945" va00
-  setv va00 addr game "betashipmap" 51321 51455 26071 26071 27180 27242
-    rtyp va00 9
-    rmsc 51388 26656 ""
-    setv game "betashipmap_946" va00
-  setv va00 addr game "betashipmap" 51455 51613 26071 26071 27242 27334
-    rtyp va00 9
-    rmsc 51534 26702 ""
-    setv game "betashipmap_947" va00
-  setv va00 addr game "betashipmap" 51613 51766 26071 26202 27334 27306
-    rtyp va00 9
-    rmsc 51689 26688 ""
-    setv game "betashipmap_948" va00
-  setv va00 addr game "betashipmap" 51766 51786 26202 26270 26559 26455
-    rtyp va00 9
-    rmsc 51776 26328 ""
-    setv game "betashipmap_949" va00
-  setv va00 addr game "betashipmap" 51766 51898 26647 26856 27306 27278
-    rtyp va00 9
-    rmsc 51832 26962 ""
-    setv game "betashipmap_950" va00
-  setv va00 addr game "betashipmap" 51898 51942 26969 27061 27278 27266
-    rtyp va00 9
-    rmsc 51920 27117 ""
-    setv game "betashipmap_951" va00
-  setv va00 addr game "betashipmap" 50891 50987 27218 27247 28092 28174
-    rtyp va00 9
-    rmsc 50939 27696 ""
-    setv game "betashipmap_952" va00
-  setv va00 addr game "betashipmap" 50987 51091 27247 27251 28174 28283
-    rtyp va00 9
-    rmsc 51039 27765 ""
-    setv game "betashipmap_953" va00
-  setv va00 addr game "betashipmap" 51091 51167 27251 27275 28283 28371
-    rtyp va00 9
-    rmsc 51129 27811 ""
-    setv game "betashipmap_954" va00
-  setv va00 addr game "betashipmap" 51167 51276 27275 27315 28371 28387
-    rtyp va00 9
-    rmsc 51221 27831 ""
-    setv game "betashipmap_955" va00
-  setv va00 addr game "betashipmap" 51276 51412 27315 27416 28387 28387
-    rtyp va00 9
-    rmsc 51344 27851 ""
-    setv game "betashipmap_956" va00
-  setv va00 addr game "betashipmap" 51412 51505 27416 27536 28387 28375
-    rtyp va00 9
-    rmsc 51458 27895 ""
-    setv game "betashipmap_957" va00
-  setv va00 addr game "betashipmap" 51505 51697 27536 27576 28375 28331
-    rtyp va00 9
-    rmsc 51601 27933 ""
-    setv game "betashipmap_958" va00
-  setv va00 addr game "betashipmap" 51697 51842 27576 27757 28331 28283
-    rtyp va00 9
-    rmsc 51769 27929 ""
-    setv game "betashipmap_959" va00
-  setv va00 addr game "betashipmap" 51842 51906 27861 27990 28283 28251
-    rtyp va00 9
-    rmsc 51874 28056 ""
-    setv game "betashipmap_960" va00
-  setv va00 addr game "betashipmap" 51200 51276 28376 28387 28416 28519
-    rtyp va00 9
-    rmsc 51238 28447 ""
-    setv game "betashipmap_961" va00
-  setv va00 addr game "betashipmap" 51276 51344 28387 28387 28519 28618
-    rtyp va00 9
-    rmsc 51310 28502 ""
-    setv game "betashipmap_962" va00
-  setv va00 addr game "betashipmap" 51344 51412 28387 28387 28618 28731
-    rtyp va00 9
-    rmsc 51378 28559 ""
-    setv game "betashipmap_963" va00
-  setv va00 addr game "betashipmap" 51412 51451 28387 28382 28731 28796
-    rtyp va00 9
-    rmsc 51431 28591 ""
-    setv game "betashipmap_964" va00
-  setv va00 addr game "betashipmap" 51451 51505 28382 28375 28801 28914
-    rtyp va00 9
-    rmsc 51478 28648 ""
-    setv game "betashipmap_965" va00
-  setv va00 addr game "betashipmap" 51505 51544 28375 28366 28914 29025
-    rtyp va00 9
-    rmsc 51524 28700 ""
-    setv game "betashipmap_966" va00
-  setv va00 addr game "betashipmap" 51544 51697 28366 28331 29121 29119
-    rtyp va00 9
-    rmsc 51620 28742 ""
-    setv game "betashipmap_967" va00
-  setv va00 addr game "betashipmap" 51697 51785 28331 28302 29119 29117
-    rtyp va00 9
-    rmsc 51741 28724 ""
-    setv game "betashipmap_968" va00
-  setv va00 addr game "betashipmap" 51785 51819 28302 28291 29117 29087
-    rtyp va00 9
-    rmsc 51802 28694 ""
-    setv game "betashipmap_969" va00
-  setv va00 addr game "betashipmap" 51819 51842 28291 28283 29087 29080
-    rtyp va00 9
-    rmsc 51830 28685 ""
-    setv game "betashipmap_970" va00
-  setv va00 addr game "betashipmap" 51842 51906 28283 28252 29080 29067
-    rtyp va00 9
-    rmsc 51874 28675 ""
-    setv game "betashipmap_971" va00
-  setv va00 addr game "betashipmap" 51906 51943 28252 28252 29067 29053
-    rtyp va00 9
-    rmsc 51924 28652 ""
-    setv game "betashipmap_972" va00
-  setv va00 addr game "betashipmap" 51943 52044 28266 28445 29053 29031
-    rtyp va00 9
-    rmsc 51993 28648 ""
-    setv game "betashipmap_973" va00
-  setv va00 addr game "betashipmap" 52044 52074 28445 28519 28794 28617
-    rtyp va00 9
-    rmsc 52059 28531 ""
-    setv game "betashipmap_974" va00
-  setv va00 addr game "betashipmap" 52044 52088 28825 28957 29031 29026
-    rtyp va00 9
-    rmsc 52066 28925 ""
-    setv game "betashipmap_975" va00
-  setv va00 addr game "betashipmap" 49293 49391 28749 28722 29054 28960
-    rtyp va00 9
-    rmsc 49342 28854 ""
-    setv game "betashipmap_976" va00
-  setv va00 addr game "betashipmap" 49391 49454 28722 28650 28960 28951
-    rtyp va00 9
-    rmsc 49422 28836 ""
-    setv game "betashipmap_977" va00
-  setv va00 addr game "betashipmap" 49454 49593 28650 28734 28951 28955
-    rtyp va00 9
-    rmsc 49523 28802 ""
-    setv game "betashipmap_978" va00
-  setv va00 addr game "betashipmap" 49593 49698 28734 28787 28955 28978
-    rtyp va00 9
-    rmsc 49645 28856 ""
-    setv game "betashipmap_979" va00
-  setv va00 addr game "betashipmap" 49698 49771 28787 28823 28978 29024
-    rtyp va00 9
-    rmsc 49734 28905 ""
-    setv game "betashipmap_980" va00
-  setv va00 addr game "betashipmap" 49771 49884 28823 28879 29024 29024
-    rtyp va00 9
-    rmsc 49827 28923 ""
-    setv game "betashipmap_981" va00
-  setv va00 addr game "betashipmap" 47160 47322 28794 28834 29067 29040
-    rtyp va00 9
-    rmsc 47241 28917 ""
-    setv game "betashipmap_982" va00
-  setv va00 addr game "betashipmap" 47014 47160 28732 28794 29123 29067
-    rtyp va00 9
-    rmsc 47087 28899 ""
-    setv game "betashipmap_983" va00
-  setv va00 addr game "betashipmap" 46842 47014 28834 28732 29184 29123
-    rtyp va00 9
-    rmsc 46928 28978 ""
-    setv game "betashipmap_984" va00
-  setv va00 addr game "betashipmap" 46654 46842 28917 28834 29116 29184
-    rtyp va00 9
-    rmsc 46748 29050 ""
-    setv game "betashipmap_985" va00
-  setv va00 addr game "betashipmap" 46589 46654 28948 28917 29110 29116
-    rtyp va00 9
-    rmsc 46621 29032 ""
-    setv game "betashipmap_986" va00
+    rmsc 54530 26570 ""
+    setv game "mapeditortmp_727" va00
+  setv va00 addr game "mapeditortmp" 57290 57454 27535 27474 28091 28047
+    rtyp va00 9
+    rmsc 57372 27791 ""
+    setv game "mapeditortmp_728" va00
+  setv va00 addr game "mapeditortmp" 57454 57551 27474 27664 28047 28006
+    rtyp va00 9
+    rmsc 57502 27740 ""
+    setv game "mapeditortmp_729" va00
+  setv va00 addr game "mapeditortmp" 57114 57290 27583 27535 28097 28091
+    rtyp va00 9
+    rmsc 57202 27837 ""
+    setv game "mapeditortmp_730" va00
+  setv va00 addr game "mapeditortmp" 56832 56973 27620 27611 27716 27854
+    rtyp va00 9
+    rmsc 56902 27737 ""
+    setv game "mapeditortmp_731" va00
+  setv va00 addr game "mapeditortmp" 56973 57114 27611 27583 27854 28054
+    rtyp va00 9
+    rmsc 57043 27832 ""
+    setv game "mapeditortmp_732" va00
+  setv va00 addr game "mapeditortmp" 56973 57114 26788 26796 27611 27583
+    rtyp va00 9
+    rmsc 57043 27185 ""
+    setv game "mapeditortmp_733" va00
+  setv va00 addr game "mapeditortmp" 57290 57401 26928 27241 27535 27494
+    rtyp va00 9
+    rmsc 57345 27211 ""
+    setv game "mapeditortmp_734" va00
+  setv va00 addr game "mapeditortmp" 57114 57290 26796 26928 27583 27535
+    rtyp va00 9
+    rmsc 57202 27165 ""
+    setv game "mapeditortmp_735" va00
+  setv va00 addr game "mapeditortmp" 56832 56973 26788 26788 27620 27611
+    rtyp va00 9
+    rmsc 56902 27199 ""
+    setv game "mapeditortmp_736" va00
+  setv va00 addr game "mapeditortmp" 56661 56832 26722 26788 27583 27620
+    rtyp va00 9
+    rmsc 56746 27171 ""
+    setv game "mapeditortmp_737" va00
+  setv va00 addr game "mapeditortmp" 56499 56661 26717 26722 27475 27583
+    rtyp va00 9
+    rmsc 56580 27150 ""
+    setv game "mapeditortmp_738" va00
+  setv va00 addr game "mapeditortmp" 56373 56499 26689 26717 27398 27475
+    rtyp va00 9
+    rmsc 56436 27082 ""
+    setv game "mapeditortmp_739" va00
+  setv va00 addr game "mapeditortmp" 56210 56373 26672 26673 27326 27398
+    rtyp va00 9
+    rmsc 56291 27035 ""
+    setv game "mapeditortmp_740" va00
+  setv va00 addr game "mapeditortmp" 56030 56210 26672 26672 27287 27326
+    rtyp va00 9
+    rmsc 56120 26999 ""
+    setv game "mapeditortmp_741" va00
+  setv va00 addr game "mapeditortmp" 55825 56030 26672 26672 27283 27287
+    rtyp va00 9
+    rmsc 55927 26979 ""
+    setv game "mapeditortmp_742" va00
+  setv va00 addr game "mapeditortmp" 57190 57350 26219 26319 26631 26635
+    rtyp va00 9
+    rmsc 57270 26427 ""
+    setv game "mapeditortmp_743" va00
+  setv va00 addr game "mapeditortmp" 56986 57190 26195 26219 26647 26631
+    rtyp va00 9
+    rmsc 57088 26413 ""
+    setv game "mapeditortmp_744" va00
+  setv va00 addr game "mapeditortmp" 56826 56986 26191 26195 26659 26647
+    rtyp va00 9
+    rmsc 56906 26419 ""
+    setv game "mapeditortmp_745" va00
+  setv va00 addr game "mapeditortmp" 56634 56826 26155 26191 26631 26659
+    rtyp va00 9
+    rmsc 56730 26407 ""
+    setv game "mapeditortmp_746" va00
+  setv va00 addr game "mapeditortmp" 56373 56634 26066 26155 26673 26631
+    rtyp va00 9
+    rmsc 56503 26348 ""
+    setv game "mapeditortmp_747" va00
+  setv va00 addr game "mapeditortmp" 56210 56373 26064 26066 26672 26673
+    rtyp va00 9
+    rmsc 56291 26368 ""
+    setv game "mapeditortmp_748" va00
+  setv va00 addr game "mapeditortmp" 56030 56210 26064 26064 26672 26672
+    rtyp va00 9
+    rmsc 56120 26368 ""
+    setv game "mapeditortmp_749" va00
+  setv va00 addr game "mapeditortmp" 55825 56030 26068 26064 26672 26672
+    rtyp va00 9
+    rmsc 55927 26370 ""
+    setv game "mapeditortmp_750" va00
+  setv va00 addr game "mapeditortmp" 55396 55540 26421 26441 26665 26681
+    rtyp va00 9
+    rmsc 55468 26551 ""
+    setv game "mapeditortmp_751" va00
+  setv va00 addr game "mapeditortmp" 55540 55685 26441 26441 26681 26769
+    rtyp va00 9
+    rmsc 55612 26605 ""
+    setv game "mapeditortmp_752" va00
+  setv va00 addr game "mapeditortmp" 55685 55771 26441 26441 26769 26892
+    rtyp va00 9
+    rmsc 55728 26666 ""
+    setv game "mapeditortmp_753" va00
+  setv va00 addr game "mapeditortmp" 55771 55825 26441 26441 26887 27176
+    rtyp va00 0
+    rmsc 55798 26808 ""
+    setv game "mapeditortmp_754" va00
+  setv va00 addr game "mapeditortmp" 55643 55825 26068 26068 26441 26441
+    rtyp va00 9
+    rmsc 55734 26254 ""
+    setv game "mapeditortmp_755" va00
+  setv va00 addr game "mapeditortmp" 55469 55643 26068 26068 26382 26398
+    rtyp va00 9
+    rmsc 55556 26233 ""
+    setv game "mapeditortmp_756" va00
+  setv va00 addr game "mapeditortmp" 55272 55469 26068 26068 26389 26382
+    rtyp va00 9
+    rmsc 55370 26225 ""
+    setv game "mapeditortmp_757" va00
+  setv va00 addr game "mapeditortmp" 55065 55272 26067 26068 26381 26389
+    rtyp va00 9
+    rmsc 55168 26228 ""
+    setv game "mapeditortmp_758" va00
+  setv va00 addr game "mapeditortmp" 54850 55065 26066 26067 26381 26381
+    rtyp va00 9
+    rmsc 54957 26223 ""
+    setv game "mapeditortmp_759" va00
+  setv va00 addr game "mapeditortmp" 54664 54850 26067 26066 26382 26381
+    rtyp va00 9
+    rmsc 54757 26224 ""
+    setv game "mapeditortmp_760" va00
+  setv va00 addr game "mapeditortmp" 54448 54664 26067 26067 26389 26382
+    rtyp va00 9
+    rmsc 54556 26224 ""
+    setv game "mapeditortmp_761" va00
+  setv va00 addr game "mapeditortmp" 54291 54448 26068 26067 26406 26389
+    rtyp va00 9
+    rmsc 54369 26228 ""
+    setv game "mapeditortmp_762" va00
+  setv va00 addr game "mapeditortmp" 54143 54291 26087 26068 26404 26406
+    rtyp va00 9
+    rmsc 54217 26246 ""
+    setv game "mapeditortmp_763" va00
+  setv va00 addr game "mapeditortmp" 53885 54004 26108 26101 26427 26410
+    rtyp va00 9
+    rmsc 53944 26259 ""
+    setv game "mapeditortmp_764" va00
+  setv va00 addr game "mapeditortmp" 53745 53885 26113 26108 26436 26427
+    rtyp va00 9
+    rmsc 53815 26270 ""
+    setv game "mapeditortmp_765" va00
+  setv va00 addr game "mapeditortmp" 54004 54143 26101 26087 26410 26404
+    rtyp va00 9
+    rmsc 54073 26252 ""
+    setv game "mapeditortmp_766" va00
+  setv va00 addr game "mapeditortmp" 53592 53763 26465 26465 27289 27281
+    rtyp va00 9
+    rmsc 53677 26873 ""
+    setv game "mapeditortmp_767" va00
+  setv va00 addr game "mapeditortmp" 53763 53821 26465 26467 27066 26859
+    rtyp va00 9
+    rmsc 53792 26662 ""
+    setv game "mapeditortmp_768" va00
+  setv va00 addr game "mapeditortmp" 53821 53925 26467 26446 26859 26741
+    rtyp va00 9
+    rmsc 53873 26604 ""
+    setv game "mapeditortmp_769" va00
+  setv va00 addr game "mapeditortmp" 53925 54047 26446 26426 26741 26693
+    rtyp va00 9
+    rmsc 53986 26569 ""
+    setv game "mapeditortmp_770" va00
+  setv va00 addr game "mapeditortmp" 54047 54164 26426 26445 26693 26680
+    rtyp va00 9
+    rmsc 54105 26553 ""
+    setv game "mapeditortmp_771" va00
+  setv va00 addr game "mapeditortmp" 53592 53745 26108 26113 26465 26465
+    rtyp va00 9
+    rmsc 53668 26286 ""
+    setv game "mapeditortmp_772" va00
+  setv va00 addr game "mapeditortmp" 53417 53592 26115 26108 27310 27289
+    rtyp va00 9
+    rmsc 53504 26702 ""
+    setv game "mapeditortmp_773" va00
+  setv va00 addr game "mapeditortmp" 53260 53417 26115 26115 27361 27310
+    rtyp va00 9
+    rmsc 53338 26712 ""
+    setv game "mapeditortmp_774" va00
+  setv va00 addr game "mapeditortmp" 53094 53260 26156 26115 27434 27361
+    rtyp va00 9
+    rmsc 53177 26758 ""
+    setv game "mapeditortmp_775" va00
+  setv va00 addr game "mapeditortmp" 52912 53094 26207 26156 27555 27434
+    rtyp va00 9
+    rmsc 53003 26820 ""
+    setv game "mapeditortmp_776" va00
+  setv va00 addr game "mapeditortmp" 52659 52912 26240 26207 27599 27555
+    rtyp va00 9
+    rmsc 52785 26897 ""
+    setv game "mapeditortmp_777" va00
+  setv va00 addr game "mapeditortmp" 52450 52659 26489 26240 27599 27599
+    rtyp va00 9
+    rmsc 52554 27044 ""
+    setv game "mapeditortmp_778" va00
+  setv va00 addr game "mapeditortmp" 52284 52450 26755 26489 27536 27599
+    rtyp va00 9
+    rmsc 52367 27177 ""
+    setv game "mapeditortmp_779" va00
+  setv va00 addr game "mapeditortmp" 52659 52798 27599 27575 27826 27676
+    rtyp va00 9
+    rmsc 52728 27637 ""
+    setv game "mapeditortmp_780" va00
+  setv va00 addr game "mapeditortmp" 52450 52659 27599 27599 28077 27826
+    rtyp va00 9
+    rmsc 52554 27712 ""
+    setv game "mapeditortmp_781" va00
+  setv va00 addr game "mapeditortmp" 52373 52450 27570 27599 28207 28077
+    rtyp va00 9
+    rmsc 52411 27823 ""
+    setv game "mapeditortmp_782" va00
+  setv va00 addr game "mapeditortmp" 52314 52373 27547 27570 28194 28207
+    rtyp va00 9
+    rmsc 52343 27877 ""
+    setv game "mapeditortmp_783" va00
+  setv va00 addr game "mapeditortmp" 52250 52314 27524 27547 27834 28050
+    rtyp va00 9
+    rmsc 52282 27787 ""
+    setv game "mapeditortmp_784" va00
 
-door game "betashipmap_600" game "betashipmap_601" 100
-door game "betashipmap_600" game "betashipmap_615" 100
-door game "betashipmap_601" game "betashipmap_602" 100
-door game "betashipmap_602" game "betashipmap_603" 100
-door game "betashipmap_603" game "betashipmap_604" 100
-door game "betashipmap_604" game "betashipmap_605" 100
-door game "betashipmap_605" game "betashipmap_606" 100
-door game "betashipmap_606" game "betashipmap_607" 100
-door game "betashipmap_607" game "betashipmap_608" 100
-door game "betashipmap_608" game "betashipmap_609" 100
+door game "mapeditortmp_600" game "mapeditortmp_715" 100
+door game "mapeditortmp_600" game "mapeditortmp_716" 100
+door game "mapeditortmp_600" game "mapeditortmp_718" 100
+door game "mapeditortmp_601" game "mapeditortmp_642" 100
+door game "mapeditortmp_601" game "mapeditortmp_649" 100
+door game "mapeditortmp_601" game "mapeditortmp_650" 100
+door game "mapeditortmp_602" game "mapeditortmp_697" 100
+door game "mapeditortmp_602" game "mapeditortmp_699" 100
+door game "mapeditortmp_602" game "mapeditortmp_700" 100
+door game "mapeditortmp_603" game "mapeditortmp_604" 100
 
-door game "betashipmap_609" game "betashipmap_610" 100
-door game "betashipmap_610" game "betashipmap_612" 100
-door game "betashipmap_610" game "betashipmap_677" 100
-door game "betashipmap_610" game "betashipmap_678" 100
-door game "betashipmap_611" game "betashipmap_626" 100
-door game "betashipmap_611" game "betashipmap_635" 100
-door game "betashipmap_611" game "betashipmap_639" 100
-door game "betashipmap_611" game "betashipmap_640" 100
-door game "betashipmap_612" game "betashipmap_613" 100
-door game "betashipmap_612" game "betashipmap_678" 100
+door game "mapeditortmp_603" game "mapeditortmp_637" 100
+door game "mapeditortmp_604" game "mapeditortmp_605" 100
+door game "mapeditortmp_604" game "mapeditortmp_637" 100
+door game "mapeditortmp_605" game "mapeditortmp_606" 100
+door game "mapeditortmp_606" game "mapeditortmp_607" 100
+door game "mapeditortmp_607" game "mapeditortmp_608" 100
+door game "mapeditortmp_608" game "mapeditortmp_609" 100
+door game "mapeditortmp_609" game "mapeditortmp_610" 100
+door game "mapeditortmp_610" game "mapeditortmp_611" 100
+door game "mapeditortmp_611" game "mapeditortmp_612" 100
 
-door game "betashipmap_612" game "betashipmap_679" 100
-door game "betashipmap_613" game "betashipmap_614" 100
-door game "betashipmap_613" game "betashipmap_679" 100
-door game "betashipmap_613" game "betashipmap_680" 100
-door game "betashipmap_614" game "betashipmap_680" 100
-door game "betashipmap_614" game "betashipmap_681" 100
-door game "betashipmap_615" game "betashipmap_616" 100
-door game "betashipmap_616" game "betashipmap_617" 100
-door game "betashipmap_617" game "betashipmap_619" 100
-door game "betashipmap_618" game "betashipmap_976" 100
+door game "mapeditortmp_612" game "mapeditortmp_613" 100
+door game "mapeditortmp_613" game "mapeditortmp_614" 100
+door game "mapeditortmp_614" game "mapeditortmp_615" 100
+door game "mapeditortmp_615" game "mapeditortmp_616" 100
+door game "mapeditortmp_615" game "mapeditortmp_633" 100
+door game "mapeditortmp_616" game "mapeditortmp_634" 100
+door game "mapeditortmp_617" game "mapeditortmp_618" 100
+door game "mapeditortmp_617" game "mapeditortmp_635" 100
+door game "mapeditortmp_618" game "mapeditortmp_619" 100
+door game "mapeditortmp_619" game "mapeditortmp_620" 100
 
-door game "betashipmap_619" game "betashipmap_620" 100
-door game "betashipmap_620" game "betashipmap_621" 100
-door game "betashipmap_621" game "betashipmap_622" 100
-door game "betashipmap_622" game "betashipmap_623" 100
-door game "betashipmap_623" game "betashipmap_624" 100
-door game "betashipmap_624" game "betashipmap_625" 100
-door game "betashipmap_625" game "betashipmap_627" 100
-door game "betashipmap_626" game "betashipmap_631" 100
-door game "betashipmap_626" game "betashipmap_633" 100
-door game "betashipmap_627" game "betashipmap_628" 100
+door game "mapeditortmp_620" game "mapeditortmp_621" 100
+door game "mapeditortmp_621" game "mapeditortmp_622" 100
+door game "mapeditortmp_622" game "mapeditortmp_623" 100
+door game "mapeditortmp_623" game "mapeditortmp_625" 100
+door game "mapeditortmp_624" game "mapeditortmp_644" 90
+door game "mapeditortmp_624" game "mapeditortmp_650" 100
+door game "mapeditortmp_625" game "mapeditortmp_626" 100
+door game "mapeditortmp_626" game "mapeditortmp_627" 100
+door game "mapeditortmp_627" game "mapeditortmp_628" 100
+door game "mapeditortmp_628" game "mapeditortmp_629" 100
 
-door game "betashipmap_628" game "betashipmap_629" 100
-door game "betashipmap_628" game "betashipmap_633" 100
-door game "betashipmap_629" game "betashipmap_630" 100
-door game "betashipmap_629" game "betashipmap_631" 100
-door game "betashipmap_629" game "betashipmap_633" 100
-door game "betashipmap_630" game "betashipmap_632" 100
-door game "betashipmap_631" game "betashipmap_632" 100
-door game "betashipmap_631" game "betashipmap_633" 100
-door game "betashipmap_633" game "betashipmap_639" 100
-door game "betashipmap_634" game "betashipmap_646" 100
+door game "mapeditortmp_629" game "mapeditortmp_630" 100
+door game "mapeditortmp_630" game "mapeditortmp_631" 100
+door game "mapeditortmp_631" game "mapeditortmp_632" 100
+door game "mapeditortmp_631" game "mapeditortmp_633" 100
+door game "mapeditortmp_631" game "mapeditortmp_634" 100
+door game "mapeditortmp_632" game "mapeditortmp_634" 100
+door game "mapeditortmp_633" game "mapeditortmp_634" 100
+door game "mapeditortmp_635" game "mapeditortmp_636" 100
+door game "mapeditortmp_635" game "mapeditortmp_637" 100
+door game "mapeditortmp_636" game "mapeditortmp_637" 100
 
-door game "betashipmap_634" game "betashipmap_647" 100
-door game "betashipmap_635" game "betashipmap_636" 100
-door game "betashipmap_635" game "betashipmap_640" 100
-door game "betashipmap_635" game "betashipmap_641" 100
-door game "betashipmap_635" game "betashipmap_642" 100
-door game "betashipmap_636" game "betashipmap_637" 100
-door game "betashipmap_636" game "betashipmap_642" 100
-door game "betashipmap_636" game "betashipmap_643" 100
-door game "betashipmap_636" game "betashipmap_644" 100
-door game "betashipmap_637" game "betashipmap_638" 100
+door game "mapeditortmp_638" game "mapeditortmp_639" 100
+door game "mapeditortmp_639" game "mapeditortmp_640" 100
+door game "mapeditortmp_640" game "mapeditortmp_641" 100
+door game "mapeditortmp_641" game "mapeditortmp_642" 100
+door game "mapeditortmp_642" game "mapeditortmp_648" 100
+door game "mapeditortmp_642" game "mapeditortmp_649" 100
+door game "mapeditortmp_643" game "mapeditortmp_645" 100
+door game "mapeditortmp_643" game "mapeditortmp_651" 100
+door game "mapeditortmp_644" game "mapeditortmp_659" 100
+door game "mapeditortmp_645" game "mapeditortmp_646" 100
 
-door game "betashipmap_637" game "betashipmap_644" 100
-door game "betashipmap_637" game "betashipmap_645" 100
-door game "betashipmap_638" game "betashipmap_645" 100
-door game "betashipmap_638" game "betashipmap_646" 100
-door game "betashipmap_639" game "betashipmap_640" 100
-door game "betashipmap_640" game "betashipmap_641" 100
-door game "betashipmap_641" game "betashipmap_642" 100
-door game "betashipmap_642" game "betashipmap_643" 100
-door game "betashipmap_643" game "betashipmap_644" 100
-door game "betashipmap_644" game "betashipmap_645" 100
+door game "mapeditortmp_646" game "mapeditortmp_648" 100
+door game "mapeditortmp_647" game "mapeditortmp_694" 100
+door game "mapeditortmp_648" game "mapeditortmp_649" 100
+door game "mapeditortmp_649" game "mapeditortmp_650" 100
+door game "mapeditortmp_651" game "mapeditortmp_660" 100
+door game "mapeditortmp_651" game "mapeditortmp_661" 100
+door game "mapeditortmp_652" game "mapeditortmp_653" 100
+door game "mapeditortmp_652" game "mapeditortmp_660" 100
+door game "mapeditortmp_652" game "mapeditortmp_661" 100
+door game "mapeditortmp_653" game "mapeditortmp_654" 100
 
-door game "betashipmap_645" game "betashipmap_646" 100
-door game "betashipmap_647" game "betashipmap_648" 100
-door game "betashipmap_648" game "betashipmap_649" 100
-door game "betashipmap_649" game "betashipmap_650" 100
-door game "betashipmap_650" game "betashipmap_651" 100
-door game "betashipmap_651" game "betashipmap_652" 100
-door game "betashipmap_652" game "betashipmap_653" 100
-door game "betashipmap_653" game "betashipmap_654" 100
-door game "betashipmap_654" game "betashipmap_655" 100
-door game "betashipmap_655" game "betashipmap_656" 100
+door game "mapeditortmp_653" game "mapeditortmp_660" 100
+door game "mapeditortmp_654" game "mapeditortmp_655" 100
+door game "mapeditortmp_655" game "mapeditortmp_656" 100
+door game "mapeditortmp_656" game "mapeditortmp_657" 100
+door game "mapeditortmp_657" game "mapeditortmp_658" 100
+door game "mapeditortmp_658" game "mapeditortmp_659" 100
+door game "mapeditortmp_658" game "mapeditortmp_662" 100
+door game "mapeditortmp_659" game "mapeditortmp_662" 100
+door game "mapeditortmp_659" game "mapeditortmp_663" 100
+door game "mapeditortmp_660" game "mapeditortmp_661" 100
 
-door game "betashipmap_656" game "betashipmap_657" 100
-door game "betashipmap_657" game "betashipmap_658" 100
-door game "betashipmap_657" game "betashipmap_659" 100
-door game "betashipmap_658" game "betashipmap_659" 100
-door game "betashipmap_658" game "betashipmap_668" 100
-door game "betashipmap_659" game "betashipmap_660" 100
-door game "betashipmap_660" game "betashipmap_661" 100
-door game "betashipmap_660" game "betashipmap_668" 100
-door game "betashipmap_660" game "betashipmap_669" 100
-door game "betashipmap_661" game "betashipmap_662" 100
+door game "mapeditortmp_662" game "mapeditortmp_663" 100
+door game "mapeditortmp_663" game "mapeditortmp_664" 100
+door game "mapeditortmp_665" game "mapeditortmp_666" 100
+door game "mapeditortmp_665" game "mapeditortmp_673" 90
+door game "mapeditortmp_666" game "mapeditortmp_667" 100
+door game "mapeditortmp_667" game "mapeditortmp_668" 100
+door game "mapeditortmp_667" game "mapeditortmp_690" 40
+door game "mapeditortmp_668" game "mapeditortmp_669" 100
+door game "mapeditortmp_669" game "mapeditortmp_670" 100
+door game "mapeditortmp_670" game "mapeditortmp_671" 100
 
-door game "betashipmap_661" game "betashipmap_669" 100
-door game "betashipmap_661" game "betashipmap_670" 100
-door game "betashipmap_662" game "betashipmap_663" 100
-door game "betashipmap_662" game "betashipmap_670" 100
-door game "betashipmap_662" game "betashipmap_671" 100
-door game "betashipmap_662" game "betashipmap_672" 100
-door game "betashipmap_663" game "betashipmap_664" 100
-door game "betashipmap_663" game "betashipmap_672" 100
-door game "betashipmap_663" game "betashipmap_673" 100
-door game "betashipmap_664" game "betashipmap_665" 100
+door game "mapeditortmp_671" game "mapeditortmp_672" 100
+door game "mapeditortmp_672" game "mapeditortmp_674" 90
+door game "mapeditortmp_673" game "mapeditortmp_693" 100
+door game "mapeditortmp_674" game "mapeditortmp_675" 100
+door game "mapeditortmp_674" game "mapeditortmp_679" 100
+door game "mapeditortmp_675" game "mapeditortmp_679" 100
+door game "mapeditortmp_676" game "mapeditortmp_677" 100
+door game "mapeditortmp_676" game "mapeditortmp_688" 100
+door game "mapeditortmp_677" game "mapeditortmp_678" 100
+door game "mapeditortmp_678" game "mapeditortmp_684" 100
 
-door game "betashipmap_664" game "betashipmap_673" 100
-door game "betashipmap_664" game "betashipmap_674" 100
-door game "betashipmap_665" game "betashipmap_666" 100
-door game "betashipmap_665" game "betashipmap_674" 100
-door game "betashipmap_665" game "betashipmap_675" 100
-door game "betashipmap_666" game "betashipmap_667" 100
-door game "betashipmap_666" game "betashipmap_676" 100
-door game "betashipmap_666" game "betashipmap_677" 100
-door game "betashipmap_666" game "betashipmap_678" 100
-door game "betashipmap_667" game "betashipmap_678" 100
+door game "mapeditortmp_679" game "mapeditortmp_681" 100
+door game "mapeditortmp_679" game "mapeditortmp_682" 100
+door game "mapeditortmp_679" game "mapeditortmp_683" 100
+door game "mapeditortmp_680" game "mapeditortmp_686" 100
+door game "mapeditortmp_680" game "mapeditortmp_688" 100
+door game "mapeditortmp_680" game "mapeditortmp_690" 100
+door game "mapeditortmp_681" game "mapeditortmp_682" 100
+door game "mapeditortmp_682" game "mapeditortmp_683" 100
+door game "mapeditortmp_683" game "mapeditortmp_684" 100
+door game "mapeditortmp_684" game "mapeditortmp_685" 100
 
-door game "betashipmap_667" game "betashipmap_679" 100
-door game "betashipmap_668" game "betashipmap_669" 100
-door game "betashipmap_669" game "betashipmap_670" 100
-door game "betashipmap_670" game "betashipmap_671" 100
-door game "betashipmap_671" game "betashipmap_672" 100
-door game "betashipmap_672" game "betashipmap_673" 100
-door game "betashipmap_673" game "betashipmap_674" 100
-door game "betashipmap_674" game "betashipmap_675" 100
-door game "betashipmap_675" game "betashipmap_676" 100
-door game "betashipmap_676" game "betashipmap_677" 100
+door game "mapeditortmp_685" game "mapeditortmp_687" 100
+door game "mapeditortmp_686" game "mapeditortmp_689" 100
+door game "mapeditortmp_687" game "mapeditortmp_688" 100
+door game "mapeditortmp_689" game "mapeditortmp_691" 100
+door game "mapeditortmp_691" game "mapeditortmp_692" 100
+door game "mapeditortmp_691" game "mapeditortmp_693" 100
+door game "mapeditortmp_692" game "mapeditortmp_693" 100
+door game "mapeditortmp_694" game "mapeditortmp_695" 100
+door game "mapeditortmp_695" game "mapeditortmp_696" 100
+door game "mapeditortmp_696" game "mapeditortmp_697" 100
 
-door game "betashipmap_677" game "betashipmap_678" 100
-door game "betashipmap_678" game "betashipmap_679" 100
-door game "betashipmap_679" game "betashipmap_680" 100
-door game "betashipmap_680" game "betashipmap_681" 100
-door game "betashipmap_682" game "betashipmap_683" 100
-door game "betashipmap_683" game "betashipmap_684" 100
-door game "betashipmap_684" game "betashipmap_685" 100
-door game "betashipmap_685" game "betashipmap_686" 100
-door game "betashipmap_686" game "betashipmap_687" 100
-door game "betashipmap_687" game "betashipmap_688" 100
+door game "mapeditortmp_697" game "mapeditortmp_700" 100
+door game "mapeditortmp_697" game "mapeditortmp_701" 100
+door game "mapeditortmp_698" game "mapeditortmp_699" 100
+door game "mapeditortmp_698" game "mapeditortmp_715" 90
+door game "mapeditortmp_699" game "mapeditortmp_700" 100
+door game "mapeditortmp_700" game "mapeditortmp_701" 100
+door game "mapeditortmp_701" game "mapeditortmp_702" 100
+door game "mapeditortmp_702" game "mapeditortmp_703" 100
+door game "mapeditortmp_703" game "mapeditortmp_704" 100
+door game "mapeditortmp_704" game "mapeditortmp_708" 100
 
-door game "betashipmap_688" game "betashipmap_689" 100
-door game "betashipmap_689" game "betashipmap_690" 100
-door game "betashipmap_690" game "betashipmap_691" 100
-door game "betashipmap_690" game "betashipmap_696" 100
-door game "betashipmap_690" game "betashipmap_697" 100
-door game "betashipmap_690" game "betashipmap_698" 100
-door game "betashipmap_691" game "betashipmap_692" 100
-door game "betashipmap_691" game "betashipmap_695" 100
-door game "betashipmap_691" game "betashipmap_696" 100
-door game "betashipmap_692" game "betashipmap_693" 100
+door game "mapeditortmp_705" game "mapeditortmp_706" 100
+door game "mapeditortmp_705" game "mapeditortmp_708" 100
+door game "mapeditortmp_706" game "mapeditortmp_707" 100
+door game "mapeditortmp_706" game "mapeditortmp_708" 100
+door game "mapeditortmp_707" game "mapeditortmp_708" 100
+door game "mapeditortmp_707" game "mapeditortmp_709" 100
+door game "mapeditortmp_709" game "mapeditortmp_710" 100
+door game "mapeditortmp_710" game "mapeditortmp_711" 100
+door game "mapeditortmp_711" game "mapeditortmp_712" 100
+door game "mapeditortmp_712" game "mapeditortmp_713" 100
 
-door game "betashipmap_692" game "betashipmap_695" 100
-door game "betashipmap_693" game "betashipmap_694" 100
-door game "betashipmap_694" game "betashipmap_707" 100
-door game "betashipmap_695" game "betashipmap_696" 100
-door game "betashipmap_696" game "betashipmap_697" 100
-door game "betashipmap_697" game "betashipmap_698" 100
-door game "betashipmap_698" game "betashipmap_699" 100
-door game "betashipmap_699" game "betashipmap_700" 100
-door game "betashipmap_700" game "betashipmap_701" 100
-door game "betashipmap_701" game "betashipmap_702" 100
+door game "mapeditortmp_713" game "mapeditortmp_714" 100
+door game "mapeditortmp_714" game "mapeditortmp_716" 100
+door game "mapeditortmp_714" game "mapeditortmp_718" 100
+door game "mapeditortmp_715" game "mapeditortmp_718" 100
+door game "mapeditortmp_716" game "mapeditortmp_717" 100
+door game "mapeditortmp_716" game "mapeditortmp_718" 100
+door game "mapeditortmp_719" game "mapeditortmp_720" 100
+door game "mapeditortmp_720" game "mapeditortmp_727" 100
+door game "mapeditortmp_721" game "mapeditortmp_722" 100
+door game "mapeditortmp_721" game "mapeditortmp_727" 100
 
-door game "betashipmap_702" game "betashipmap_703" 100
-door game "betashipmap_703" game "betashipmap_704" 100
-door game "betashipmap_704" game "betashipmap_705" 100
-door game "betashipmap_705" game "betashipmap_706" 100
-door game "betashipmap_706" game "betashipmap_712" 100
-door game "betashipmap_706" game "betashipmap_729" 100
-door game "betashipmap_707" game "betashipmap_724" 100
-door game "betashipmap_707" game "betashipmap_725" 100
-door game "betashipmap_707" game "betashipmap_726" 100
-door game "betashipmap_708" game "betashipmap_709" 100
+door game "mapeditortmp_722" game "mapeditortmp_723" 100
+door game "mapeditortmp_723" game "mapeditortmp_724" 100
+door game "mapeditortmp_724" game "mapeditortmp_725" 100
+door game "mapeditortmp_725" game "mapeditortmp_726" 100
+door game "mapeditortmp_728" game "mapeditortmp_729" 100
+door game "mapeditortmp_728" game "mapeditortmp_730" 100
+door game "mapeditortmp_728" game "mapeditortmp_734" 40
+door game "mapeditortmp_730" game "mapeditortmp_732" 100
+door game "mapeditortmp_730" game "mapeditortmp_735" 40
+door game "mapeditortmp_731" game "mapeditortmp_732" 100
 
-door game "betashipmap_708" game "betashipmap_731" 100
-door game "betashipmap_709" game "betashipmap_710" 100
-door game "betashipmap_709" game "betashipmap_730" 100
-door game "betashipmap_709" game "betashipmap_731" 100
-door game "betashipmap_710" game "betashipmap_711" 100
-door game "betashipmap_710" game "betashipmap_729" 100
-door game "betashipmap_710" game "betashipmap_730" 100
-door game "betashipmap_711" game "betashipmap_712" 100
-door game "betashipmap_711" game "betashipmap_729" 100
-door game "betashipmap_712" game "betashipmap_713" 100
+door game "mapeditortmp_731" game "mapeditortmp_736" 40
+door game "mapeditortmp_732" game "mapeditortmp_733" 40
+door game "mapeditortmp_733" game "mapeditortmp_735" 100
+door game "mapeditortmp_733" game "mapeditortmp_736" 100
+door game "mapeditortmp_734" game "mapeditortmp_735" 100
+door game "mapeditortmp_736" game "mapeditortmp_737" 100
+door game "mapeditortmp_737" game "mapeditortmp_738" 100
+door game "mapeditortmp_738" game "mapeditortmp_739" 100
+door game "mapeditortmp_739" game "mapeditortmp_740" 100
+door game "mapeditortmp_740" game "mapeditortmp_741" 100
 
-door game "betashipmap_712" game "betashipmap_729" 100
-door game "betashipmap_713" game "betashipmap_714" 100
-door game "betashipmap_714" game "betashipmap_715" 100
-door game "betashipmap_715" game "betashipmap_716" 100
-door game "betashipmap_716" game "betashipmap_717" 100
-door game "betashipmap_717" game "betashipmap_718" 100
-door game "betashipmap_718" game "betashipmap_719" 100
-door game "betashipmap_719" game "betashipmap_720" 100
-door game "betashipmap_720" game "betashipmap_721" 100
-door game "betashipmap_721" game "betashipmap_722" 100
+door game "mapeditortmp_740" game "mapeditortmp_748" 100
+door game "mapeditortmp_741" game "mapeditortmp_742" 100
+door game "mapeditortmp_741" game "mapeditortmp_749" 100
+door game "mapeditortmp_742" game "mapeditortmp_750" 100
+door game "mapeditortmp_742" game "mapeditortmp_754" 100
+door game "mapeditortmp_743" game "mapeditortmp_744" 100
+door game "mapeditortmp_744" game "mapeditortmp_745" 100
+door game "mapeditortmp_745" game "mapeditortmp_746" 100
+door game "mapeditortmp_746" game "mapeditortmp_747" 100
+door game "mapeditortmp_747" game "mapeditortmp_748" 100
 
-door game "betashipmap_722" game "betashipmap_723" 100
-door game "betashipmap_723" game "betashipmap_724" 100
-door game "betashipmap_724" game "betashipmap_725" 100
-door game "betashipmap_725" game "betashipmap_726" 100
-door game "betashipmap_726" game "betashipmap_727" 100
-door game "betashipmap_727" game "betashipmap_728" 100
-door game "betashipmap_729" game "betashipmap_730" 100
-door game "betashipmap_730" game "betashipmap_731" 100
-door game "betashipmap_732" game "betashipmap_733" 100
-door game "betashipmap_732" game "betashipmap_739" 100
+door game "mapeditortmp_748" game "mapeditortmp_749" 100
+door game "mapeditortmp_749" game "mapeditortmp_750" 100
+door game "mapeditortmp_750" game "mapeditortmp_754" 100
+door game "mapeditortmp_750" game "mapeditortmp_755" 100
+door game "mapeditortmp_751" game "mapeditortmp_752" 100
+door game "mapeditortmp_752" game "mapeditortmp_753" 100
+door game "mapeditortmp_752" game "mapeditortmp_755" 100
+door game "mapeditortmp_753" game "mapeditortmp_754" 100
+door game "mapeditortmp_753" game "mapeditortmp_755" 100
+door game "mapeditortmp_754" game "mapeditortmp_755" 100
 
-door game "betashipmap_732" game "betashipmap_740" 100
-door game "betashipmap_732" game "betashipmap_741" 100
-door game "betashipmap_732" game "betashipmap_742" 100
-door game "betashipmap_732" game "betashipmap_743" 100
-door game "betashipmap_732" game "betashipmap_744" 100
-door game "betashipmap_732" game "betashipmap_745" 100
-door game "betashipmap_732" game "betashipmap_746" 100
-door game "betashipmap_732" game "betashipmap_773" 100
-door game "betashipmap_732" game "betashipmap_774" 100
-door game "betashipmap_732" game "betashipmap_775" 60
+door game "mapeditortmp_755" game "mapeditortmp_756" 100
+door game "mapeditortmp_756" game "mapeditortmp_757" 100
+door game "mapeditortmp_757" game "mapeditortmp_758" 100
+door game "mapeditortmp_758" game "mapeditortmp_759" 100
+door game "mapeditortmp_759" game "mapeditortmp_760" 100
+door game "mapeditortmp_760" game "mapeditortmp_761" 100
+door game "mapeditortmp_761" game "mapeditortmp_762" 100
+door game "mapeditortmp_762" game "mapeditortmp_763" 100
+door game "mapeditortmp_763" game "mapeditortmp_766" 100
+door game "mapeditortmp_764" game "mapeditortmp_765" 100
 
-door game "betashipmap_733" game "betashipmap_736" 100
-door game "betashipmap_733" game "betashipmap_737" 100
-door game "betashipmap_733" game "betashipmap_738" 100
-door game "betashipmap_733" game "betashipmap_739" 100
-door game "betashipmap_734" game "betashipmap_735" 100
-door game "betashipmap_734" game "betashipmap_763" 100
-door game "betashipmap_734" game "betashipmap_764" 100
-door game "betashipmap_734" game "betashipmap_765" 100
-door game "betashipmap_734" game "betashipmap_766" 100
-door game "betashipmap_734" game "betashipmap_767" 100
+door game "mapeditortmp_764" game "mapeditortmp_766" 100
+door game "mapeditortmp_765" game "mapeditortmp_772" 100
+door game "mapeditortmp_767" game "mapeditortmp_768" 100
+door game "mapeditortmp_767" game "mapeditortmp_772" 100
+door game "mapeditortmp_767" game "mapeditortmp_773" 100
+door game "mapeditortmp_768" game "mapeditortmp_769" 100
+door game "mapeditortmp_769" game "mapeditortmp_770" 100
+door game "mapeditortmp_770" game "mapeditortmp_771" 100
+door game "mapeditortmp_772" game "mapeditortmp_773" 100
+door game "mapeditortmp_773" game "mapeditortmp_774" 100
 
-door game "betashipmap_734" game "betashipmap_768" 100
-door game "betashipmap_734" game "betashipmap_769" 100
-door game "betashipmap_734" game "betashipmap_782" 60
-door game "betashipmap_735" game "betashipmap_769" 100
-door game "betashipmap_735" game "betashipmap_770" 100
-door game "betashipmap_735" game "betashipmap_771" 100
-door game "betashipmap_735" game "betashipmap_772" 100
-door game "betashipmap_736" game "betashipmap_737" 100
-door game "betashipmap_737" game "betashipmap_738" 100
-door game "betashipmap_738" game "betashipmap_739" 100
+door game "mapeditortmp_774" game "mapeditortmp_775" 100
+door game "mapeditortmp_775" game "mapeditortmp_776" 100
+door game "mapeditortmp_776" game "mapeditortmp_777" 100
+door game "mapeditortmp_777" game "mapeditortmp_778" 100
+door game "mapeditortmp_777" game "mapeditortmp_780" 40
+door game "mapeditortmp_778" game "mapeditortmp_779" 100
+door game "mapeditortmp_778" game "mapeditortmp_781" 40
+door game "mapeditortmp_779" game "mapeditortmp_782" 40
+door game "mapeditortmp_779" game "mapeditortmp_783" 40
+door game "mapeditortmp_779" game "mapeditortmp_784" 40
 
-door game "betashipmap_739" game "betashipmap_740" 100
-door game "betashipmap_740" game "betashipmap_741" 100
-door game "betashipmap_741" game "betashipmap_742" 100
-door game "betashipmap_742" game "betashipmap_743" 100
-door game "betashipmap_743" game "betashipmap_744" 100
-door game "betashipmap_744" game "betashipmap_745" 100
-door game "betashipmap_745" game "betashipmap_746" 100
-door game "betashipmap_746" game "betashipmap_747" 100
-door game "betashipmap_746" game "betashipmap_773" 100
-door game "betashipmap_747" game "betashipmap_748" 100
+door game "mapeditortmp_780" game "mapeditortmp_781" 100
+door game "mapeditortmp_781" game "mapeditortmp_782" 100
+door game "mapeditortmp_782" game "mapeditortmp_783" 100
+door game "mapeditortmp_783" game "mapeditortmp_784" 100
 
-door game "betashipmap_747" game "betashipmap_756" 100
-door game "betashipmap_747" game "betashipmap_773" 100
-door game "betashipmap_748" game "betashipmap_749" 100
-door game "betashipmap_749" game "betashipmap_750" 100
-door game "betashipmap_750" game "betashipmap_751" 100
-door game "betashipmap_751" game "betashipmap_752" 100
-door game "betashipmap_752" game "betashipmap_753" 100
-door game "betashipmap_753" game "betashipmap_755" 100
-door game "betashipmap_754" game "betashipmap_755" 100
-door game "betashipmap_754" game "betashipmap_761" 100
+delg "mapeditortmp_600"
+delg "mapeditortmp_601"
+delg "mapeditortmp_602"
+delg "mapeditortmp_603"
+delg "mapeditortmp_604"
+delg "mapeditortmp_605"
+delg "mapeditortmp_606"
+delg "mapeditortmp_607"
+delg "mapeditortmp_608"
+delg "mapeditortmp_609"
+delg "mapeditortmp_610"
+delg "mapeditortmp_611"
+delg "mapeditortmp_612"
+delg "mapeditortmp_613"
+delg "mapeditortmp_614"
+delg "mapeditortmp_615"
+delg "mapeditortmp_616"
+delg "mapeditortmp_617"
+delg "mapeditortmp_618"
+delg "mapeditortmp_619"
+delg "mapeditortmp_620"
+delg "mapeditortmp_621"
+delg "mapeditortmp_622"
+delg "mapeditortmp_623"
+delg "mapeditortmp_624"
+delg "mapeditortmp_625"
+delg "mapeditortmp_626"
+delg "mapeditortmp_627"
+delg "mapeditortmp_628"
+delg "mapeditortmp_629"
+delg "mapeditortmp_630"
+delg "mapeditortmp_631"
+delg "mapeditortmp_632"
+delg "mapeditortmp_633"
+delg "mapeditortmp_634"
+delg "mapeditortmp_635"
+delg "mapeditortmp_636"
+delg "mapeditortmp_637"
+delg "mapeditortmp_638"
+delg "mapeditortmp_639"
+delg "mapeditortmp_640"
+delg "mapeditortmp_641"
+delg "mapeditortmp_642"
+delg "mapeditortmp_643"
+delg "mapeditortmp_644"
+delg "mapeditortmp_645"
+delg "mapeditortmp_646"
+delg "mapeditortmp_647"
+delg "mapeditortmp_648"
+delg "mapeditortmp_649"
+delg "mapeditortmp_650"
+delg "mapeditortmp_651"
+delg "mapeditortmp_652"
+delg "mapeditortmp_653"
+delg "mapeditortmp_654"
+delg "mapeditortmp_655"
+delg "mapeditortmp_656"
+delg "mapeditortmp_657"
+delg "mapeditortmp_658"
+delg "mapeditortmp_659"
+delg "mapeditortmp_660"
+delg "mapeditortmp_661"
+delg "mapeditortmp_662"
+delg "mapeditortmp_663"
+delg "mapeditortmp_664"
+delg "mapeditortmp_665"
+delg "mapeditortmp_666"
+delg "mapeditortmp_667"
+delg "mapeditortmp_668"
+delg "mapeditortmp_669"
+delg "mapeditortmp_670"
+delg "mapeditortmp_671"
+delg "mapeditortmp_672"
+delg "mapeditortmp_673"
+delg "mapeditortmp_674"
+delg "mapeditortmp_675"
+delg "mapeditortmp_676"
+delg "mapeditortmp_677"
+delg "mapeditortmp_678"
+delg "mapeditortmp_679"
+delg "mapeditortmp_680"
+delg "mapeditortmp_681"
+delg "mapeditortmp_682"
+delg "mapeditortmp_683"
+delg "mapeditortmp_684"
+delg "mapeditortmp_685"
+delg "mapeditortmp_686"
+delg "mapeditortmp_687"
+delg "mapeditortmp_688"
+delg "mapeditortmp_689"
+delg "mapeditortmp_690"
+delg "mapeditortmp_691"
+delg "mapeditortmp_692"
+delg "mapeditortmp_693"
+delg "mapeditortmp_694"
+delg "mapeditortmp_695"
+delg "mapeditortmp_696"
+delg "mapeditortmp_697"
+delg "mapeditortmp_698"
+delg "mapeditortmp_699"
+delg "mapeditortmp_700"
+delg "mapeditortmp_701"
+delg "mapeditortmp_702"
+delg "mapeditortmp_703"
+delg "mapeditortmp_704"
+delg "mapeditortmp_705"
+delg "mapeditortmp_706"
+delg "mapeditortmp_707"
+delg "mapeditortmp_708"
+delg "mapeditortmp_709"
+delg "mapeditortmp_710"
+delg "mapeditortmp_711"
+delg "mapeditortmp_712"
+delg "mapeditortmp_713"
+delg "mapeditortmp_714"
+delg "mapeditortmp_715"
+delg "mapeditortmp_716"
+delg "mapeditortmp_717"
+delg "mapeditortmp_718"
+delg "mapeditortmp_719"
+delg "mapeditortmp_720"
+delg "mapeditortmp_721"
+delg "mapeditortmp_722"
+delg "mapeditortmp_723"
+delg "mapeditortmp_724"
+delg "mapeditortmp_725"
+delg "mapeditortmp_726"
+delg "mapeditortmp_727"
+delg "mapeditortmp_728"
+delg "mapeditortmp_729"
+delg "mapeditortmp_730"
+delg "mapeditortmp_731"
+delg "mapeditortmp_732"
+delg "mapeditortmp_733"
+delg "mapeditortmp_734"
+delg "mapeditortmp_735"
+delg "mapeditortmp_736"
+delg "mapeditortmp_737"
+delg "mapeditortmp_738"
+delg "mapeditortmp_739"
+delg "mapeditortmp_740"
+delg "mapeditortmp_741"
+delg "mapeditortmp_742"
+delg "mapeditortmp_743"
+delg "mapeditortmp_744"
+delg "mapeditortmp_745"
+delg "mapeditortmp_746"
+delg "mapeditortmp_747"
+delg "mapeditortmp_748"
+delg "mapeditortmp_749"
+delg "mapeditortmp_750"
+delg "mapeditortmp_751"
+delg "mapeditortmp_752"
+delg "mapeditortmp_753"
+delg "mapeditortmp_754"
+delg "mapeditortmp_755"
+delg "mapeditortmp_756"
+delg "mapeditortmp_757"
+delg "mapeditortmp_758"
+delg "mapeditortmp_759"
+delg "mapeditortmp_760"
+delg "mapeditortmp_761"
+delg "mapeditortmp_762"
+delg "mapeditortmp_763"
+delg "mapeditortmp_764"
+delg "mapeditortmp_765"
+delg "mapeditortmp_766"
+delg "mapeditortmp_767"
+delg "mapeditortmp_768"
+delg "mapeditortmp_769"
+delg "mapeditortmp_770"
+delg "mapeditortmp_771"
+delg "mapeditortmp_772"
+delg "mapeditortmp_773"
+delg "mapeditortmp_774"
+delg "mapeditortmp_775"
+delg "mapeditortmp_776"
+delg "mapeditortmp_777"
+delg "mapeditortmp_778"
+delg "mapeditortmp_779"
+delg "mapeditortmp_780"
+delg "mapeditortmp_781"
+delg "mapeditortmp_782"
+delg "mapeditortmp_783"
+delg "mapeditortmp_784"
 
-door game "betashipmap_755" game "betashipmap_762" 100
-door game "betashipmap_756" game "betashipmap_757" 100
-door game "betashipmap_757" game "betashipmap_758" 100
-door game "betashipmap_758" game "betashipmap_759" 100
-door game "betashipmap_759" game "betashipmap_760" 100
-door game "betashipmap_760" game "betashipmap_761" 100
-door game "betashipmap_762" game "betashipmap_763" 100
-door game "betashipmap_763" game "betashipmap_764" 100
-door game "betashipmap_764" game "betashipmap_765" 100
-door game "betashipmap_765" game "betashipmap_766" 100
 
-door game "betashipmap_766" game "betashipmap_767" 100
-door game "betashipmap_767" game "betashipmap_768" 100
-door game "betashipmap_768" game "betashipmap_769" 100
-door game "betashipmap_769" game "betashipmap_770" 100
-door game "betashipmap_770" game "betashipmap_771" 100
-door game "betashipmap_771" game "betashipmap_772" 100
-door game "betashipmap_773" game "betashipmap_774" 100
-door game "betashipmap_774" game "betashipmap_775" 100
-door game "betashipmap_775" game "betashipmap_776" 100
-door game "betashipmap_776" game "betashipmap_777" 100
 
-door game "betashipmap_777" game "betashipmap_778" 100
-door game "betashipmap_778" game "betashipmap_779" 100
-door game "betashipmap_779" game "betashipmap_780" 100
-door game "betashipmap_780" game "betashipmap_781" 100
-door game "betashipmap_781" game "betashipmap_782" 100
-door game "betashipmap_783" game "betashipmap_784" 100
-door game "betashipmap_783" game "betashipmap_812" 100
-door game "betashipmap_784" game "betashipmap_785" 100
-door game "betashipmap_784" game "betashipmap_813" 100
-door game "betashipmap_785" game "betashipmap_786" 100
 
-door game "betashipmap_785" game "betashipmap_814" 100
-door game "betashipmap_786" game "betashipmap_787" 100
-door game "betashipmap_787" game "betashipmap_788" 100
-door game "betashipmap_788" game "betashipmap_789" 100
-door game "betashipmap_789" game "betashipmap_790" 100
-door game "betashipmap_790" game "betashipmap_791" 100
-door game "betashipmap_791" game "betashipmap_792" 100
-door game "betashipmap_792" game "betashipmap_793" 100
-door game "betashipmap_793" game "betashipmap_794" 100
-door game "betashipmap_794" game "betashipmap_795" 100
-
-door game "betashipmap_795" game "betashipmap_796" 100
-door game "betashipmap_796" game "betashipmap_797" 100
-door game "betashipmap_797" game "betashipmap_798" 100
-door game "betashipmap_798" game "betashipmap_799" 100
-door game "betashipmap_799" game "betashipmap_800" 100
-door game "betashipmap_800" game "betashipmap_801" 100
-door game "betashipmap_801" game "betashipmap_802" 100
-door game "betashipmap_802" game "betashipmap_803" 100
-door game "betashipmap_803" game "betashipmap_804" 100
-door game "betashipmap_804" game "betashipmap_805" 100
-
-door game "betashipmap_805" game "betashipmap_806" 100
-door game "betashipmap_806" game "betashipmap_807" 100
-door game "betashipmap_806" game "betashipmap_844" 100
-door game "betashipmap_807" game "betashipmap_808" 100
-door game "betashipmap_807" game "betashipmap_844" 100
-door game "betashipmap_808" game "betashipmap_809" 100
-door game "betashipmap_808" game "betashipmap_844" 100
-door game "betashipmap_808" game "betashipmap_845" 100
-door game "betashipmap_809" game "betashipmap_810" 100
-door game "betashipmap_809" game "betashipmap_845" 100
-
-door game "betashipmap_810" game "betashipmap_811" 100
-door game "betashipmap_812" game "betashipmap_813" 100
-door game "betashipmap_813" game "betashipmap_814" 100
-door game "betashipmap_814" game "betashipmap_815" 100
-door game "betashipmap_815" game "betashipmap_816" 100
-door game "betashipmap_816" game "betashipmap_817" 100
-door game "betashipmap_817" game "betashipmap_818" 100
-door game "betashipmap_818" game "betashipmap_819" 100
-door game "betashipmap_819" game "betashipmap_820" 100
-door game "betashipmap_820" game "betashipmap_821" 100
-
-door game "betashipmap_821" game "betashipmap_822" 100
-door game "betashipmap_822" game "betashipmap_823" 100
-door game "betashipmap_823" game "betashipmap_824" 100
-door game "betashipmap_824" game "betashipmap_826" 100
-door game "betashipmap_824" game "betashipmap_837" 100
-door game "betashipmap_825" game "betashipmap_826" 100
-door game "betashipmap_825" game "betashipmap_837" 100
-door game "betashipmap_825" game "betashipmap_838" 100
-door game "betashipmap_825" game "betashipmap_839" 100
-door game "betashipmap_825" game "betashipmap_846" 100
-
-door game "betashipmap_826" game "betashipmap_827" 100
-door game "betashipmap_827" game "betashipmap_828" 100
-door game "betashipmap_828" game "betashipmap_829" 100
-door game "betashipmap_829" game "betashipmap_830" 100
-door game "betashipmap_830" game "betashipmap_831" 100
-door game "betashipmap_831" game "betashipmap_832" 100
-door game "betashipmap_832" game "betashipmap_833" 100
-door game "betashipmap_833" game "betashipmap_834" 100
-door game "betashipmap_834" game "betashipmap_835" 100
-door game "betashipmap_835" game "betashipmap_836" 100
-
-door game "betashipmap_837" game "betashipmap_838" 100
-door game "betashipmap_838" game "betashipmap_839" 100
-door game "betashipmap_839" game "betashipmap_840" 100
-door game "betashipmap_839" game "betashipmap_846" 100
-door game "betashipmap_840" game "betashipmap_841" 100
-door game "betashipmap_840" game "betashipmap_846" 100
-door game "betashipmap_841" game "betashipmap_842" 100
-door game "betashipmap_841" game "betashipmap_846" 100
-door game "betashipmap_842" game "betashipmap_843" 100
-door game "betashipmap_843" game "betashipmap_844" 100
-
-door game "betashipmap_844" game "betashipmap_845" 100
-door game "betashipmap_847" game "betashipmap_848" 100
-door game "betashipmap_848" game "betashipmap_849" 100
-door game "betashipmap_849" game "betashipmap_850" 100
-door game "betashipmap_850" game "betashipmap_851" 100
-door game "betashipmap_851" game "betashipmap_852" 100
-door game "betashipmap_852" game "betashipmap_853" 100
-door game "betashipmap_853" game "betashipmap_854" 100
-door game "betashipmap_854" game "betashipmap_855" 100
-door game "betashipmap_855" game "betashipmap_856" 100
-
-door game "betashipmap_856" game "betashipmap_857" 100
-door game "betashipmap_857" game "betashipmap_858" 100
-door game "betashipmap_858" game "betashipmap_859" 100
-door game "betashipmap_859" game "betashipmap_860" 100
-door game "betashipmap_860" game "betashipmap_861" 100
-door game "betashipmap_862" game "betashipmap_863" 100
-door game "betashipmap_862" game "betashipmap_885" 100
-door game "betashipmap_863" game "betashipmap_864" 100
-door game "betashipmap_864" game "betashipmap_874" 100
-door game "betashipmap_865" game "betashipmap_866" 100
-
-door game "betashipmap_865" game "betashipmap_884" 40
-door game "betashipmap_866" game "betashipmap_867" 100
-door game "betashipmap_866" game "betashipmap_883" 40
-door game "betashipmap_867" game "betashipmap_868" 100
-door game "betashipmap_867" game "betashipmap_882" 40
-door game "betashipmap_868" game "betashipmap_869" 100
-door game "betashipmap_868" game "betashipmap_881" 40
-door game "betashipmap_869" game "betashipmap_870" 100
-door game "betashipmap_869" game "betashipmap_880" 40
-door game "betashipmap_870" game "betashipmap_871" 100
-
-door game "betashipmap_870" game "betashipmap_879" 40
-door game "betashipmap_871" game "betashipmap_872" 100
-door game "betashipmap_871" game "betashipmap_878" 40
-door game "betashipmap_872" game "betashipmap_873" 100
-door game "betashipmap_872" game "betashipmap_877" 40
-door game "betashipmap_873" game "betashipmap_875" 40
-door game "betashipmap_874" game "betashipmap_884" 100
-door game "betashipmap_875" game "betashipmap_876" 100
-door game "betashipmap_875" game "betashipmap_877" 100
-door game "betashipmap_877" game "betashipmap_878" 100
-
-door game "betashipmap_878" game "betashipmap_879" 100
-door game "betashipmap_879" game "betashipmap_880" 100
-door game "betashipmap_880" game "betashipmap_881" 100
-door game "betashipmap_881" game "betashipmap_882" 100
-door game "betashipmap_882" game "betashipmap_883" 100
-door game "betashipmap_883" game "betashipmap_884" 100
-door game "betashipmap_885" game "betashipmap_892" 100
-door game "betashipmap_886" game "betashipmap_894" 100
-door game "betashipmap_887" game "betashipmap_888" 100
-door game "betashipmap_887" game "betashipmap_894" 100
-
-door game "betashipmap_888" game "betashipmap_889" 100
-door game "betashipmap_889" game "betashipmap_890" 100
-door game "betashipmap_890" game "betashipmap_891" 100
-door game "betashipmap_891" game "betashipmap_893" 100
-door game "betashipmap_892" game "betashipmap_893" 100
-door game "betashipmap_892" game "betashipmap_895" 100
-door game "betashipmap_895" game "betashipmap_897" 100
-door game "betashipmap_896" game "betashipmap_897" 100
-door game "betashipmap_896" game "betashipmap_898" 100
-door game "betashipmap_896" game "betashipmap_899" 100
-
-door game "betashipmap_899" game "betashipmap_900" 100
-door game "betashipmap_900" game "betashipmap_901" 100
-door game "betashipmap_901" game "betashipmap_902" 100
-door game "betashipmap_902" game "betashipmap_903" 100
-door game "betashipmap_903" game "betashipmap_904" 100
-door game "betashipmap_904" game "betashipmap_905" 100
-door game "betashipmap_905" game "betashipmap_906" 100
-door game "betashipmap_906" game "betashipmap_907" 100
-door game "betashipmap_907" game "betashipmap_908" 100
-door game "betashipmap_908" game "betashipmap_909" 100
-
-door game "betashipmap_909" game "betashipmap_910" 100
-door game "betashipmap_910" game "betashipmap_911" 100
-door game "betashipmap_911" game "betashipmap_912" 100
-door game "betashipmap_912" game "betashipmap_913" 100
-door game "betashipmap_913" game "betashipmap_914" 100
-door game "betashipmap_914" game "betashipmap_915" 100
-door game "betashipmap_915" game "betashipmap_916" 100
-door game "betashipmap_916" game "betashipmap_917" 100
-door game "betashipmap_917" game "betashipmap_918" 100
-door game "betashipmap_918" game "betashipmap_919" 100
-
-door game "betashipmap_919" game "betashipmap_920" 100
-door game "betashipmap_920" game "betashipmap_921" 100
-door game "betashipmap_921" game "betashipmap_923" 100
-door game "betashipmap_922" game "betashipmap_923" 100
-door game "betashipmap_922" game "betashipmap_924" 100
-door game "betashipmap_924" game "betashipmap_925" 100
-door game "betashipmap_925" game "betashipmap_926" 100
-door game "betashipmap_926" game "betashipmap_927" 100
-door game "betashipmap_927" game "betashipmap_928" 100
-door game "betashipmap_928" game "betashipmap_929" 100
-
-door game "betashipmap_929" game "betashipmap_930" 100
-door game "betashipmap_930" game "betashipmap_931" 100
-door game "betashipmap_931" game "betashipmap_932" 100
-door game "betashipmap_932" game "betashipmap_933" 100
-door game "betashipmap_932" game "betashipmap_935" 100
-door game "betashipmap_933" game "betashipmap_934" 100
-door game "betashipmap_935" game "betashipmap_936" 100
-door game "betashipmap_936" game "betashipmap_937" 100
-door game "betashipmap_937" game "betashipmap_938" 100
-door game "betashipmap_938" game "betashipmap_939" 100
-
-door game "betashipmap_939" game "betashipmap_940" 100
-door game "betashipmap_940" game "betashipmap_941" 100
-door game "betashipmap_941" game "betashipmap_942" 100
-door game "betashipmap_941" game "betashipmap_952" 100
-door game "betashipmap_942" game "betashipmap_943" 100
-door game "betashipmap_943" game "betashipmap_944" 100
-door game "betashipmap_944" game "betashipmap_945" 100
-door game "betashipmap_945" game "betashipmap_946" 100
-door game "betashipmap_946" game "betashipmap_947" 100
-door game "betashipmap_947" game "betashipmap_948" 100
-
-door game "betashipmap_948" game "betashipmap_949" 100
-door game "betashipmap_948" game "betashipmap_950" 100
-door game "betashipmap_950" game "betashipmap_951" 100
-door game "betashipmap_952" game "betashipmap_953" 100
-door game "betashipmap_953" game "betashipmap_954" 100
-door game "betashipmap_954" game "betashipmap_955" 100
-door game "betashipmap_955" game "betashipmap_956" 100
-door game "betashipmap_955" game "betashipmap_961" 40
-door game "betashipmap_956" game "betashipmap_957" 100
-door game "betashipmap_956" game "betashipmap_962" 40
-
-door game "betashipmap_956" game "betashipmap_963" 40
-door game "betashipmap_957" game "betashipmap_958" 100
-door game "betashipmap_957" game "betashipmap_964" 40
-door game "betashipmap_957" game "betashipmap_965" 40
-door game "betashipmap_958" game "betashipmap_959" 100
-door game "betashipmap_958" game "betashipmap_966" 40
-door game "betashipmap_958" game "betashipmap_967" 40
-door game "betashipmap_959" game "betashipmap_960" 100
-door game "betashipmap_959" game "betashipmap_968" 40
-door game "betashipmap_959" game "betashipmap_969" 40
-
-door game "betashipmap_959" game "betashipmap_970" 40
-door game "betashipmap_960" game "betashipmap_971" 40
-door game "betashipmap_961" game "betashipmap_962" 100
-door game "betashipmap_962" game "betashipmap_963" 100
-door game "betashipmap_963" game "betashipmap_964" 100
-door game "betashipmap_964" game "betashipmap_965" 100
-door game "betashipmap_965" game "betashipmap_966" 100
-door game "betashipmap_966" game "betashipmap_967" 100
-door game "betashipmap_967" game "betashipmap_968" 100
-door game "betashipmap_968" game "betashipmap_969" 100
-
-door game "betashipmap_969" game "betashipmap_970" 100
-door game "betashipmap_970" game "betashipmap_971" 100
-door game "betashipmap_971" game "betashipmap_972" 100
-door game "betashipmap_972" game "betashipmap_973" 100
-door game "betashipmap_973" game "betashipmap_974" 100
-door game "betashipmap_973" game "betashipmap_975" 100
-door game "betashipmap_976" game "betashipmap_977" 100
-door game "betashipmap_977" game "betashipmap_978" 100
-door game "betashipmap_978" game "betashipmap_979" 100
-door game "betashipmap_979" game "betashipmap_980" 100
-
-door game "betashipmap_980" game "betashipmap_981" 100
-door game "betashipmap_982" game "betashipmap_983" 100
-door game "betashipmap_983" game "betashipmap_984" 100
-door game "betashipmap_984" game "betashipmap_985" 100
-door game "betashipmap_985" game "betashipmap_986" 100
-
-delg "betashipmap_600"
-delg "betashipmap_601"
-delg "betashipmap_602"
-delg "betashipmap_603"
-delg "betashipmap_604"
-delg "betashipmap_605"
-delg "betashipmap_606"
-delg "betashipmap_607"
-delg "betashipmap_608"
-delg "betashipmap_609"
-delg "betashipmap_610"
-delg "betashipmap_611"
-delg "betashipmap_612"
-delg "betashipmap_613"
-delg "betashipmap_614"
-delg "betashipmap_615"
-delg "betashipmap_616"
-delg "betashipmap_617"
-delg "betashipmap_618"
-delg "betashipmap_619"
-delg "betashipmap_620"
-delg "betashipmap_621"
-delg "betashipmap_622"
-delg "betashipmap_623"
-delg "betashipmap_624"
-delg "betashipmap_625"
-delg "betashipmap_626"
-delg "betashipmap_627"
-delg "betashipmap_628"
-delg "betashipmap_629"
-delg "betashipmap_630"
-delg "betashipmap_631"
-delg "betashipmap_632"
-delg "betashipmap_633"
-delg "betashipmap_634"
-delg "betashipmap_635"
-delg "betashipmap_636"
-delg "betashipmap_637"
-delg "betashipmap_638"
-delg "betashipmap_639"
-delg "betashipmap_640"
-delg "betashipmap_641"
-delg "betashipmap_642"
-delg "betashipmap_643"
-delg "betashipmap_644"
-delg "betashipmap_645"
-delg "betashipmap_646"
-delg "betashipmap_647"
-delg "betashipmap_648"
-delg "betashipmap_649"
-delg "betashipmap_650"
-delg "betashipmap_651"
-delg "betashipmap_652"
-delg "betashipmap_653"
-delg "betashipmap_654"
-delg "betashipmap_655"
-delg "betashipmap_656"
-delg "betashipmap_657"
-delg "betashipmap_658"
-delg "betashipmap_659"
-delg "betashipmap_660"
-delg "betashipmap_661"
-delg "betashipmap_662"
-delg "betashipmap_663"
-delg "betashipmap_664"
-delg "betashipmap_665"
-delg "betashipmap_666"
-delg "betashipmap_667"
-delg "betashipmap_668"
-delg "betashipmap_669"
-delg "betashipmap_670"
-delg "betashipmap_671"
-delg "betashipmap_672"
-delg "betashipmap_673"
-delg "betashipmap_674"
-delg "betashipmap_675"
-delg "betashipmap_676"
-delg "betashipmap_677"
-delg "betashipmap_678"
-delg "betashipmap_679"
-delg "betashipmap_680"
-delg "betashipmap_681"
-delg "betashipmap_682"
-delg "betashipmap_683"
-delg "betashipmap_684"
-delg "betashipmap_685"
-delg "betashipmap_686"
-delg "betashipmap_687"
-delg "betashipmap_688"
-delg "betashipmap_689"
-delg "betashipmap_690"
-delg "betashipmap_691"
-delg "betashipmap_692"
-delg "betashipmap_693"
-delg "betashipmap_694"
-delg "betashipmap_695"
-delg "betashipmap_696"
-delg "betashipmap_697"
-delg "betashipmap_698"
-delg "betashipmap_699"
-delg "betashipmap_700"
-delg "betashipmap_701"
-delg "betashipmap_702"
-delg "betashipmap_703"
-delg "betashipmap_704"
-delg "betashipmap_705"
-delg "betashipmap_706"
-delg "betashipmap_707"
-delg "betashipmap_708"
-delg "betashipmap_709"
-delg "betashipmap_710"
-delg "betashipmap_711"
-delg "betashipmap_712"
-delg "betashipmap_713"
-delg "betashipmap_714"
-delg "betashipmap_715"
-delg "betashipmap_716"
-delg "betashipmap_717"
-delg "betashipmap_718"
-delg "betashipmap_719"
-delg "betashipmap_720"
-delg "betashipmap_721"
-delg "betashipmap_722"
-delg "betashipmap_723"
-delg "betashipmap_724"
-delg "betashipmap_725"
-delg "betashipmap_726"
-delg "betashipmap_727"
-delg "betashipmap_728"
-delg "betashipmap_729"
-delg "betashipmap_730"
-delg "betashipmap_731"
-delg "betashipmap_732"
-delg "betashipmap_733"
-delg "betashipmap_734"
-delg "betashipmap_735"
-delg "betashipmap_736"
-delg "betashipmap_737"
-delg "betashipmap_738"
-delg "betashipmap_739"
-delg "betashipmap_740"
-delg "betashipmap_741"
-delg "betashipmap_742"
-delg "betashipmap_743"
-delg "betashipmap_744"
-delg "betashipmap_745"
-delg "betashipmap_746"
-delg "betashipmap_747"
-delg "betashipmap_748"
-delg "betashipmap_749"
-delg "betashipmap_750"
-delg "betashipmap_751"
-delg "betashipmap_752"
-delg "betashipmap_753"
-delg "betashipmap_754"
-delg "betashipmap_755"
-delg "betashipmap_756"
-delg "betashipmap_757"
-delg "betashipmap_758"
-delg "betashipmap_759"
-delg "betashipmap_760"
-delg "betashipmap_761"
-delg "betashipmap_762"
-delg "betashipmap_763"
-delg "betashipmap_764"
-delg "betashipmap_765"
-delg "betashipmap_766"
-delg "betashipmap_767"
-delg "betashipmap_768"
-delg "betashipmap_769"
-delg "betashipmap_770"
-delg "betashipmap_771"
-delg "betashipmap_772"
-delg "betashipmap_773"
-delg "betashipmap_774"
-delg "betashipmap_775"
-delg "betashipmap_776"
-delg "betashipmap_777"
-delg "betashipmap_778"
-delg "betashipmap_779"
-delg "betashipmap_780"
-delg "betashipmap_781"
-delg "betashipmap_782"
-delg "betashipmap_783"
-delg "betashipmap_784"
-delg "betashipmap_785"
-delg "betashipmap_786"
-delg "betashipmap_787"
-delg "betashipmap_788"
-delg "betashipmap_789"
-delg "betashipmap_790"
-delg "betashipmap_791"
-delg "betashipmap_792"
-delg "betashipmap_793"
-delg "betashipmap_794"
-delg "betashipmap_795"
-delg "betashipmap_796"
-delg "betashipmap_797"
-delg "betashipmap_798"
-delg "betashipmap_799"
-delg "betashipmap_800"
-delg "betashipmap_801"
-delg "betashipmap_802"
-delg "betashipmap_803"
-delg "betashipmap_804"
-delg "betashipmap_805"
-delg "betashipmap_806"
-delg "betashipmap_807"
-delg "betashipmap_808"
-delg "betashipmap_809"
-delg "betashipmap_810"
-delg "betashipmap_811"
-delg "betashipmap_812"
-delg "betashipmap_813"
-delg "betashipmap_814"
-delg "betashipmap_815"
-delg "betashipmap_816"
-delg "betashipmap_817"
-delg "betashipmap_818"
-delg "betashipmap_819"
-delg "betashipmap_820"
-delg "betashipmap_821"
-delg "betashipmap_822"
-delg "betashipmap_823"
-delg "betashipmap_824"
-delg "betashipmap_825"
-delg "betashipmap_826"
-delg "betashipmap_827"
-delg "betashipmap_828"
-delg "betashipmap_829"
-delg "betashipmap_830"
-delg "betashipmap_831"
-delg "betashipmap_832"
-delg "betashipmap_833"
-delg "betashipmap_834"
-delg "betashipmap_835"
-delg "betashipmap_836"
-delg "betashipmap_837"
-delg "betashipmap_838"
-delg "betashipmap_839"
-delg "betashipmap_840"
-delg "betashipmap_841"
-delg "betashipmap_842"
-delg "betashipmap_843"
-delg "betashipmap_844"
-delg "betashipmap_845"
-delg "betashipmap_846"
-delg "betashipmap_847"
-delg "betashipmap_848"
-delg "betashipmap_849"
-delg "betashipmap_850"
-delg "betashipmap_851"
-delg "betashipmap_852"
-delg "betashipmap_853"
-delg "betashipmap_854"
-delg "betashipmap_855"
-delg "betashipmap_856"
-delg "betashipmap_857"
-delg "betashipmap_858"
-delg "betashipmap_859"
-delg "betashipmap_860"
-delg "betashipmap_861"
-delg "betashipmap_862"
-delg "betashipmap_863"
-delg "betashipmap_864"
-delg "betashipmap_865"
-delg "betashipmap_866"
-delg "betashipmap_867"
-delg "betashipmap_868"
-delg "betashipmap_869"
-delg "betashipmap_870"
-delg "betashipmap_871"
-delg "betashipmap_872"
-delg "betashipmap_873"
-delg "betashipmap_874"
-delg "betashipmap_875"
-delg "betashipmap_876"
-delg "betashipmap_877"
-delg "betashipmap_878"
-delg "betashipmap_879"
-delg "betashipmap_880"
-delg "betashipmap_881"
-delg "betashipmap_882"
-delg "betashipmap_883"
-delg "betashipmap_884"
-delg "betashipmap_885"
-delg "betashipmap_886"
-delg "betashipmap_887"
-delg "betashipmap_888"
-delg "betashipmap_889"
-delg "betashipmap_890"
-delg "betashipmap_891"
-delg "betashipmap_892"
-delg "betashipmap_893"
-delg "betashipmap_894"
-delg "betashipmap_895"
-delg "betashipmap_896"
-delg "betashipmap_897"
-delg "betashipmap_898"
-delg "betashipmap_899"
-delg "betashipmap_900"
-delg "betashipmap_901"
-delg "betashipmap_902"
-delg "betashipmap_903"
-delg "betashipmap_904"
-delg "betashipmap_905"
-delg "betashipmap_906"
-delg "betashipmap_907"
-delg "betashipmap_908"
-delg "betashipmap_909"
-delg "betashipmap_910"
-delg "betashipmap_911"
-delg "betashipmap_912"
-delg "betashipmap_913"
-delg "betashipmap_914"
-delg "betashipmap_915"
-delg "betashipmap_916"
-delg "betashipmap_917"
-delg "betashipmap_918"
-delg "betashipmap_919"
-delg "betashipmap_920"
-delg "betashipmap_921"
-delg "betashipmap_922"
-delg "betashipmap_923"
-delg "betashipmap_924"
-delg "betashipmap_925"
-delg "betashipmap_926"
-delg "betashipmap_927"
-delg "betashipmap_928"
-delg "betashipmap_929"
-delg "betashipmap_930"
-delg "betashipmap_931"
-delg "betashipmap_932"
-delg "betashipmap_933"
-delg "betashipmap_934"
-delg "betashipmap_935"
-delg "betashipmap_936"
-delg "betashipmap_937"
-delg "betashipmap_938"
-delg "betashipmap_939"
-delg "betashipmap_940"
-delg "betashipmap_941"
-delg "betashipmap_942"
-delg "betashipmap_943"
-delg "betashipmap_944"
-delg "betashipmap_945"
-delg "betashipmap_946"
-delg "betashipmap_947"
-delg "betashipmap_948"
-delg "betashipmap_949"
-delg "betashipmap_950"
-delg "betashipmap_951"
-delg "betashipmap_952"
-delg "betashipmap_953"
-delg "betashipmap_954"
-delg "betashipmap_955"
-delg "betashipmap_956"
-delg "betashipmap_957"
-delg "betashipmap_958"
-delg "betashipmap_959"
-delg "betashipmap_960"
-delg "betashipmap_961"
-delg "betashipmap_962"
-delg "betashipmap_963"
-delg "betashipmap_964"
-delg "betashipmap_965"
-delg "betashipmap_966"
-delg "betashipmap_967"
-delg "betashipmap_968"
-delg "betashipmap_969"
-delg "betashipmap_970"
-delg "betashipmap_971"
-delg "betashipmap_972"
-delg "betashipmap_973"
-delg "betashipmap_974"
-delg "betashipmap_975"
-delg "betashipmap_976"
-delg "betashipmap_977"
-delg "betashipmap_978"
-delg "betashipmap_979"
-delg "betashipmap_980"
-delg "betashipmap_981"
-delg "betashipmap_982"
-delg "betashipmap_983"
-delg "betashipmap_984"
-delg "betashipmap_985"
-delg "betashipmap_986"
 
 
 **
@@ -2586,11 +1305,11 @@ enum 2 11 36463
 	kill targ
 next
 ** fish
-enum 2 15 36465
+enum 2 15 36464
 	kill targ
 next
 ** fly
-enum 2 15 36466
+enum 2 13 36464
 	kill targ
 next
 ** leaf 
@@ -2600,15 +1319,15 @@ next
 enum 2 5 36468
 	kill targ
 next
-** nestca
+** homeemitters
 enum 1 1 36468
 	kill targ
 next
 ** gadgetvoc
-enum 3 8 36468
+enum 3 8 36463
 	kill targ
 next
-enum 3 3 36468
+enum 3 3 36463
 	kill targ
 next
 ** clouds

@@ -1,2 +1,5 @@
 
 *.xcf
+*.png
+backgrounds/mimetype
+backgrounds/stack.xml

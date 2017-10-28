@@ -1,0 +1,61 @@
+
+**
+** Caemitter controller
+**
+**
+
+**
+** Plant and flower connecting to CA 9
+**
+
+*Plants
+cacl 2 4 0 9
+*Flowers
+cacl 2 7 0 9
+
+
+** Timer script
+
+scrp 1 1 36464 9
+	doif ov00 eq 1
+* Light dependant of time of day and season
+		setv va00 ov01
+		doif time eq 0
+			mulv va00 0.31
+		elif time eq 1
+			mulv va00 0.35
+		elif time eq 2
+			mulv va00 0.79
+			doif sean eq 1
+				mulv va00 1.1
+			elif sean eq 3
+				mulv va00 0.93
+			endi
+		elif time eq 3 or time eq 4
+			mulv va00 0
+		endi
+	elif ov00 eq 2
+* Heat dependant of season and time of day
+		setv va00 ov01
+		doif time eq 2
+			mulv va00 1.3
+		elif time eq 4
+			mulv va00 0.7
+		endi
+
+		doif sean eq 0 or sean eq 2
+			mulv va00 1
+		elif sean eq 1
+			mulv va00 1.5
+		elif sean eq 3
+			mulv va00 0.55
+		endi
+	endi
+	emit ov00 va00
+	tick 300
+endm
+
+rscr
+enum 1 1 36464
+	kill targ
+next

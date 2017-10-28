@@ -1,0 +1,73 @@
+**
+** Flower script
+**
+
+**
+** Creation script
+**
+
+** Flower creation
+scrp 2 7 36463 1000
+* Attr: mouseable 2 + collide 64 + physics 128 = 194
+	attr 194
+* Bhvr: act1 1
+	bhvr 1
+* Set physics attributes
+	accg 2
+	aero 3
+* Set collision attributes
+	perm 100
+	fric 100
+	elas 0
+* emit flower smell
+	emit 9 0.3
+* Move to the spot if possible
+	doif tmvt _p1_ _p2_ ne 0
+		mvto _p1_ _p2_
+	else
+		kill targ
+	endi
+	tick 1
+endm
+
+**
+** Activate 1 (push) script
+**
+
+** Flower play
+scrp 2 7 36463 1
+* stim played with flower
+	stim writ from 84 1
+* reset timer script, try to spawn
+	mesg writ ownr 9
+endm
+
+**
+** Timer script
+**
+
+** Flower
+scrp 2 7 36463 9
+	tick rand 400 800
+* get the heat CA level of the room the flower is in
+	setv va00 grap posx posy
+	setv va01 prop va00 2
+	doif time eq 4
+		alph 100 1
+	else
+* get the heat CA and check if the conditions are OK
+		doif va01 gt 0.45 and va01 lt 0.61
+			alph 0 0
+			doif rand 0 3 eq 3
+				setv va02 posl
+				setv va03 post
+				new: simp 2 3 36463 "betaship_agents" 1 0 rand 1200 4000
+				mesg wrt+ targ 1000 va02 va03 1
+				velo rand -5 5 -5
+			endi
+		else
+* if conditions not OK, make semi-transparant
+			alph 100 1
+		endi
+	endi
+endm
