@@ -29,7 +29,7 @@ doif game "betaship" ne 1
 	setv ov05 0
 	setv ov06 0
 * initial tick
-	tick 100
+	tick 10
 
 ** Set betaship game variable
 	setv game "betaship" 1
@@ -58,19 +58,21 @@ scrp 1 1 36465 9
 		rtar 1 4 36465
 * If there is a signpost
 		doif targ ne ownr and targ ne null
+			doif velx eq 0 and vely eq 0
 * Set the signpost variable
-			seta va00 targ
-			flto 10 10
-			show 0
-			targ ownr
-			seta ov00 va00
+				seta va00 targ
+				show 0
+
+				targ ownr
+				seta ov00 va00
+			endi
 		endi
 * if the signpost variable is set
 	else
-		tick 20
-		show 1
 * retarget ownr
 		targ ownr
+		tick 20
+		show 1
 		inst
 * recalculate posx posy
 		setv va00 ov02
@@ -81,7 +83,7 @@ scrp 1 1 36465 9
 			setv va00 fltx
 			setv va99 1
 		endi
-		doif va00 ne flty
+		doif va01 ne flty
 			setv va01 flty
 			setv va99 1
 		endi
@@ -90,6 +92,7 @@ scrp 1 1 36465 9
 			flto va00 va01
 		endi
 		slow
+		targ ownr
 * if the time pose isn't correct
 		doif ov02 ne time
 * set the timevar
@@ -138,3 +141,4 @@ next
 enum 1 1 36465
 	kill targ
 next
+setv game "betaship" 0

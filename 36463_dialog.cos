@@ -29,7 +29,7 @@ part 1
 ptxt read "txt_betaship" 0
 
 *kill dialog
-scrp 1 2 36463 1001
+scrp 1 2 36463 1000
 **
 ** Move camera to signpost!
 **
