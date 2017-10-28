@@ -4,6 +4,38 @@ rate 9 2 1.000000 0.010000 1.000000
 
 doif game "betaship" ne 1
 **
+** Water body emitters
+**
+**
+**
+
+** Aquatic room
+	new: simp 1 1 36464 "blnk" 1 0 100
+	emit 5 1
+	mvto 54248 28103
+	new: simp 1 1 36464 "blnk" 1 0 100
+	emit 5 1
+	mvto 55087 28103
+
+** Ocean
+	
+	new: simp 1 1 36464 "blnk" 1 0 100
+	emit 5 1
+	mvto 52995 26634
+	new: simp 1 1 36464 "blnk" 1 0 100
+	emit 5 1
+	mvto 54767 26219
+	new: simp 1 1 36464 "blnk" 1 0 100
+	emit 5 1
+	mvto 56476 26450
+	new: simp 1 1 36464 "blnk" 1 0 100
+	emit 5 1
+	mvto 56583 27119
+
+
+
+
+**
 ** Light emitters
 **
 **
