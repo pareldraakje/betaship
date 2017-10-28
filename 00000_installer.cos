@@ -33,7 +33,7 @@
 *# link 36463_vocab.cos 36464_cacontroller.cos 36464_fish.cos 36464_fly.cos 36465_vendor_food.cos 
 *# link 36466_background.cos 36467_clouds.cos 36468_homeemitters.cos 36468_leaf.cos
 *# link 999999_eledoor_install.cos 999999_initial_agents.cos 999999_initial_caemitters.cos 999999_initial_patchplants.cos
-*# link 36465_signpost.cos
+*# link 36463_dialog.cos 36465_signpost.cos
 
 **
 
