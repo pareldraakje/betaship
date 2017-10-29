@@ -16,7 +16,7 @@ repe
 
 * main controller
 new: simp 2 5 36468 "blnk" 1 0 1
-tick 70
+tick 50
 
 **
 ** Event scripts
@@ -49,15 +49,15 @@ scrp 2 5 36468 9
 	doif sean eq 2
 		doif rand 1 4 eq 4
 			new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
-			mesg wrt+ targ 1000 rand 46946 48095 rand 26852 27000 1
+			mesg wrt+ targ 1000 rand 53959 54504 rand 26836 26919 1
 		endi
 		doif rand 1 4 eq 4
 			new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
-			mesg wrt+ targ 1000 rand 48809 49576 rand 26804 27000 1
+			mesg wrt+ targ 1000 rand 55163 55637 rand 26816 26903 1
 		endi
 		doif rand 1 8 eq 8
 			new: simp 2 6 36468 "betaship_tools" 1 1 rand 1500 4000
-			mesg wrt+ targ 1000 rand 47597 47982 rand 27370 27390 1
+			mesg wrt+ targ 1000 rand 54368 54599 rand 27160 27248 1
 		endi
 	endi
 endm
@@ -92,9 +92,9 @@ scrp 2 6 36468 9
 			doif va02 eq 8 or va02 eq 9
 			else
 				doif ov50 gt 30
-		doif room ownr ne -1
-			altr room ownr 4 1
-		endi
+					doif room ownr ne -1
+						altr room ownr 4 0.01
+					endi
 					kill ownr
 					stop
 				endi
@@ -117,9 +117,9 @@ scrp 2 6 36468 9
 						mesg wrt+ targ 1000 va01 va02 0
 					repe
 				elif va00 gt 8
-		doif room ownr ne -1
-			altr room ownr 4 1
-		endi
+					doif room ownr ne -1
+						altr room ownr 4 1
+					endi
 					kill ownr
 					stop
 				endi
