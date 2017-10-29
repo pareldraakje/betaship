@@ -59,7 +59,7 @@ scrp 2 9 36463 9
 		altr room targ 4 0.02
 		altr room targ 3 0.02
 		kill ownr
-	elif room targ eq -1 and carr eq null
+	else
 		kill ownr
 	endi
 
@@ -115,7 +115,7 @@ scrp 2 10 36463 9
 	doif room targ ne -1 and carr eq null
 		altr room targ 4 0.02
 		kill ownr
-	elif room targ eq -1 and carr eq null
+	else
 		kill ownr
 	endi
 endm
