@@ -179,7 +179,7 @@ scrp 2 20 36467 1000
 	accg 0.2
 	aero 10
 	emit 3 0.3
-	tick 300
+	tick 200
 	setv ov00 0
 	mvto _p1_ _p2_
 endm
@@ -193,9 +193,9 @@ scrp 2 19 36467 6
 endm
 
 scrp 2 20 36467 9
-	altr -1 2 -0.06
+	altr -1 2 -0.08
 	addv ov00 1
-	doif ov00 gt 3
+	doif ov00 gt 4
 		kill ownr
 	endi
 endm
