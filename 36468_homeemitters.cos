@@ -9,16 +9,19 @@
 ** arctic norn home
 new: simp 1 1 36468 "betaship_tools" 1 0 800
 setv ov00 0
+emit 15 0.1
 mesg wrt+ targ 1000 53272 27815 1
 
 ** main norn home
 new: simp 1 1 36468 "betaship_tools" 1 0 800
 setv ov00 1
+emit 15 0.1
 mesg wrt+ targ 1000 54320 27039 1
 
 ** desert norn home
 new: simp 1 1 36468 "betaship_tools" 1 0 800
 setv ov00 2
+emit 15 0.1
 mesg wrt+ targ 1000 56383 27746 1
 
 **
@@ -51,20 +54,20 @@ endm
 
 ** Timer script, for seasonal differences
 scrp 1 1 36468 9
-	tick 500
+	tick 100
 	doif ov00 eq 0
 		doif sean eq 1
 			emit 15 1
 		else
 			emit 15 0
 		endi
-	elif ov01 eq 1
+	elif ov00 eq 1
 		doif sean eq 0 or sean eq 2
 			emit 15 1
 		else
 			emit 15 0
 		endi
-	elif ov02 eq 2
+	elif ov00 eq 2
 		doif sean eq 3
 			emit 15 1
 		else
