@@ -4,7 +4,7 @@
 
 new: simp 1 1 36466 "blnk" 1 0 1000
 setv ov00 gmap 54668 26862
-tick 20
+tick 60
 
 
 **
@@ -26,3 +26,8 @@ scrp 1 1 36466 9
 		endi
 	endi
 endm
+
+rscr
+enum 1 1 36466
+kill targ
+next
