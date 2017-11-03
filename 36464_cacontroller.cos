@@ -21,17 +21,19 @@ scrp 1 1 36464 9
 * Light dependant of time of day and season
 		setv va00 ov01
 		doif time eq 0
-			mulv va00 0.31
+			mulv va00 0.2
 		elif time eq 1
-			mulv va00 0.35
+			mulv va00 0.70
 		elif time eq 2
-			mulv va00 0.79
+			mulv va00 1.1
 			doif sean eq 1
 				mulv va00 1.1
 			elif sean eq 3
 				mulv va00 0.93
 			endi
-		elif time eq 3 or time eq 4
+		elif time eq 3
+			mulv va00 0.5
+		elif time eq 4
 			mulv va00 0
 		endi
 	elif ov00 eq 2
@@ -52,7 +54,7 @@ scrp 1 1 36464 9
 		endi
 	endi
 	emit ov00 va00
-	tick 300
+	tick 100
 endm
 
 rscr

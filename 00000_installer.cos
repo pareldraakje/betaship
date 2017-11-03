@@ -1276,31 +1276,39 @@ endi
 rscr
 
 
-** agents_install
+** bug
 enum 2 13 36463
 	kill targ
 next
+** critter
 enum 2 15 36463
 	kill targ
 next
+** vendor
 enum 2 21 36463
 	kill targ
 next
-enum 1 1 36463
-	kill targ
-next
-enum 2 3 36463
-	kill targ
-next
+** plant
 enum 2 4 36463
 	kill targ
 next
+** flower
 enum 2 7 36463
 	kill targ
 next
+** patchplants
+enum 1 1 36463
+	kill targ
+next
+** seed
+enum 2 3 36463
+	kill targ
+next
+** fruit
 enum 2 8 36463
 	kill targ
 next
+** food
 enum 2 11 36463
 	kill targ
 next
@@ -1323,21 +1331,24 @@ next
 enum 1 1 36468
 	kill targ
 next
-** gadgetvoc
+** gadget
 enum 3 8 36463
 	kill targ
 next
+** vocab
 enum 3 3 36463
 	kill targ
 next
 ** clouds
+enum 1 1 36467
+	kill targ
+next
+** rain
 enum 2 19 36467
 	kill targ
 next
+** snow
 enum 2 20 36467
-	kill targ
-next
-enum 1 1 36467
 	kill targ
 next
 ** livevendor
@@ -1348,10 +1359,23 @@ next
 enum 2 23 36465
 	kill targ
 next
-** detritus/manky
+** manky
 enum 2 9 36463
 	kill targ
 next
+** detritus
 enum 2 10 36463
 	kill targ
+next
+** homeemitter
+enum 1 1 36468
+	kill targ
+next
+** cacontroller
+enum 1 1 36464
+	kill targ
+next
+** backgroundcontroller
+enum 1 1 36466
+kill targ
 next
