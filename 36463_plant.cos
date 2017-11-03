@@ -54,10 +54,14 @@ scrp 2 4 36463 9
 	setv va01 prop va00 2
 	doif time eq 4
 		alph 100 1
+		attr 210
+		emit 9 0
 	else
 * get the heat CA, check if conditions are OK
 		doif va01 gt 0.59 and va01 lt 0.71
+			attr 194
 			alph 0 0
+			emit 9 0.3
 			doif rand 0 3 eq 3
 * Create fruit
 				setv va02 posl
@@ -69,6 +73,8 @@ scrp 2 4 36463 9
 		else
 * If conditions not OK, make semi-transparant
 			alph 100 1
+			attr 210
+			emit 9 0
 		endi
 	endi
 endm

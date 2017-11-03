@@ -54,10 +54,14 @@ scrp 2 7 36463 9
 	setv va01 prop va00 2
 	doif time eq 4
 		alph 100 1
+		attr 210
+		emit 9 0
 	else
 * get the heat CA and check if the conditions are OK
 		doif va01 gt 0.45 and va01 lt 0.61
+			attr 194
 			alph 0 0
+			emit 9 0.3
 			doif rand 0 3 eq 3
 				setv va02 posl
 				setv va03 post
@@ -68,6 +72,8 @@ scrp 2 7 36463 9
 		else
 * if conditions not OK, make semi-transparant
 			alph 100 1
+			attr 210
+			emit 9 0
 		endi
 	endi
 endm
