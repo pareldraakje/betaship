@@ -23,12 +23,12 @@ reps 3
 	mesg wrt+ targ 1000 53604 27504 0
 	velo rand -20 20 0
 repe
-reps 5
+reps 3
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 53341 27726 0
 	velo rand -45 45 0
 repe
-reps 8
+reps 5
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 53223 27947 0
 	velo rand -65 65 0
@@ -40,24 +40,28 @@ reps 3
 	mesg wrt+ targ 1000 53604 27504 0
 	velo rand -20 20 0
 repe
-reps 5
+reps 3
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 53341 27726 0
 	velo rand -25 25 0
 repe
-reps 8
+reps 5
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 53223 27947 0
 	velo rand -35 35 0
 repe
 ** Critters
 * critter arctic
-new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
-mesg wrt+ targ 1000 53223 27947 0
+reps 3
+	new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+	mesg wrt+ targ 1000 53223 27947 0
+repe
 ** Bugs
 * bug arctic
-new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
-mesg wrt+ targ 1000 53223 27947 0
+reps 3
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
+	mesg wrt+ targ 1000 53223 27947 0
+repe
 ** Toys
 * toy arctic top
 new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
@@ -93,12 +97,12 @@ reps 2
 	mesg wrt+ targ 1000 55919 27520 0
 	velo rand -20 20 0
 repe
-reps 4
+reps 3
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 56367 27721 0
 	velo rand -35 35 0
 repe
-reps 8
+reps 5
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 56362 27947 0
 	velo rand -65 65 0
@@ -110,24 +114,28 @@ reps 2
 	mesg wrt+ targ 1000 55919 27520 0
 	velo rand -20 20 0
 repe
-reps 4
+reps 3
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 56367 27721 0
 	velo rand -25 25 0
 repe
-reps 8
+reps 5
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 56362 27947 0
 	velo rand -65 65 0
 repe
 ** Critters
 * critter desert
-new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
-mesg wrt+ targ 1000 56362 27947 0
+reps 3
+	new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+	mesg wrt+ targ 1000 56362 27947 0
+repe
 ** Bugs
 * bug desert
-new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
-mesg wrt+ targ 1000 56362 27947 0
+reps 3
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
+	mesg wrt+ targ 1000 56362 27947 0
+repe
 ** Toys
 * toy desert top
 new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
@@ -161,36 +169,40 @@ mesg wrt+ targ 1000 56542 27787 1
 **
 ** Plants
 * plant main
-reps 8
+reps 5
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 54885 26959 0
 	velo rand -75 75 0
 repe
-reps 9
+reps 5
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 54869 27196 0
 	velo rand -75 75 0
 repe
 ** Flowers
 * flower main
-reps 8
+reps 5
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 54885 26959 0
 	velo rand -75 75 0
 repe
-reps 9
+reps 5
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 54869 27196 0
 	velo rand -75 75 0
 repe
 ** Critters
 * critter main
-new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
-mesg wrt+ targ 1000 54869 27196 0
+reps 3
+	new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+	mesg wrt+ targ 1000 54869 27196 0
+repe
 ** Bugs
 * bug main
-new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
-mesg wrt+ targ 1000 54869 27196 0
+reps 3
+	new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
+	mesg wrt+ targ 1000 54869 27196 0
+repe
 ** Toys
 * toy main left
 new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
@@ -224,26 +236,24 @@ mesg wrt+ targ 1000 54242 27062 1
 
 ** Plants
 * plant aqua
-reps 7
+reps 4
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 54869 27865 0
 	velo rand -70 70 0
 repe
 ** Flowers
 * flower aqua
-reps 7
+reps 4
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 54869 27865 0
 	velo rand -70 70 0
 repe
 ** Critters
 * critter aqua
-new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
-mesg wrt+ targ 1000 54869 27865 0
-** Bugs
-* bug aqua
-new: simp 2 13 36463 "betaship_agents" 2 6 rand 1500 4000
-mesg wrt+ targ 1000 54869 27865 0
+reps 3
+	new: simp 2 15 36463 "betaship_agents" 2 4 rand 1500 4000
+	mesg wrt+ targ 1000 54869 27865 0
+repe
 ** Toys
 * toy aqua
 new: simp 2 21 36463 "betaship_agents" 1 3 rand 1500 4000
@@ -271,27 +281,27 @@ mesg wrt+ targ 1000 55219 28204 1
 **
 ** Plants
 * plant ocean 
-reps 8
+reps 3
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 52968 26910 0
 	velo rand -50 50 0
 repe
-reps 8
+reps 5
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 54777 26121 0
 	velo rand -50 50 0
 repe
-reps 8
+reps 7
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 56617 26987 0
 	velo rand -50 50 0
 repe
-reps 4
+reps 2
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 57024 26440 0
 	velo rand -40 40 0
 repe
-reps 3
+reps 5
 	new: simp 2 4 36463 "betaship_agents" 1 8 rand 1500 400
 	mesg wrt+ targ 1000 57329 27868 0
 	velo rand -25 25 0
@@ -303,12 +313,12 @@ reps 8
 	mesg wrt+ targ 1000 52968 26910 0
 	velo rand -50 50 0
 repe
-reps 8
+reps 5
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 54777 26121 0
 	velo rand -50 50 0
 repe
-reps 8
+reps 3
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 56617 26987 0
 	velo rand -50 50 0
@@ -318,7 +328,7 @@ reps 4
 	mesg wrt+ targ 1000 57024 26440 0
 	velo rand -40 40 0
 repe
-reps 3
+reps 2
 	new: simp 2 7 36463 "betaship_agents" 1 9 rand 1500 400
 	mesg wrt+ targ 1000 57329 27868 0
 	velo rand -25 25 0
