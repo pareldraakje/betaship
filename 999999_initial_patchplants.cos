@@ -37,90 +37,130 @@ setv name "winter" 1
 tick 1
 mvto 54117 28100
 
+
+**
+** SEASONAL
+**
+
+**
+** SPRING
+**
+
+**
 ** Main biome
-* fruit main top left
-new: simp 1 1 36463 "betaship_agents" 1 1 300
-setv ov00 8
-setv name "summer" 1
-setv name "fall" 1
-tick 1
-mvto 54138 26982
-* seed main top left
-new: simp 1 1 36463 "betaship_agents" 1 0 300
-setv ov00 3
-setv name "fall" 1
-tick 1
-mvto 54411 26961
+**
 * food main top left
 new: simp 1 1 36463 "betaship_agents" 1 2 300
 setv ov00 11
 setv name "spring" 1
-setv name "fall" 1
 tick 1
 mvto 54235 26863
-* seed main top center
-new: simp 1 1 36463 "betaship_agents" 1 0 300
-setv ov00 3
-setv name "fall" 1
-setv name "spring" 1
-tick 1
-mvto 55313 26833
-* fruit main top right
-new: simp 1 1 36463 "betaship_agents" 1 1 300
-setv ov00 8
-setv name "fall" 1
-setv name "summer" 1
-tick 1
-mvto 55483 26956
 * seed main top right
 new: simp 1 1 36463 "betaship_agents" 1 0 300
 setv ov00 3
 setv name "spring" 1
 tick 1
 mvto 55400 26822
-* food main top right
-new: simp 1 1 36463 "betaship_agents" 1 2 300
-setv ov00 11
-setv name "summer" 1
-setv name "winter" 1
-tick 1
-mvto 55570 26987
-* fruit main bot right
-new: simp 1 1 36463 "betaship_agents" 1 1 300
-setv ov00 8
-setv name "fall" 1
-setv name "summer" 1
-setv name "spring" 1
-tick 1
-mvto 55596 27162
-* seed main bot right
-new: simp 1 1 36463 "betaship_agents" 1 0 300
-setv ov00 3
-setv name "fall" 1
-tick 1
-mvto 55472 27157
 * seed main bot left
 new: simp 1 1 36463 "betaship_agents" 1 0 300
 setv ov00 3
 setv name "spring" 1
 tick 1
 mvto 54576 27214
-* food main bot left
+
+**
+** Arctic biome
+**
+* seed arctic mid
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "spring" 1
+tick 1
+mvto 53514 27734
+* food arctic mid
 new: simp 1 1 36463 "betaship_agents" 1 2 300
 setv ov00 11
 setv name "spring" 1
-setv name "fall" 1
 tick 1
-mvto 54457 27214
-* food main bot right
+mvto 53375 27719
+* seed arctic low
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "spring" 1
+tick 1
+mvto 53158 27935
+* food arctic low
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+tick 1
+mvto 53653 27930
+
+**
+** Desert biome
+**
+* food desert high
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+tick 1
+mvto 56003 27430
+* fruit desert mid
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "spring" 1
+tick 1
+mvto 56575 27765
+* fruit desert low right
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "spring" 1
+tick 1
+mvto 55777 27894
+* food desert low right
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "spring" 1
+tick 1
+mvto 55679 27915
+
+
+
+**
+** SUMMER
+**
+
+**
+** Main biome
+**
+* fruit main top left
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "summer" 1
+tick 1
+mvto 54138 26982
+* food main top right
 new: simp 1 1 36463 "betaship_agents" 1 2 300
 setv ov00 11
 setv name "summer" 1
-setv name "winter" 1
 tick 1
-mvto 55447 27245
+mvto 55570 26987
+* fruit main bot right
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "summer" 1
+tick 1
+mvto 55596 27162
+* food main bot left
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "summer" 1
+tick 1
+mvto 54576 27214
 
+**
 ** Arctic biome
+**
 * fruit arctic top
 new: simp 1 1 36463 "betaship_agents" 1 1 300
 setv ov00 8
@@ -133,55 +173,174 @@ setv ov00 3
 setv name "summer" 1
 tick 1
 mvto 53442 27440
-* fruit arctic mid
-new: simp 1 1 36463 "betaship_agents" 1 1 300
-setv ov00 8
-setv name "fall" 1
-tick 1
-mvto 53663 27739
-* seed arctic mid
-new: simp 1 1 36463 "betaship_agents" 1 0 300
-setv ov00 3
-setv name "fall" 1
-tick 1
-mvto 53514 27734
 * food arctic mid
 new: simp 1 1 36463 "betaship_agents" 1 2 300
 setv ov00 11
-setv name "spring" 1
 setv name "summer" 1
-setv name "fall" 1
 tick 1
 mvto 53375 27719
 * fruit arctic low
 new: simp 1 1 36463 "betaship_agents" 1 1 300
 setv ov00 8
 setv name "summer" 1
-setv name "spring" 1
 tick 1
 mvto 53158 27935
 * seed arctic low
 new: simp 1 1 36463 "betaship_agents" 1 0 300
 setv ov00 3
 setv name "summer" 1
-setv name "fall" 1
 tick 1
 mvto 53411 27935
 * food arctic low
 new: simp 1 1 36463 "betaship_agents" 1 2 300
 setv ov00 11
-setv name "spring" 1
 setv name "summer" 1
+tick 1
+mvto 53653 27930
+
+**
+** Desert biome
+**
+* food desert mid
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "summer" 1
+tick 1
+mvto 56410 27812
+
+
+**
+** FALL
+**
+
+**
+** Main biome
+**
+* fruit main top left
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "fall" 1
+tick 1
+mvto 54138 26982
+* seed main top left
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "fall" 1
+tick 1
+mvto 54411 26961
+* fruit main top right
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "fall" 1
+tick 1
+mvto 55483 26956
+* fruit main bot right
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "fall" 1
+tick 1
+mvto 55596 27162
+* food main bot right
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "fall" 1
+tick 1
+mvto 55447 27245
+
+**
+** Arctic biome
+**
+* fruit arctic mid
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "fall" 1
+tick 1
+mvto 53663 27739
+* fruit arctic low
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "fall" 1
+tick 1
+mvto 53158 27935
+* food arctic low
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
 setv name "fall" 1
 tick 1
 mvto 53653 27930
 
+**
 ** Desert biome
+**
 * food desert high
 new: simp 1 1 36463 "betaship_agents" 1 2 300
 setv ov00 11
-setv name "spring" 1
 setv name "fall" 1
+tick 1
+mvto 56003 27430
+* seed desert mid
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "fall" 1
+tick 1
+mvto 56575 27765
+* food desert mid
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "fall" 1
+tick 1
+mvto 56410 27812
+* seed desert low mid
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "fall" 1
+tick 1
+mvto 56483 27941
+
+
+
+**
+** WINTER
+**
+
+**
+** Main biome
+**
+* food main top right
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "winter" 1
+tick 1
+mvto 55570 26987
+* seed main bot left
+new: simp 1 1 36463 "betaship_agents" 1 0 300
+setv ov00 3
+setv name "winter" 1
+tick 1
+mvto 54576 27214
+* food main bot right
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "winter" 1
+tick 1
+mvto 55447 27245
+
+**
+** Arctic biome
+**
+* food arctic low
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
+setv name "winter" 1
+tick 1
+mvto 53653 27930
+
+**
+** Desert biome
+**
+* food desert high
+new: simp 1 1 36463 "betaship_agents" 1 2 300
+setv ov00 11
 setv name "winter" 1
 tick 1
 mvto 56003 27430
@@ -189,20 +348,11 @@ mvto 56003 27430
 new: simp 1 1 36463 "betaship_agents" 1 1 300
 setv ov00 8
 setv name "winter" 1
-setv name "fall" 1
 tick 1
 mvto 56039 27698
-* seed desert mid
-new: simp 1 1 36463 "betaship_agents" 1 0 300
-setv ov00 3
-setv name "spring" 1
-tick 1
-mvto 56575 27765
 * food desert mid
 new: simp 1 1 36463 "betaship_agents" 1 2 300
 setv ov00 11
-setv name "spring" 1
-setv name "fall" 1
 setv name "winter" 1
 tick 1
 mvto 56410 27812
@@ -212,13 +362,6 @@ setv ov00 8
 setv name "winter" 1
 tick 1
 mvto 56756 27935
-* seed desert low mid
-new: simp 1 1 36463 "betaship_agents" 1 0 300
-setv ov00 3
-setv name "spring" 1
-setv name "fall" 1
-tick 1
-mvto 56483 27941
 * fruit desert low right
 new: simp 1 1 36463 "betaship_agents" 1 1 300
 setv ov00 8
@@ -228,14 +371,6 @@ mvto 55962 27910
 * seed desert low right
 new: simp 1 1 36463 "betaship_agents" 1 0 300
 setv ov00 3
-setv name "spring" 1
-tick 1
-mvto 55777 27894
-* food desert low right
-new: simp 1 1 36463 "betaship_agents" 1 2 300
-setv ov00 11
-setv name "spring" 1
-setv name "fall" 1
 setv name "winter" 1
 tick 1
 mvto 55679 27915
