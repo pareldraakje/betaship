@@ -110,6 +110,11 @@ endm
 scrp 3 1 36463 1
 	doif from ne pntr
 		doif ov00 ne ownr
+			targ ownr
+			lock
+			frat 20
+			anim [0 0 0 0]
+			unlk
 			targ ov00
 			setv va00 posx
 			setv va02 posy
@@ -132,6 +137,13 @@ scrp 3 1 36463 1
 			slow
 * travel lift
 			stim writ from 94 1
+			targ ownr
+			targ ov00
+			lock
+			frat 20
+			anim [0 0 0 0]
+			over
+			unlk
 		else
 * disappoint
 			stim writ from 0 1

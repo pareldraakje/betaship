@@ -3,34 +3,70 @@ doif game "betaship" ne 1
 ** DOORS
 **
 
+**
+** Changed to elevators
+**
 * MAIN - ARCTIC
-	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
+*	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
+*	mesg wrt+ targ 1000 53895 27317 0
+*	setv va05 grap 53895 27317
+*	seta va00 targ
+*	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
+*	mesg wrt+ targ 1000 53803 27497 0
+*	setv va06 grap 53803 27497
+*	seta va01 targ
+*	link va05 va06 30
+*	targ va00
+*	seta ov00 va01
+*	targ va01
+*	seta ov00 va00
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
 	mesg wrt+ targ 1000 53895 27317 0
+	seta ov00 targ
+	seta ov01 targ
 	setv va05 grap 53895 27317
 	seta va00 targ
-	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
-	mesg wrt+ targ 1000 53803 27497 0
-	setv va06 grap 53803 27497
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 53780 27497 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va06 grap 53780 27497
 	seta va01 targ
 	link va05 va06 30
 	targ va00
-	seta ov00 va01
+	seta ov01 va01
 	targ va01
 	seta ov00 va00
 
-
 * MAIN - DESERT
-	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
+*	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
+*	mesg wrt+ targ 1000 55730 27265 0
+*	setv va05 grap 55730 27265
+*	seta va00 targ
+*	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
+*	mesg wrt+ targ 1000 55782 27523 0
+*	setv va06 grap 55782 27523
+*	seta va01 targ
+*	link va05 va06 30
+*	targ va00
+*	seta ov00 va01
+*	targ va01
+*	seta ov00 va00
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
 	mesg wrt+ targ 1000 55730 27265 0
+	seta ov00 targ
+	seta ov01 targ
 	setv va05 grap 55730 27265
 	seta va00 targ
-	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
 	mesg wrt+ targ 1000 55782 27523 0
+	seta ov00 targ
+	seta ov01 targ
 	setv va06 grap 55782 27523
 	seta va01 targ
 	link va05 va06 30
 	targ va00
-	seta ov00 va01
+	seta ov01 va01
 	targ va01
 	seta ov00 va00
 
