@@ -56,7 +56,7 @@ scrp 1 1 36463 9
 	retn
 
 	subr hide
-		alph 100 0
+		alph 256 0
 		show 0
 	retn
 endm

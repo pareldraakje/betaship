@@ -30,7 +30,7 @@
 *# attach betaship.catalogue
 
 *# link 36463_bug.cos 36463_critter.cos 36463_eledoor.cos 36463_flower.cos 36463_food.cos 36463_fruit.cos 36463_dead.cos
-*# link 36463_gadget.cos 36463_patchplants.cos 36463_plant.cos 36463_seed.cos 36463_toy.cos 36463_vendor_wildlife.cos
+*# link 36463_deadremover.cos 36463_gadget.cos 36463_patchplants.cos 36463_plant.cos 36463_seed.cos 36463_toy.cos 36463_vendor_wildlife.cos
 *# link 36463_vocab.cos 36464_cacontroller.cos 36464_fish.cos 36464_fly.cos 36465_vendor_food.cos 
 *# link 36466_background.cos 36467_clouds.cos 36468_homeemitters.cos 36468_leaf.cos
 *# link 999999_eledoor_install.cos 999999_initial_agents.cos 999999_initial_caemitters.cos 999999_initial_patchplants.cos
@@ -1371,7 +1371,15 @@ next
 enum 1 1 36468
 	kill targ
 next
+** Emittercontroller
+enum 1 21 36464
+	kill targ
+next
 ** backgroundcontroller
 enum 1 1 36466
-kill targ
+	kill targ
+next
+** deadremover
+enum 2 22 36464
+	kill targ
 next

@@ -125,21 +125,29 @@ scrp 2 15 36463 9
 * if too many critters around, kill this one
 			elif va00 gt 7
 				gsub detritus
-				targ ownr
-				kill ownr
 			endi
 		endi
 	endi
 * set tick
 	tick rand 50 85
 	subr detritus
-		inst
+		slow
 		targ ownr
 		setv va00 posl
 		setv va01 post
-		subv va01 5
+		subv va01 10
 		new: simp 2 10 36463 "betaship_dead" 1 1 rand 1000 3000
 		mesg wrt+ targ 1000 va00 va01 0
-		slow
+		targ ownr
+		attr 16
+		show 0
+		wait 20
+		kill ownr
 	retn
 endm
+
+
+rscr
+enum 2 15 36463
+	kill targ
+next

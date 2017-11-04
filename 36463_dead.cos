@@ -28,7 +28,8 @@ scrp 2 9 36463 1000
 	elas 30
 * Emit nutrient smell
 	emit 4 0.01
-	tick rand 500 1200
+	tick rand 300 800
+	slow
 
 	doif tmvt va00 va01 ne 0
 		mvto va00 va01
@@ -53,16 +54,15 @@ endm
 *
 
 scrp 2 9 36463 9
-
-
-	doif room targ ne -1 and carr eq null
-		altr room targ 4 0.02
-		altr room targ 3 0.02
-		kill ownr
-	else
-		kill ownr
+	doif carr eq null
+		doif room targ ne -1
+			altr room targ 4 0.02
+			altr room targ 3 0.02
+			kill ownr
+		else
+			kill ownr
+		endi
 	endi
-
 
 endm
 
@@ -77,6 +77,8 @@ endm
 
 scrp 2 10 36463 1000
 	inst
+	setv va00 _p1_
+	setv va01 _p2_
 * Attr: mouseable 2 + collide 64 + physics 128 = 194
 	attr 194
 * Bhvr: eat 16 + pick up 32
@@ -91,8 +93,9 @@ scrp 2 10 36463 1000
 * Emit nutrient smell
 	emit 4 0.01
 	tick rand 500 1200
-	doif tmvt _p1_ _p2_ ne 0
-		mvto _p1_ _p2_
+	slow
+	doif tmvt va00 va01 ne 0
+		mvto va00 va01
 	else
 		kill ownr
 	endi
@@ -112,11 +115,13 @@ endm
 *
 
 scrp 2 10 36463 9
-	doif room targ ne -1 and carr eq null
-		altr room targ 4 0.02
-		kill ownr
-	else
-		kill ownr
+	doif carr eq null
+		doif room targ ne -1
+			altr room targ 4 0.02
+			kill ownr
+		else
+			kill ownr
+		endi
 	endi
 endm
 

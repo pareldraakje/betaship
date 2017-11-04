@@ -11,7 +11,7 @@ new: comp 2 23 36465 "betaship_vendor" 1 0 2500
 mesg wrt+ targ 1000 54668 26584 1
 ** Main
 new: comp 2 23 36465 "betaship_vendor" 1 0 2500
-mesg wrt+ targ 1000 55070 27259 1
+mesg wrt+ targ 1000 54750 27259 1
 ** Arctic
 new: comp 2 23 36465 "betaship_vendor" 1 0 2500
 mesg wrt+ targ 1000 53539 27979 1

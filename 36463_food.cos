@@ -27,7 +27,7 @@ scrp 2 11 36463 1000
 	else
 		kill targ
 	endi
-	tick 1
+	tick rand 100 200
 endm
 
 **
@@ -54,25 +54,28 @@ scrp 2 11 36463 9
 	next
 	doif va00 gt 3
 		gsub detritus
-		targ ownr
-		kill ownr
 	endi
 * If around for long enough, kill it
 	tick rand 200 400
 	addv ov00 1
-	doif ov00 gt 10 and carr eq null
-		gsub detritus
-		targ ownr
-		kill ownr
+	doif carr eq null
+		doif ov00 gt 10
+			gsub detritus
+		endi
 	endi
 
 	subr detritus
-		inst
+		slow
 		targ ownr
 		setv va00 posl
 		setv va01 post
 		new: simp 2 10 36463 "betaship_dead" 1 2 rand 1000 3000
 		mesg wrt+ targ 1000 va00 va01 0
-		slow
+		targ ownr
+		attr 16
+		show 0
+		wait 20
+		kill ownr
+		stop
 	retn
 endm

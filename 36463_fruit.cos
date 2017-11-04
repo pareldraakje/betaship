@@ -27,7 +27,7 @@ scrp 2 8 36463 1000
 	else
 		kill targ
 	endi
-	tick 1
+	tick rand 100 200
 endm
 
 **
@@ -54,31 +54,29 @@ scrp 2 8 36463 9
 	next
 	doif va00 gt 3
 		gsub manky
-		wait 2
-		targ ownr
-		kill targ
 	endi
 * If around for long enough, kill it
 	targ ownr
 	tick rand 200 400
 	addv ov00 1
-	doif ov00 gt 10 and carr eq null
-		doif room ownr ne -1
+	doif carr eq null
+		doif ov00 gt 10
 			gsub manky
-			targ ownr
-			kill targ
-		else
-			kill targ
 		endi
 	endi
 
 	subr manky
-		inst
+		slow
 		targ ownr
 		setv va00 posl
 		setv va01 post
 		new: simp 2 9 36463 "betaship_dead" 1 0 rand 1000 3000
 		mesg wrt+ targ 1000 va00 va01 0
-		slow
+		targ ownr
+		attr 16
+		show 0
+		wait 20
+		kill ownr
+		stop
 	retn
 endm

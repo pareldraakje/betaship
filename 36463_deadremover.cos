@@ -1,0 +1,31 @@
+new: simp 2 22 36464 "blnk" 1 0 0
+tick 6000
+
+
+scrp 2 22 36464 9
+	inst
+	enum 2 10 36463
+		doif tick eq 0
+			tick 1
+		endi
+	next
+	slow
+endm
+
+
+rscr
+enum 2 22 36464
+	kill targ
+next
+enum 2 10 36463
+	kill targ
+next
+enum 2 9 36463
+	kill targ
+next
+enum 2 13 36464
+	kill targ
+next
+enum 2 15 36464
+	kill targ
+next

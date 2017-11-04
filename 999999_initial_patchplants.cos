@@ -9,6 +9,15 @@
 ** This script installs the initial patch plants
 
 ** Aquatic biome
+* fruit aqua top
+new: simp 1 1 36463 "betaship_agents" 1 1 300
+setv ov00 8
+setv name "spring" 1
+setv name "summer" 1
+setv name "fall" 1
+setv name "winter" 1
+tick 1
+mvto 54924 27540
 * fruit aqua bot
 new: simp 1 1 36463 "betaship_agents" 1 1 300
 setv ov00 8
@@ -111,7 +120,7 @@ setv ov00 8
 setv name "spring" 1
 tick 1
 mvto 56575 27765
-* fruit desert low right
+* fruit desert low left
 new: simp 1 1 36463 "betaship_agents" 1 1 300
 setv ov00 8
 setv name "spring" 1
@@ -122,7 +131,7 @@ new: simp 1 1 36463 "betaship_agents" 1 2 300
 setv ov00 11
 setv name "spring" 1
 tick 1
-mvto 55679 27915
+mvto 56348 27940
 
 
 
@@ -284,12 +293,6 @@ setv ov00 3
 setv name "fall" 1
 tick 1
 mvto 56575 27765
-* food desert mid
-new: simp 1 1 36463 "betaship_agents" 1 2 300
-setv ov00 11
-setv name "fall" 1
-tick 1
-mvto 56410 27812
 * seed desert low mid
 new: simp 1 1 36463 "betaship_agents" 1 0 300
 setv ov00 3
@@ -344,12 +347,6 @@ setv ov00 11
 setv name "winter" 1
 tick 1
 mvto 56003 27430
-* fruit desert mid
-new: simp 1 1 36463 "betaship_agents" 1 1 300
-setv ov00 8
-setv name "winter" 1
-tick 1
-mvto 56039 27698
 * food desert mid
 new: simp 1 1 36463 "betaship_agents" 1 2 300
 setv ov00 11
