@@ -27,16 +27,16 @@ scrp 1 22 36464 9
 			doif time eq 0
 				mulv va00 0.2
 			elif time eq 1
-				mulv va00 0.70
+				mulv va00 0.60
 			elif time eq 2
-				mulv va00 1.1
+				mulv va00 1.2
 				doif sean eq 1
-					mulv va00 1.1
+					mulv va00 1.2
 				elif sean eq 3
 					mulv va00 0.93
 				endi
 			elif time eq 3
-				mulv va00 0.5
+				mulv va00 0.27
 			elif time eq 4
 				mulv va00 0
 			endi
@@ -62,6 +62,6 @@ scrp 1 22 36464 9
 endm
 
 rscr
-enum 1 21 36464
+enum 1 22 36464
 	kill targ
 next
