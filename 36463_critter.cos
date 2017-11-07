@@ -25,7 +25,7 @@ scrp 2 15 36463 1000
 	else
 		kill targ
 	endi
-	tick 1
+	tick 8
 endm
 
 **
