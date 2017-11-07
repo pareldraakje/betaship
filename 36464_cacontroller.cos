@@ -52,9 +52,9 @@ scrp 1 22 36464 9
 			doif sean eq 0 or sean eq 2
 				mulv va00 1
 			elif sean eq 1
-				mulv va00 1.5
+				mulv va00 2
 			elif sean eq 3
-				mulv va00 0.55
+				mulv va00 0.30
 			endi
 		endi
 		emit ov00 va00

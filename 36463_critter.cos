@@ -118,10 +118,12 @@ scrp 2 15 36463 9
 				setv va01 posx
 				setv va02 post
 				subv va02 5
+				inst
 				reps 2
 					new: simp 2 15 36463 "betaship_agents" 2 4 rand 1200 4000
 					mesg wrt+ targ 1000 va01 va02 0
 				repe
+				slow
 * if too many critters around, kill this one
 			elif va00 gt 7
 				gsub detritus
