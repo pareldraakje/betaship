@@ -27,7 +27,7 @@ scrp 2 7 36463 1000
 	else
 		kill targ
 	endi
-	tick 1
+	tick rand 3 8
 endm
 
 **
