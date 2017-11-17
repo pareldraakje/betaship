@@ -2,13 +2,11 @@
 * ====== CAOS2PRAY CHUNK ======
 *
 
-**
 ** To create the agents file:
 ** Open Monk
 ** Deselect "merge scripts"
 ** Drop this file on Monk
 ** Profit!
-**
 
 *# Pray-File "betaship.agents"
 *# DS-Name "Betaship"
