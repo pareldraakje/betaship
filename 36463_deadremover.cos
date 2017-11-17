@@ -6,7 +6,7 @@ scrp 2 22 36464 9
 	inst
 	enum 2 10 36463
 		doif tick eq 0
-			tick 1
+			tick 100
 		endi
 	next
 	slow
