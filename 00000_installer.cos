@@ -2,6 +2,14 @@
 * ====== CAOS2PRAY CHUNK ======
 *
 
+**
+** To create the agents file:
+** Open Monk
+** Deselect "merge scripts"
+** Drop this file on Monk
+** Profit!
+**
+
 *# Pray-File "betaship.agents"
 *# DS-Name "Betaship"
 *# desc = "This is the Betaship metaroom. It has proper CAs, flowers, plants, food and animals. Depending on the season, there'll be different resources available."
