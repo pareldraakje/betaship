@@ -48,14 +48,14 @@ scrp 1 1 36467 1000
 	setv va00 rand -20 20
 	divv va00 20.0
 	velo va00 0
-	tick rand 200 300
+	tick rand 400 600
 	mvto _p1_ _p2_
 *	alph rand 50 100 1
 endm
 
 scrp 1 1 36467 9
 
-	tick rand 200 300
+	tick rand 400 600
 	setv va00 sean
 	doif rand 0 5 eq 5
 		setv va99 rand -20 20
