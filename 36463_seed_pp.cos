@@ -1,0 +1,114 @@
+** CAOS2PRAY
+
+*# Pray-File "gb_pp_betaseed.agent"
+*# DSGB-Name "Betaship seed PP"
+*# Depend blnk.c16
+*# Attach betaship_agents.c16 betaship.catalogue
+*# Attach betaship_dead.c16
+
+*# desc = "A seed patch from the Betaship"
+*# Agent Animation File = "betaship_agents.c16"
+*# Agent Animation Gallery = "betaship_agents"
+*# Agent Sprite First Image = 0
+*# GB_Category = 1
+*# Agent Author = "Pilla"
+
+*# link 36463_dead.cos 36463_deadremover.cos
+
+**
+** Seed script
+**
+
+** Gardenbox invisible flag holding name variables
+new: simp 1 205 36463 "blnk" 0 0 9000
+* Spawn script
+setv name "spawn_script" 1009
+sets name "sprite_file" "betaship_agents"
+setv name "sprite_pose" 0
+setv name "prod_fmly" 2
+setv name "prod_gnus" 3
+setv name "prod_spcs" 36463
+setv name "density" 1
+setv name "tickfrom" 200
+setv name "tickto" 260
+
+
+** Contact patch core agent
+seta va00 targ
+enum 1 1 22929
+	mesg wrt+ targ 1000 va00 0 0
+next
+
+
+**
+** Creation script
+**
+
+** Seed creation
+scrp 1 205 36463 1009
+	new: simp name "prod_fmly" name "prod_gnus" name "prod_spcs" name "sprite_file" 1 name "sprite_pose" name "patch_plane"
+* Attr: mouseable 2 + collide 64 + physics 128 = 194
+	attr 194
+* Bhvr: eat 16 + pick up 32
+	bhvr 48
+* Set physics attributes
+	accg 0
+	aero 3
+* Set collision attributes
+	perm 60
+	fric 60
+	elas 30
+* Move to the spot if possible
+	mvto _p1_ _p2_
+	setv name "patch_id" mame "patch_id"
+	tick rand mame "tickfrom" mame "tickto"
+
+endm
+
+**
+** Eat script
+**
+
+** Seed eat
+scrp 2 3 36463 12
+	stim writ from 77 2
+	kill ownr
+endm
+
+**
+** Timer script
+**
+** Seed
+scrp 2 3 36463 9
+* If around for long enough, kill it
+	doif carr eq null
+		addv ov00 1
+	endi
+	doif ov00 gt rand 6 8
+* Emit seed smell
+		emit 7 0.3
+* Set gravity
+		accg 2
+* Decouple from patch
+		setv name "patch_id" 0
+		doif carr eq null
+			doif ov00 gt 13
+				gsub detritus
+			endi
+		endi
+	endi
+	subr detritus
+		slow
+		targ ownr
+		setv va00 posl
+		setv va01 post
+		new: simp 2 10 36463 "betaship_dead" 1 2 rand 1000 3000
+		mesg wrt+ targ 1000 va00 va01 0
+		targ ownr
+		attr 16
+		show 0
+		wait 20
+		kill ownr
+		stop
+	retn
+endm
