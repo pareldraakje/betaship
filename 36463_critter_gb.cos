@@ -1,33 +1,34 @@
 ** CAOS2PRAY
 
-*# Pray-File "gb_betabug.agent"
-*# DSGB-Name "Betaship bug GB"
+*# Pray-File "gb_betacritter.agent"
+*# DSGB-Name "Betaship critter GB"
 *# Depend blnk.c16
 *# Attach betaship_agents.c16 betaship.catalogue
 *# Attach betaship_dead.c16
 
-*# desc = "A bug from the Betaship"
+*# desc = "A critter from the Betaship"
 *# Agent Animation File = "betaship_agents.c16"
 *# Agent Animation Gallery = "betaship_agents"
-*# Agent Sprite First Image = 6
+*# Agent Sprite First Image = 4
 *# GB_Category = 3
 *# Agent Author = "Pilla"
 
 *# link 36463_dead.cos 36463_deadremover.cos
 
 **
-** Bug script
+** Critter script
 **
 
-new: simp 2 13 36463 "betaship_agents" 2 6 rand 1000 4000
+new: simp 2 15 36463 "betaship_agents" 2 4 rand 1000 4000
 mesg wrt+ targ 1009 game "ch_x" game "ch_y" 0
+
 
 **
 ** Creation script
 **
 
-** Bug creation
-scrp 2 13 36463 1009
+** Critter creation
+scrp 2 15 36463 1009
 * Attr: mouseable 2 + collide 64 + physics 128 = 194
 	attr 194
 * Bhvr: act1 1 + hit 8 + eat 16 + pick up 32 = 57
@@ -44,15 +45,16 @@ scrp 2 13 36463 1009
 	tick 8
 endm
 
+
 **
 ** Activate 1 (push) script
 **
 
-** Bug play
-scrp 2 13 36463 1
-* stim played with good bug
-	stim writ from 85 1
-* move the bug around a bit
+** Critter play
+scrp 2 15 36463 1
+* stim played with animal
+	stim writ from 86 1
+* move critter around a bit
 	setv va00 velx
 	mulv va00 3
 	velo va00 -3
@@ -62,11 +64,11 @@ endm
 ** Hit script
 **
 
-** Bug hit
-scrp 2 13 36463 3
+** Critter hit
+scrp 2 15 36463 3
 * stim hit animal
 	stim writ from 87 1
-* move the bug around a little
+* move the critter around a bit
 	velo rand -3 3 rand -6 -3
 endm
 
@@ -74,8 +76,8 @@ endm
 ** Eat script
 **
 
-** Bug eat
-scrp 2 13 36463 12
+** Critter eat
+scrp 2 15 36463 12
 * stim eaten animal
 	stim writ from 80 2
 	kill ownr
@@ -85,11 +87,11 @@ endm
 ** Timer script
 **
 
-* Bug
-scrp 2 13 36463 9
+** Critter
+scrp 2 15 36463 9
 * if not being carried
 	doif carr eq null
-* Pick direction
+* set direction
 		setv va00 rand 1 8
 		doif va00 le 4
 			setv va00 rand -8 -5
@@ -98,19 +100,19 @@ scrp 2 13 36463 9
 			setv va00 rand 5 8
 			pose 0
 		endi
-* walk
+* move the critter
 		reps rand 4 12
-* if not busy falling
+* if not falling
 			doif fall ne 1
 				setv va20 grap posx posy
-* if in water, set accg
+* if critter in water, set accg
 				doif rtyp va20 eq 8 or rtyp va20 eq 9
 					accg 0.8
-* if in invalid spot, kill
+* if critter in invalid spot, kill it
 				elif rtyp va20 eq -1
 					kill targ
 					stop
-* if on land, set accg
+* if critter on land, set accg
 				else
 					accg 2
 				endi
@@ -124,21 +126,23 @@ scrp 2 13 36463 9
 			rnge 1000
 * set random variable to get dynamic population
 			setv va00 rand 0 3
-* check if not too many around
-			esee 2 13 36463
+			esee 2 15 36463
 				addv va00 1
 			next
+* if not many critters around
 			doif va00 lt 4
-* Create new bugs
+* Create new critters
 				targ ownr
 				setv va01 posx
 				setv va02 post
 				subv va02 5
+				inst
 				reps 2
-					new: simp 2 13 36463 "betaship_agents" 2 6 rand 1200 4000
+					new: simp 2 15 36463 "betaship_agents" 2 4 rand 1200 4000
 					mesg wrt+ targ 1009 va01 va02 0
 				repe
-* if too many bugs around, die
+				slow
+* if too many critters around, kill this one
 			elif va00 gt 7
 				gsub detritus
 			endi
@@ -160,10 +164,10 @@ scrp 2 13 36463 9
 		wait 20
 		kill ownr
 	retn
-
 endm
 
+
 rscr
-enum 2 13 36463
+enum 2 15 36463
 	kill targ
 next

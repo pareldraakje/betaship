@@ -1,0 +1,98 @@
+** CAOS2PRAY
+
+*# Pray-File "gb_betaplant.agent"
+*# DSGB-Name "Betaship plant GB"
+*# Depend blnk.c16
+*# Attach betaship_agents.c16 betaship.catalogue
+*# Attach betaship_dead.c16
+
+*# desc = "A plant from the Betaship"
+*# Agent Animation File = "betaship_agents.c16"
+*# Agent Animation Gallery = "betaship_agents"
+*# Agent Sprite First Image = 8
+*# GB_Category = 2
+*# Agent Author = "Pilla"
+
+*# link 36463_dead.cos 36463_deadremover.cos 
+*# link 36463_fruit.cos
+
+**
+** Plant script
+**
+
+new: simp 2 15 36464 "betaship_agents" 1 8 rand 1000 4000
+mesg wrt+ targ 1009 game "ch_x" game "ch_y" 0
+
+
+**
+** Creation script
+**
+
+** Plant creation
+scrp 2 4 36463 1009
+* Attr: mouseable 2 + collide 64 + physics 128 = 194
+	attr 194
+* Bhvr: act1 1
+	bhvr 1
+* Set physics attributes
+	accg 2
+	aero 3
+* Set collision attributes
+	perm 100
+	fric 100
+	elas 0
+* emit flower smell
+	emit 9 0.3
+* Move to the spot if possible
+	mvsf _p1_ _p2_
+	tick 3
+endm
+
+**
+** Activate 1 (push) script
+**
+
+** Plant play
+scrp 2 4 36463 1
+* Stim played with plant
+	stim writ from 84 1
+** Reset the timer, try to spawn
+	mesg writ ownr 9
+endm
+
+**
+** Timer script
+**
+
+** Plant
+scrp 2 4 36463 9
+	tick rand 400 800
+* get the heat CA level of the room the plant is in
+	setv va00 grap posx posy
+	setv va01 prop va00 2
+	doif time eq 4
+		alph 100 1
+		attr 210
+		emit 9 0
+	else
+* get the heat CA, check if conditions are OK
+		doif va01 gt 0.59 and va01 lt 0.71
+			attr 194
+			alph 0 0
+			emit 9 0.3
+			doif rand 0 3 eq 3
+* Create fruit
+				setv va02 posl
+				setv va03 post
+				new: simp 2 8 36463 "betaship_agents" 1 1 rand 1200 4000
+				mesg wrt+ targ 1000 va02 va03 1
+				velo rand -5 5 -5
+			endi
+		else
+* If conditions not OK, make semi-transparant
+			alph 100 1
+			attr 210
+			emit 9 0
+		endi
+	endi
+endm
