@@ -20,7 +20,7 @@
 ** Plant script
 **
 
-new: simp 2 15 36464 "betaship_agents" 1 8 rand 1000 4000
+new: simp 2 4 36463 "betaship_agents" 1 8 rand 1000 4000
 mesg wrt+ targ 1009 game "ch_x" game "ch_y" 0
 
 

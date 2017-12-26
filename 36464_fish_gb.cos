@@ -10,7 +10,7 @@
 *# Agent Animation File = "betaship_fish.c16"
 *# Agent Animation Gallery = "betaship_fish"
 *# Agent Sprite First Image = 0
-*# GB_Category = 3
+*# GB_Category = 5
 *# Agent Author = "Pilla"
 
 *# link 36463_dead.cos 36463_deadremover.cos
