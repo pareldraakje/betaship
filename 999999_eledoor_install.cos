@@ -1,4 +1,4 @@
-doif game "betaship" ne 1
+doif game "betaship" eq 1
 **
 ** DOORS
 **
@@ -6,60 +6,33 @@ doif game "betaship" ne 1
 **
 ** Changed to elevators
 **
-* MAIN - ARCTIC
-*	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
-*	mesg wrt+ targ 1000 53895 27317 0
-*	setv va05 grap 53895 27317
-*	seta va00 targ
-*	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
-*	mesg wrt+ targ 1000 53803 27497 0
-*	setv va06 grap 53803 27497
-*	seta va01 targ
-*	link va05 va06 30
-*	targ va00
-*	seta ov00 va01
-*	targ va01
-*	seta ov00 va00
+** Main - Arctic
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 53895 27317 0
+	mesg wrt+ targ 1000 53737 27277 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va05 grap 53895 27317
+	setv va05 grap 53737 27277
 	seta va00 targ
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 53780 27497 0
+	mesg wrt+ targ 1000 53737 27529 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va06 grap 53780 27497
+	setv va06 grap 53737 27529
 	seta va01 targ
 	link va05 va06 30
 	targ va00
 	seta ov01 va01
 	targ va01
 	seta ov00 va00
-
 * MAIN - DESERT
-*	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
-*	mesg wrt+ targ 1000 55730 27265 0
-*	setv va05 grap 55730 27265
-*	seta va00 targ
-*	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
-*	mesg wrt+ targ 1000 55782 27523 0
-*	setv va06 grap 55782 27523
-*	seta va01 targ
-*	link va05 va06 30
-*	targ va00
-*	seta ov00 va01
-*	targ va01
-*	seta ov00 va00
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 55730 27265 0
+	mesg wrt+ targ 1000 55636 27279 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va05 grap 55730 27265
+	setv va05 grap 55636 27279
 	seta va00 targ
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 55782 27523 0
+	mesg wrt+ targ 1000 55636 27539 0
 	seta ov00 targ
 	seta ov01 targ
 	setv va06 grap 55782 27523
@@ -78,23 +51,102 @@ doif game "betaship" ne 1
 	mesg wrt+ targ 1000 55390 28183 0
 * Deep water left low
 	new: simp 3 2 36463 "betaship_eledoor" 1 2 500
-	mesg wrt+ targ 1000 52565 27513 0
+	mesg wrt+ targ 1000 52539 27329 0
 * Deep water center
 	new: simp 3 2 36463 "betaship_eledoor" 1 2 500
 	mesg wrt+ targ 1000 54781 26317 0
 * Deep water right cliff
 	new: simp 3 2 36463 "betaship_eledoor" 1 2 500
 	mesg wrt+ targ 1000 57061 26569 0
-* Deep water right platform
-	new: simp 3 2 36463 "betaship_eledoor" 1 2 500
-	mesg wrt+ targ 1000 56901 27502 0
 * Deep water right low
 	new: simp 3 2 36463 "betaship_eledoor" 1 2 500
-	mesg wrt+ targ 1000 57354 28002 0
+	mesg wrt+ targ 1000 57044 27295 0
 
 **
 ** ELEVATORS
 **
+
+**
+** Underwater
+**
+
+
+* Lower left to island
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 53017 26683 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va05 grap 53017 26683
+	seta va00 targ
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 53017 27227 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va06 grap 53017 27227
+	seta va01 targ
+	link va05 va06 30
+	targ va00
+	seta ov01 va01
+	targ va01
+	seta ov00 va00
+
+* Left exit to top
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 53802 26336 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va05 grap 53802 26336
+	seta va00 targ
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 53802 26635 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va06 grap 53802 26635
+	seta va01 targ
+	link va05 va06 30
+	targ va00
+	seta ov01 va01
+	targ va01
+	seta ov00 va00
+
+* Right top to lower
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 55392 26279 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va05 grap 55392 26279
+	seta va00 targ
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 55392 26606 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va06 grap 55392 26606
+	seta va01 targ
+	link va05 va06 30
+	targ va00
+	seta ov01 va01
+	targ va01
+	seta ov00 va00
+
+* Right top to mid
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 57209 26564 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va05 grap 57209 26564
+	seta va00 targ
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 57209 27267 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va06 grap 57209 27267
+	seta va01 targ
+	link va05 va06 30
+	targ va00
+	seta ov01 va01
+	targ va01
+	seta ov00 va00
+
 
 * Desert upper elevators
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
@@ -135,16 +187,16 @@ doif game "betaship" ne 1
 
 * Arctic upper elevators
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 53535 27518 0
+	mesg wrt+ targ 1000 53357 27536 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va05 grap 53535 27518
+	setv va05 grap 53357 27536
 	seta va00 targ
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 53535 27786 0
+	mesg wrt+ targ 1000 53357 27812 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va06 grap 53535 27786
+	setv va06 grap 53357 27812
 	seta va01 targ
 	link va05 va06 30
 	targ va00
@@ -153,16 +205,16 @@ doif game "betaship" ne 1
 	seta ov00 va00
 * Arctic lower elevators
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 53117 27801 0
+	mesg wrt+ targ 1000 53024 27795 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va05 grap 53117 27801
+	setv va05 grap 53024 27795
 	seta va00 targ
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 53117 28157 0
+	mesg wrt+ targ 1000 53024 28142 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va06 grap 53117 28157
+	setv va06 grap 53024 28142
 	seta va01 targ
 	link va05 va06 30
 	targ va00
