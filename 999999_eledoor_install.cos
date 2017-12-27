@@ -1,4 +1,4 @@
-doif game "betaship" eq 1
+doif game "betaship" ne 1
 **
 ** DOORS
 **
