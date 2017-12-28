@@ -19,15 +19,15 @@ rate 10 1 1 0.03 2
 * Norn life: ancient at 4h39m
 * So normal expected norn life: roughly 4h30m
 * original lengthofseason: 4
-setv game "engine_LengthOfSeasonInDays" 1
+setv game "engine_LengthOfSeasonInDays" 4
 * original lengthofday: 20
-setv game "engine_LengthOfDayInMinutes" 4
+setv game "engine_LengthOfDayInMinutes" 8
 * 1 second = 20 ticks, 1 minute = 1200 ticks for a minute
 * 1 day = 8 minutes, so 9600 ticks for day change
 * 4 days per season, so 32 minutes / 38400 ticks for season change 
 rgam
 
-*doif game "betaship" ne 1
+doif game "betaship" ne 1
 **
 ** Water body emitters
 **
@@ -593,7 +593,7 @@ setv ov01 0.75
 mvto 56916 27054
 
 
-*endi
+endi
 
 
 **
