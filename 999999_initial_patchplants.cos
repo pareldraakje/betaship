@@ -207,16 +207,6 @@ setv name "summer" 1
 tick 1
 mvto 53653 27930
 
-**
-** Desert biome
-**
-* food desert mid
-new: simp 1 1 36463 "betaship_agents" 1 2 300
-setv ov00 11
-setv name "summer" 1
-tick 1
-mvto 56410 27812
-
 
 **
 ** FALL
@@ -327,16 +317,6 @@ setv ov00 11
 setv name "winter" 1
 tick 1
 mvto 55447 27245
-
-**
-** Arctic biome
-**
-* food arctic low
-new: simp 1 1 36463 "betaship_agents" 1 2 300
-setv ov00 11
-setv name "winter" 1
-tick 1
-mvto 53653 27930
 
 **
 ** Desert biome
