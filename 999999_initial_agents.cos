@@ -1,7 +1,7 @@
 **
 ** Installer script
 **
-** This script installs initial critters/bugs/toys/plants
+** This script installs initial critters/bugs/toys/plants/bubbles
 **
 
 **
@@ -279,6 +279,40 @@ mesg wrt+ targ 1000 55219 28204 1
 **
 ** Scary outside world. (The ocean)
 **
+
+**
+** Bubblers
+
+new: simp 2 23 36464 "blnk" 1 0 0
+mvto 53044 26709
+
+new: simp 2 23 36464 "blnk" 1 0 0
+mvto 52655 27344
+
+new: simp 2 23 36464 "blnk" 1 0 0
+mvto 53330 27171
+
+new: simp 2 23 36464 "blnk" 1 0 0
+mvto 53528 26699
+
+new: simp 2 23 36464 "blnk" 1 0 0
+mvto 54329 26349
+
+new: simp 2 23 36464 "blnk" 1 0 0
+mvto 54950 26349
+
+new: simp 2 23 36464 "blnk" 1 0 0
+mvto 55691 26690
+
+new: simp 2 23 36464 "blnk" 1 0 0
+mvto 56882 26620
+
+new: simp 2 23 36464 "blnk" 1 0 0
+mvto 56948 27347
+
+new: simp 2 23 36464 "blnk" 1 0 0
+mvto 54569 28241
+
 ** Plants
 * plant ocean 
 reps 3
@@ -403,5 +437,8 @@ enum 3 3 36463
 	kill targ
 next
 enum 3 8 36463
+	kill targ
+next
+enum 2 23 36464
 	kill targ
 next

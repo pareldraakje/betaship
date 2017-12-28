@@ -20,7 +20,7 @@ scrp 2 23 36464 10
 * Attr: mouseable 2 + invisible 16
 	attr 18
 * Bhvr: none
-	tick rand 100 300
+	tick rand 300 600
 endm
 
 
@@ -29,13 +29,13 @@ endm
 **
 
 scrp 2 23 36464 9
-	tick rand 100 300
+	tick rand 200 600
 	setv va00 posx
 	setv va01 post
 ** Bubble Injection script
 	new: simp 2 21 36464 "betaship_air" 1 1 rand 2000 4000
 	mesg wrt+ targ 1000 va00 va01 0
-	velo rand -8 8 0
+	velo rand -15 15 0
 endm
 **
 **
