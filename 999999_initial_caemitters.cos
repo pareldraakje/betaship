@@ -19,9 +19,9 @@ rate 10 1 1 0.03 2
 * Norn life: ancient at 4h39m
 * So normal expected norn life: roughly 4h30m
 * original lengthofseason: 4
-setv game "engine_LengthOfSeasonInDays" 4
+setv game "engine_LengthOfSeasonInDays" 1
 * original lengthofday: 20
-setv game "engine_LengthOfDayInMinutes" 8
+setv game "engine_LengthOfDayInMinutes" 4
 * 1 second = 20 ticks, 1 minute = 1200 ticks for a minute
 * 1 day = 8 minutes, so 9600 ticks for day change
 * 4 days per season, so 32 minutes / 38400 ticks for season change 
@@ -173,7 +173,22 @@ setv ov00 1
 setv ov01 0.95
 mvto 56560 27729
 
+new: simp 1 1 36464 "blnk" 1 0 100
+setv ov00 1
+setv ov01 0.95
+mvto 56956 27668
+
+new: simp 1 1 36464 "blnk" 1 0 100
+setv ov00 1
+setv ov01 0.95
+mvto 57351 27588
+
 * Desert bot
+new: simp 1 1 36464 "blnk" 1 0 100
+setv ov00 1
+setv ov01 0.95
+mvto 55664 28078
+
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 1
 setv ov01 0.95
@@ -188,6 +203,16 @@ new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 1
 setv ov01 0.95
 mvto 56771 28018
+
+new: simp 1 1 36464 "blnk" 1 0 100
+setv ov00 1
+setv ov01 0.95
+mvto 57228 27915
+
+new: simp 1 1 36464 "blnk" 1 0 100
+setv ov00 1
+setv ov01 0.95
+mvto 57515 27883
 
 
 * Aqua top
@@ -285,7 +310,6 @@ new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 1
 setv ov01 0.95
 mvto 56282 26853
-
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 1
 setv ov01 0.95
@@ -367,34 +391,41 @@ mvto 53215 27477
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 2
 setv ov01 0.60
-mvto 53818 27755
-
+mvto 52311 27735
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 2
 setv ov01 0.60
-mvto 53277 27755
-
+mvto 52550 27766
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 2
 setv ov01 0.60
-mvto 52818 27755
+mvto 52905 27778
+new: simp 1 1 36464 "blnk" 1 0 100
+setv ov00 2
+setv ov01 0.60
+mvto 53268 27751
+new: simp 1 1 36464 "blnk" 1 0 100
+setv ov00 2
+setv ov01 0.60
+mvto 53651 27739
 
 * Arctic bot
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 2
 setv ov01 0.60
-mvto 53849 27966
-
+mvto 52534 28002
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 2
 setv ov01 0.60
-mvto 53282 27966
-
+mvto 52841 28002
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 2
 setv ov01 0.60
-mvto 52705 27966
-
+mvto 53224 28002
+new: simp 1 1 36464 "blnk" 1 0 100
+setv ov00 2
+setv ov01 0.60
+mvto 53651 27995
 
 ** DESERT
 * Desert top
@@ -421,15 +452,20 @@ mvto 56560 27729
 
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 2
-setv ov01 0.8
-mvto 56137 27729
+setv ov01 1.1
+mvto 56960 27620
 
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 2
-setv ov01 0.8
-mvto 56560 27729
+setv ov01 1.1
+mvto 57351 27729
 
-* Desert bot
+** Desert Bot
+new: simp 1 1 36464 "blnk" 1 0 100
+setv ov00 2
+setv ov01 1.1
+mvto 55664 28078
+
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 2
 setv ov01 1.1
@@ -447,19 +483,13 @@ mvto 56771 28018
 
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 2
-setv ov01 0.8
-mvto 55978 28018
+setv ov01 1.1
+mvto 57228 27915
 
 new: simp 1 1 36464 "blnk" 1 0 100
 setv ov00 2
-setv ov01 0.8
-mvto 56380 28018
-
-new: simp 1 1 36464 "blnk" 1 0 100
-setv ov00 2
-setv ov01 0.8
-mvto 56771 28018
-
+setv ov01 1.1
+mvto 57515 27883
 
 * Aqua top
 new: simp 1 1 36464 "blnk" 1 0 100
