@@ -25,6 +25,7 @@
 *# attach betaship_n2.blk
 
 *# attach betaship_agents.c16
+*# attach betaship_air.c16
 *# attach betaship_cloud.c16
 *# attach betaship_dead.c16
 *# attach betaship_eledoor.c16
@@ -38,7 +39,7 @@
 *# link 36463_bug.cos 36463_critter.cos 36463_eledoor.cos 36463_flower.cos 36463_food.cos 36463_fruit.cos 36463_dead.cos
 *# link 36463_deadremover.cos 36463_gadget.cos 36463_patchplants.cos 36463_plant.cos 36463_seed.cos 36463_toy.cos 36463_vendor_wildlife.cos
 *# link 36463_vocab.cos 36464_cacontroller.cos 36464_fish.cos 36464_fly.cos 36465_vendor_food.cos 
-*# link 36466_background.cos 36467_clouds.cos 36468_homeemitters.cos 36468_leaf.cos
+*# link 36466_background.cos 36467_clouds.cos 36468_homeemitters.cos 36468_leaf.cos 36464_bubble.cos
 *# link 999999_eledoor_install.cos 999999_initial_agents.cos 999999_initial_caemitters.cos 999999_initial_patchplants.cos
 *# link 36463_dialog.cos 36465_signpost.cos
 
@@ -875,7 +876,7 @@ doif game "betaship" ne 1
     rmsc 56090 27007 ""
     setv game "mapeditortmp_798" va00
   setv va00 addr game "mapeditortmp" 55841 55929 26793 26759 27097 27169
-    rtyp va00 5
+    rtyp va00 9
     rmsc 55885 26981 ""
     setv game "mapeditortmp_799" va00
   setv va00 addr game "mapeditortmp" 57106 57302 26147 26139 26627 26635
@@ -1263,7 +1264,7 @@ doif game "betaship" ne 1
     rmsc 57394 26384 ""
     setv game "mapeditortmp_895" va00
   setv va00 addr game "mapeditortmp" 56470 56601 26079 26124 26617 26611
-    rtyp va00 0
+    rtyp va00 9
     rmsc 56535 26345 ""
     setv game "mapeditortmp_896" va00
   setv va00 addr game "mapeditortmp" 52715 52838 26773 26795 27379 27345
@@ -2023,8 +2024,6 @@ delg "mapeditortmp_896"
 delg "mapeditortmp_897"
 delg "mapeditortmp_898"
 delg "mapeditortmp_899"
-
-
 
 
 
