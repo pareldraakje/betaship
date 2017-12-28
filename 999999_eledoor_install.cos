@@ -1,4 +1,4 @@
-doif game "betaship" ne 1
+doif game "betaship" eq 1
 **
 ** DOORS
 **
@@ -166,18 +166,39 @@ doif game "betaship" ne 1
 	seta ov01 va01
 	targ va01
 	seta ov00 va00
-* Desert lower elevators
+
+* Desert lower left elevators
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 56468 27801 0
+	mesg wrt+ targ 1000 56236 27801 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va05 grap 56468 27801
+	setv va05 grap 56236 27801
 	seta va00 targ
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 56468 28152 0
+	mesg wrt+ targ 1000 56236 28155 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va06 grap 56468 28152
+	setv va06 grap 56236 28155
+	seta va01 targ
+	link va05 va06 30
+	targ va00
+	seta ov01 va01
+	targ va01
+	seta ov00 va00
+
+
+* Desert lower right elevators
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 56789 27768 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va05 grap 56789 27768
+	seta va00 targ
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 56789 28096 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va06 grap 56789 28096
 	seta va01 targ
 	link va05 va06 30
 	targ va00
@@ -203,18 +224,56 @@ doif game "betaship" ne 1
 	seta ov01 va01
 	targ va01
 	seta ov00 va00
-* Arctic lower elevators
+* Arctic lower left elevators
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 53024 27795 0
+	mesg wrt+ targ 1000 52634 27821 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va05 grap 53024 27795
+	setv va05 grap 52634 27821
 	seta va00 targ
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 53024 28142 0
+	mesg wrt+ targ 1000 52634 28109 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va06 grap 53024 28142
+	setv va06 grap 52634 28109
+	seta va01 targ
+	link va05 va06 30
+	targ va00
+	seta ov01 va01
+	targ va01
+	seta ov00 va00
+
+* Arctic lower right elevators
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 53127 27795 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va05 grap 53127 27795
+	seta va00 targ
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 53127 28142 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va06 grap 53127 28142
+	seta va01 targ
+	link va05 va06 30
+	targ va00
+	seta ov01 va01
+	targ va01
+	seta ov00 va00
+
+* Main left elevators
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 54533 27024 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va05 grap 54533 27024
+	seta va00 targ
+	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	mesg wrt+ targ 1000 54533 27412 0
+	seta ov00 targ
+	seta ov01 targ
+	setv va06 grap 54533 27412
 	seta va01 targ
 	link va05 va06 30
 	targ va00
