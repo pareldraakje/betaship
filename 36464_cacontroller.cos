@@ -5,7 +5,7 @@
 **
 
 new: simp 1 22 36464 "blnk" 1 0 0
-tick 600
+tick 500
 
 **
 ** Plant and flower connecting to CA 9
