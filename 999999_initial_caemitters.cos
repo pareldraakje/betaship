@@ -36,24 +36,41 @@ doif game "betaship" ne 1
 
 ** Aquatic room
 	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 5
+	setv ov01 1
 	emit 5 1
 	mvto 54248 28103
 	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 5
+	setv ov01 1
 	emit 5 1
 	mvto 55087 28103
 
 ** Ocean
 
 	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 5
+	setv ov01 1
 	emit 5 1
 	mvto 52995 26634
 	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 5
+	setv ov01 1
+	emit 5 1
+	mvto 52995 27103
+	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 5
+	setv ov01 1
 	emit 5 1
 	mvto 54767 26219
 	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 5
+	setv ov01 1
 	emit 5 1
 	mvto 56476 26450
 	new: simp 1 1 36464 "blnk" 1 0 100
+	setv ov00 5
+	setv ov01 1
 	emit 5 1
 	mvto 56583 27119
 
