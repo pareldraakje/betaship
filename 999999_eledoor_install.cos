@@ -156,10 +156,10 @@ doif game "betaship" ne 1
 	setv va05 grap 56014 27533
 	seta va00 targ
 	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
-	mesg wrt+ targ 1000 56014 27791 0
+	mesg wrt+ targ 1000 56066 27791 0
 	seta ov00 targ
 	seta ov01 targ
-	setv va06 grap 56014 27791
+	setv va06 grap 56066 27791
 	seta va01 targ
 	link va05 va06 30
 	targ va00
@@ -320,14 +320,14 @@ doif game "betaship" ne 1
 	targ va03
 	seta ov00 va02
 
-* Aquatic lift left underwater
-	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+* Aquatic door left underwater
+	new: simp 2 2 36463 "betaship_eledoor" 1 1 500
 	mesg wrt+ targ 1000 54251 27734 0
 	seta ov00 targ
 	seta ov01 targ
 	setv va05 grap 54251 27734
 	seta va00 targ
-	new: simp 3 1 36463 "betaship_eledoor" 1 0 500
+	new: simp 3 1 36463 "betaship_eledoor" 1 1 500
 	mesg wrt+ targ 1000 54251 28239 0
 	seta ov00 targ
 	seta ov01 targ
